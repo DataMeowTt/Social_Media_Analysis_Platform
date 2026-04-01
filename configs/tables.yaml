@@ -1,0 +1,13 @@
+s3:
+  raw:
+    format: json
+    partition_cols: ["ingestion_date"]
+
+  processed:
+    format: parquet
+    partition_cols: ["year", "month", "day"]
+
+  analytics:
+    format: parquet
+    partition_cols: ["year", "month", "day"]
+  

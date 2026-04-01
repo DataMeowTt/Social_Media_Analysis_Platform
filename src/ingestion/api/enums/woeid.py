@@ -1,0 +1,10 @@
+from enum import Enum
+
+class Woeid(Enum):
+    NEW_YORK = 2459115
+    LOS_ANGELES = 2442047
+    WASHINGTON_DC = 2514815
+
+    VIETNAM = 23424984
+    HO_CHI_MINH = 1252431
+    HA_NOI = 1236594

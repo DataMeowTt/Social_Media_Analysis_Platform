@@ -1,0 +1,7 @@
+aws:
+  region: ap-southeast-1
+
+s3:
+  bucket_name: "social-analysis-dev-bucket"
+
+  
