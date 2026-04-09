@@ -1,13 +1,16 @@
 s3:
   raw:
     format: json
+    compression: gzip
     partition_cols: ["ingestion_date"]
 
   processed:
     format: parquet
+    compression: snappy
     partition_cols: ["year", "month", "day"]
 
   analytics:
     format: parquet
+    compression: snappy
     partition_cols: ["year", "month", "day"]
-  
+   
