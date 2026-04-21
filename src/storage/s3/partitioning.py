@@ -4,16 +4,14 @@ def get_partition_prefix(ingestion_time: datetime, partition_cols: list[str]) ->
 
     partition_values = []
     for col in partition_cols:
-        if col == "ingestion_date":
-            partition_values.append(f"ingestion_date={ingestion_time.strftime('%Y-%m-%d')}")
-
-        # TODO Complement partitioning for processed and analysis layer later. 
-        # elif col == "year":
-        #     ...
-        # elif col == "month":
-        #     ...
-        # elif col == "day":
-        #     ...
+        if col == "year":
+            partition_values.append(f"year={ingestion_time.strftime('%Y')}")
+        elif col == "month":
+            partition_values.append(f"month={ingestion_time.strftime('%m')}")
+        elif col == "day":
+            partition_values.append(f"day={ingestion_time.strftime('%d')}")
+        
+        # TODO: processed/analytics — extract year/month/day từ created_at của tweet
 
     return "/".join(partition_values) + "/"
     

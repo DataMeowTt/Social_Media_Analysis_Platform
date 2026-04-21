@@ -2,7 +2,7 @@ s3:
   raw:
     format: json
     compression: gzip
-    partition_cols: ["ingestion_date"]
+    partition_cols: ["year", "month", "day"]
 
   processed:
     format: parquet

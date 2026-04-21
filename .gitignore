@@ -91,3 +91,6 @@ checkpoints/
 *.tmp
 *.bak
 *.swp
+
+temporary/*
+.databricks
