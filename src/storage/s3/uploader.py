@@ -1,67 +1,56 @@
 import boto3
 import json
 import gzip
-import io
-import pyarrow as pa
-import pyarrow.parquet as pq
 from datetime import datetime, timezone
-from src.storage.s3.partitioning import get_s3_key
+
+from src.storage.s3.partitioning import get_s3_key, get_partition_prefix
 from src.utils.config_loader import load_config, load_table_config
 from src.utils.logger import get_logger
+from pyspark.sql import DataFrame
 
 logger = get_logger(__name__)
+config = load_config()
+bucket = config["s3"]["bucket_name"]
 
-def upload_to_s3(data: list[dict], dataset: str, layer: str, ingestion_time: datetime = None) -> str:
-    config = load_config()
-    table_config = load_table_config(layer)
-
-    bucket = config["s3"]["bucket_name"]
-    fmt = table_config["format"]
-    partition_cols = table_config["partition_cols"]
+def upload_to_bronze_s3(
+    data: list[dict], 
+    dataset: str, 
+    ingestion_time: datetime = None
+) -> str:
+    table_config = load_table_config("raw")
 
     if ingestion_time is None:
         ingestion_time = datetime.now(timezone.utc)
-
-    if fmt == "json":
-        filename = f"{dataset}_{ingestion_time.strftime('%Y%m%d_%H%M%S')}.json.gz"
-    elif fmt == "parquet":
-        filename = f"{dataset}_{ingestion_time.strftime('%Y%m%d_%H%M%S')}.parquet"
-    else:
-        logger.error(f"Unsupported format: {fmt}")
-        raise ValueError(f"Unsupported format: {fmt}")
-
+        
+    filename = f"{dataset}_{ingestion_time.strftime('%Y%m%d_%H%M%S')}.json.gz"
     s3_key = get_s3_key(
-        layer=layer,
+        layer="raw",
         dataset=dataset,
         filename=filename,
-        ingestion_time=ingestion_time,
-        partition_cols=partition_cols
+        partition_time=ingestion_time,
+        partition_cols=table_config["partition_cols"]
     )
 
     s3 = boto3.client("s3", region_name=config["aws"]["region"])
-    
-    if fmt == "json":
-        body = gzip.compress(json.dumps(data, ensure_ascii=False).encode("utf-8"))
-        s3.put_object(
-            Bucket=bucket,
-            Key=s3_key,
-            Body=body,
-            ContentType="application/json",
-            ContentEncoding="gzip"
-        )
-    elif fmt == "parquet":
-        table = pa.Table.from_pylist(data)
-        buffer = io.BytesIO()
-        pq.write_table(table, buffer, compression="snappy")
-        buffer.seek(0)
-        s3.put_object(
-            Bucket=bucket,
-            Key=s3_key,
-            Body=buffer.read(),
-            ContentType="application/octet-stream"
-        )
+    body = gzip.compress(json.dumps(data, ensure_ascii=False).encode("utf-8"))
+    s3.put_object(
+        Bucket=bucket,
+        Key=s3_key,
+        Body=body,
+        ContentType="application/json",
+        ContentEncoding="gzip"
+    )
 
-    logger.info(f"Data uploaded to S3 at {s3_key}") 
-
+    logger.info(f"bronze upload complete {s3_key}") 
     return f"s3://{bucket}/{s3_key}"
 
+def upload_to_silver_s3(df: DataFrame, dataset: str) -> None:
+    table_config = load_table_config("processed")
+    
+    created_at = df.select("created_at_ts").first()[0]
+    partition_prefix = get_partition_prefix(created_at, table_config["partition_cols"])
+    
+    path = f"s3a://{bucket}/processed/{dataset}/{partition_prefix}"
+
+    df.write.mode("append").option("compression", "snappy").parquet(path)
+    logger.info(f"Silver upload complete: {path}")

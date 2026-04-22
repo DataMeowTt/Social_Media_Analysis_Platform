@@ -19,6 +19,11 @@ def get_logger(name: str) -> logging.Logger:
     ingestion_handler = logging.FileHandler(LOG_DIR / "ingestion.log")
     ingestion_handler.setLevel(logging.INFO)
     ingestion_handler.setFormatter(formatter)
+    
+    # INFO+ -> logs/processing.log
+    processing_handler = logging.FileHandler(LOG_DIR / "processing.log")
+    processing_handler.setLevel(logging.INFO)
+    processing_handler.setFormatter(formatter)
 
     # ERROR+ -> logs/errors.log
     error_handler = logging.FileHandler(LOG_DIR / "errors.log")
@@ -27,6 +32,7 @@ def get_logger(name: str) -> logging.Logger:
 
     logger.setLevel(logging.INFO)
     logger.addHandler(ingestion_handler)
+    logger.addHandler(processing_handler)
     logger.addHandler(error_handler)
 
     return logger
