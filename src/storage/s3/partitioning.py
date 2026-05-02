@@ -1,4 +1,10 @@
+from __future__ import annotations
 from datetime import datetime
+from src.utils.config_loader import load_config
+from src.utils.aws_session import get_s3_client
+
+config = load_config()
+bucket = config["s3"]["bucket_name"]
 
 def get_partition_prefix(partition_time: datetime, partition_cols: list[str]) -> str:
 
@@ -13,12 +19,28 @@ def get_partition_prefix(partition_time: datetime, partition_cols: list[str]) ->
 
     return "/".join(partition_values) + "/"
     
-
 def get_s3_key(layer: str, dataset: str, filename: str, partition_time: datetime, partition_cols: list[str]) -> str:
     partition_prefix = get_partition_prefix(partition_time, partition_cols)
     
     return f"{layer}/{dataset}/{partition_prefix}{filename}"
 
-###############################################################################
-# example output: "raw/tweets/year=2024/month=06/day=15/tweets_2024-06-15.json"
-###############################################################################
+def latest_value(prefix: str, key: str) -> str:
+    s3 = get_s3_client()
+    response = s3.list_objects_v2(Bucket=bucket, Prefix=prefix, Delimiter="/")
+
+    values = []
+    for object in response.get("CommonPrefixes", []):
+        if f"{key}=" in object["Prefix"]:
+            values.append(object["Prefix"].split("/")[-2].split("=")[1])
+
+    if not values:
+        raise ValueError(f"No partition found for prefix {prefix} and key {key}")
+    return sorted(values)[-1]
+
+def get_latest_partition_prefix(dataset: str, layer: str) -> str:
+    base = f"{layer}/{dataset}/"
+    year = latest_value(base, "year")
+    month = latest_value(f"{base}year={year}/", "month")
+    day = latest_value(f"{base}year={year}/month={month}/", "day")
+
+    return f"s3a://{bucket}/{base}year={year}/month={month}/day={day}/"

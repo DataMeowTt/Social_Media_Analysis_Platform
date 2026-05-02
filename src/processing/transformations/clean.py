@@ -31,7 +31,7 @@ def clean_text(df: DataFrame) -> DataFrame:
         df
         .withColumn("text", F.regexp_replace(F.col("text"), r"@\w+", "")) # Remove mentions
         .withColumn("text", F.regexp_replace(F.col("text"), r"https?://\S+", "")) # Remove URLs
-        .withColumn("text", F.regexp_replace(F.col("text"), r"[^\w\s#\U0001F300-\U0010FFFF]", "")) # Remove special characters except hashtags and emojis
+        .withColumn("text", F.regexp_replace(F.col("text"), "[^\w\s#\U0001F300-\U0010FFFF]", "")) # Remove special characters except hashtags and emojis
         .withColumn("text", F.trim(F.regexp_replace(F.col("text"), r"\s{2,}", " "))) # Replace multiple spaces with single space and trim
     )
 

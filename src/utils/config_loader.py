@@ -2,13 +2,10 @@ import yaml
 from pathlib import Path
 import os
 
-def load_yaml(filename: str):
-    config_dir = os.getenv("CONFIG_DIR")
+CONFIG_DIR = Path(__file__).resolve().parents[2] / "configs"
 
-    if not config_dir:
-        raise ValueError("CONFIG_DIR environment variable is not set.")
-    
-    config_path = Path(config_dir) / filename
+def load_yaml(filename: str):
+    config_path = CONFIG_DIR / filename
 
     if not config_path.exists():
         raise FileNotFoundError(f"Configuration file {config_path} not found.")

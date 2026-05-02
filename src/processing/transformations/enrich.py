@@ -20,10 +20,13 @@ def add_created_at_ts(df: DataFrame) -> DataFrame:
         )
     
 def add_temporal_features(df: DataFrame) -> DataFrame:
-    return(
+    return (
         df
         .withColumn("tweet_hour", F.hour(F.col("created_at_ts")))
-        .withColumn("tweet_day_of_week", F.dayofweek(F.col("created_at_ts"))) 
+        .withColumn("tweet_day_of_week", F.dayofweek(F.col("created_at_ts")))
+        .withColumn("year", F.year(F.col("created_at_ts")))
+        .withColumn("month", F.month(F.col("created_at_ts")))
+        .withColumn("day", F.dayofmonth(F.col("created_at_ts")))
     )
     
 def add_tweet_type_flags(df: DataFrame) -> DataFrame:
@@ -36,8 +39,8 @@ def add_tweet_type_flags(df: DataFrame) -> DataFrame:
 def add_entity_count(df: DataFrame) -> DataFrame:
     return (
         df
-        .withColumn("hashtag_count", F.size(F.col("hashtags")))
-        .withColumn("mention_count", F.size(F.col("mentioned_user_ids")))
+        .withColumn("hashtag_count", F.size(F.coalesce(F.col("hashtags"), F.array())))
+        .withColumn("mention_count", F.size(F.coalesce(F.col("mentioned_user_ids"), F.array())))
     )
     
 def add_author_influence(df: DataFrame) -> DataFrame:

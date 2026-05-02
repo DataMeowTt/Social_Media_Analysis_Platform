@@ -2,17 +2,21 @@ from pyspark.sql import DataFrame
 from pyspark.sql.functions import pandas_udf
 from pyspark.sql.types import StringType, FloatType, StructType, StructField
 import pandas as pd
+from functools import lru_cache
 
 _schema = StructType([
     StructField("sentiment_label", StringType(), True),
     StructField("sentiment_score", FloatType(), True)
 ])
 
-@pandas_udf(_schema)
-def predict_sentiment_udf(texts: pd.Series) -> pd.DataFrame:
+@lru_cache(maxsize=1)
+def _get_predictor():
     from src.ml.inference.predictor import SentimentPredictor
-    
-    predictor = SentimentPredictor()
+    return SentimentPredictor()
+
+@pandas_udf(_schema)
+def predict_sentiment_udf(texts: pd.Series) -> pd.DataFrame:  
+    predictor = _get_predictor()
     results = [predictor.predict(t) for t in texts]
     
     return pd.DataFrame({

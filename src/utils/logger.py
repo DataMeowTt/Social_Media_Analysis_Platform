@@ -1,13 +1,13 @@
 import logging
 from pathlib import Path
 
-LOG_DIR = Path("logs")
+LOG_DIR = Path(__file__).resolve().parents[2] / "logs"
 LOG_DIR.mkdir(exist_ok=True)
 
 def get_logger(name: str) -> logging.Logger:
     logger = logging.getLogger(name)
 
-    if logger.hasHandlers():
+    if logger.handlers:
         return logger
     
     formatter = logging.Formatter(

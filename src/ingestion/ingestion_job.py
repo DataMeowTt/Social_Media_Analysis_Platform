@@ -7,7 +7,7 @@ from datetime import datetime, timezone
 
 from src.ingestion.api.fetcher import TwitterDataFetcher
 from src.ingestion.api.client import TwitterAPIClient   
-from src.storage.s3.uploader import upload_to_s3
+from src.storage.s3.uploader import upload_to_bronze_s3
 from src.ingestion.api.enums.query_type import QueryType
 from src.utils.config_loader import load_config
 from src.utils.logger import get_logger 
@@ -53,7 +53,7 @@ async def _upload_chunk(chunk: list[dict], ingestion_time: datetime, dataset: st
     # Offload the blocking upload to a thread pool executor
     s3_path = await loop.run_in_executor(
         None,
-        lambda: upload_to_s3(
+        lambda: upload_to_bronze_s3(
             data=chunk,
             dataset=dataset,
             layer=layer,
