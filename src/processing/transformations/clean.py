@@ -9,7 +9,8 @@ def drop_missing_critical_fields(df: DataFrame) -> DataFrame:
         F.col("id").isNotNull() &
         F.col("text").isNotNull() &
         F.col("createdAt").isNotNull() &
-        F.col("author_id").isNotNull()
+        F.col("author_id").isNotNull() &
+        F.col("author_createdAt").isNotNull()
     )
 
 def drop_negative_engagement(df: DataFrame) -> DataFrame:
@@ -18,12 +19,6 @@ def drop_negative_engagement(df: DataFrame) -> DataFrame:
         (F.col("likeCount")    >= 0) &
         (F.col("replyCount")   >= 0) &
         (F.col("quoteCount")   >= 0)
-    )
-
-def parse_source(df: DataFrame) -> DataFrame:
-    return df.withColumn(
-        "source",
-        F.regexp_extract(F.col("source"), r">(.+?)</a>", 1)
     )
 
 def clean_text(df: DataFrame) -> DataFrame:
@@ -38,7 +33,6 @@ def clean_text(df: DataFrame) -> DataFrame:
 def clean_tweets(df: DataFrame) -> DataFrame:
     df = drop_missing_critical_fields(df)
     df = drop_negative_engagement(df)
-    df = parse_source(df)
     df = clean_text(df)
     
     return df

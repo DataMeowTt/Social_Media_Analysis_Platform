@@ -19,7 +19,7 @@ def assert_no_null_critical_fields(df: DataFrame) -> None:
     _check(
         df,
         F.col("id").isNull() | F.col("text").isNull() |
-        F.col("createdAt").isNull() | F.col("author_id").isNull(),
+        F.col("createdAt").isNull() | F.col("author_id").isNull() | F.col("author_createdAt").isNull(),
         "null_critical_fields"
     )
 
@@ -36,8 +36,7 @@ def assert_engagement_non_negative(df: DataFrame) -> None:
 def assert_numeric_features_valid(df: DataFrame) -> None:
     _check(
         df,
-        (F.col("hashtag_count") < 0)    | (F.col("mention_count") < 0)    |
-        (F.col("engagement_score") < 0) |
+        (F.col("hashtag_count") < 0) | (F.col("mention_count") < 0) |
         F.col("tweet_hour").isNull()        | (F.col("tweet_hour") < 0)        |
         F.col("tweet_day_of_week").isNull() | (F.col("tweet_day_of_week") < 1) |
         F.col("year").isNull()              | (F.col("year") <= 0)              |

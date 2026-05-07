@@ -33,10 +33,15 @@ def read_all_bronze(spark: SparkSession, dataset: str) -> DataFrame:
 def read_latest_bronze(spark: SparkSession, dataset: str) -> DataFrame:
     path = get_latest_partition_prefix(dataset=dataset, layer="raw")
     logger.info(f"Reading latest partition from {path}")
-    
+
     return (
         spark.read
         .option("compression", "gzip")
         .schema(TWEET_SCHEMA)
         .json(path)
     )
+
+def read_silver(spark: SparkSession, dataset: str) -> DataFrame:
+    path = f"s3a://{bucket}/processed/{dataset}/"
+    logger.info(f"Reading silver from {path}")
+    return spark.read.format("parquet").load(path)

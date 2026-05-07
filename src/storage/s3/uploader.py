@@ -3,7 +3,7 @@ import json
 import gzip
 from datetime import datetime, timezone
 
-from src.storage.s3.partitioning import get_s3_key, get_partition_prefix
+from src.storage.s3.partitioning import get_s3_key
 from src.utils.config_loader import load_config, load_table_config
 from src.utils.logger import get_logger
 from src.utils.aws_session import get_s3_client
@@ -45,24 +45,24 @@ def upload_to_bronze_s3(
     logger.info(f"bronze upload complete {s3_key}") 
     return f"s3://{bucket}/{s3_key}"
 
-def write_to_silver_table(df: DataFrame, table_name: str) -> None:
-    
-    table_config = load_table_config("processed")
+def write_to_S3(df: DataFrame, table_name: str, layer: str, mode: str = "overwrite") -> None:
+
+    table_config = load_table_config(layer)
     partition_cols = table_config["partition_cols"]
-    
+
     dataset = table_name.split(".")[-1]
     db = table_name.split(".")[0]
-    path = f"s3a://{bucket}/processed/{dataset}/"
-    
+    path = f"s3a://{bucket}/{layer}/{dataset}/"
+
     df.sparkSession.sql(f"CREATE DATABASE IF NOT EXISTS {db}")
-    
+
     (df.write
-        .mode("overwrite")
+        .mode(mode)
         .partitionBy(*partition_cols)
         .format("parquet")
         .option("path", path)
         .option("compression", "snappy")
         .saveAsTable(table_name)
         )
-    
-    logger.info(f"silver upload complete to {table_name} at {path}")
+
+    logger.info(f"{layer} upload complete to {table_name} at {path}")

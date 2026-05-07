@@ -66,7 +66,7 @@ async def run_ingestion_tweets(query: str, query_type: QueryType, tweets_number:
 
 async def main() -> None:
     query = os.getenv("QUERY")
-    await run_ingestion_tweets(query=query, query_type=QueryType.LATEST, tweets_number=100)
+    await run_ingestion_tweets(query=query, query_type=QueryType.TOP, tweets_number=100)
 
 
 if __name__ == "__main__":

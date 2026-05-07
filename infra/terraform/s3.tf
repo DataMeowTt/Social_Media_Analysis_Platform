@@ -42,6 +42,8 @@ resource "aws_s3_bucket_lifecycle_configuration" "social_analysis" {
         id     = "transition-to-ia"
         status = "Enabled"
 
+        filter {}
+        
         transition {
 
             days          = 30
