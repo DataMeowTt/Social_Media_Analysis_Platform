@@ -9,15 +9,7 @@ from src.utils.logger import get_logger
 
 logger = get_logger(__name__)
 
-_CALL_DELAY = 0.4  # QPS limit = 3 → min interval = 0.333s, dùng 0.4s để có margin
-
-# --- Adaptive rate limiting (commented out) ---
-# _QPS_LIMIT = 3
-# _MIN_DELAY = 1.0 / _QPS_LIMIT        # 0.333s — hard floor from QPS=3
-# _BASELINE_DELAY = _MIN_DELAY * 1.2   # 0.4s  — 20% margin above QPS limit
-# _MAX_DELAY = 30.0
-
-
+_CALL_DELAY = 5.0  # free tier: 1 request per 5 seconds
 class TwitterDataFetcher:
     def __init__(self, client: TwitterAPIClient):
         self.client = client
@@ -66,19 +58,6 @@ class TwitterDataFetcher:
                 break
 
             cursor = data.get("next_cursor")
-
-        # --- Adaptive fetch_tweets (commented out) ---
-        # call_delay = _BASELINE_DELAY
-        # ...
-        # if retry_after is not None:
-        #     logger.warning(f"Rate limited (429) — waiting {retry_after}s, then bumping delay {call_delay:.2f}s → {min(call_delay * 1.5, _MAX_DELAY):.2f}s")
-        #     await asyncio.sleep(retry_after)
-        #     call_delay = min(call_delay * 1.5, _MAX_DELAY)
-        #     data, retry_after = await self.client.get(session, endpoint, params)
-        #     if data is None:
-        #         logger.error("Still rate limited after retry — stopping")
-        #         break
-        # call_delay = max(call_delay * 0.9, _BASELINE_DELAY)
 
     async def fetch_trends(self, session: aiohttp.ClientSession, woeid: int, count: int = 30) -> list[dict]:
         endpoint, params = TwitterEndpoints.search_trends(woeid, count)
