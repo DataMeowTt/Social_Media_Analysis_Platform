@@ -1,4 +1,4 @@
-from pyspark.sql.types import StructType, StructField, StringType, IntegerType, ArrayType, BooleanType
+from pyspark.sql.types import StructType, StructField, StringType, IntegerType, ArrayType, BooleanType, LongType
 
 HASHTAG_SCHEMA = StructType([
     StructField("text",    StringType(),              True),
@@ -50,10 +50,10 @@ TWEET_SCHEMA = StructType([
     StructField("url",               StringType(), True),
     StructField("text",              StringType(), True),
     StructField("source",            StringType(), True),
-    StructField("retweetCount",      IntegerType(), True),
-    StructField("replyCount",        IntegerType(), True),
-    StructField("likeCount",         IntegerType(), True),
-    StructField("quoteCount",        IntegerType(), True),
+    StructField("retweetCount",      LongType(), True),
+    StructField("replyCount",        LongType(), True),
+    StructField("likeCount",         LongType(), True),
+    StructField("quoteCount",        LongType(), True),
     StructField("createdAt",         StringType(), True),
     StructField("lang",              StringType(), True),
     StructField("inReplyToId",       StringType(), True),

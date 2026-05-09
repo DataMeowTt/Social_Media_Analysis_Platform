@@ -14,7 +14,7 @@ def load_yaml(filename: str):
         return yaml.safe_load(file)
 
 def load_config():
-    env = os.getenv("ENV", "dev")
+    env = os.getenv("ENV", "prod")
 
     base_config = load_yaml("base.yaml")
     env_config = load_yaml(f"{env}.yaml")

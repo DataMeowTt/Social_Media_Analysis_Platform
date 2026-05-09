@@ -232,6 +232,7 @@ services:
       - spark-master
     environment:
       - PYTHONPATH=/opt/workspace
+      - ENV=prod
       - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
       - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
       - AWS_DEFAULT_REGION=ap-southeast-1
@@ -249,6 +250,7 @@ services:
         --executor-memory 2G
         --packages org.apache.hadoop:hadoop-aws:3.3.4
         --conf spark.executorEnv.PYTHONPATH=/opt/workspace
+        --conf spark.executorEnv.ENV=prod
         --conf spark.executorEnv.AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
         --conf spark.executorEnv.AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
         --conf spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem

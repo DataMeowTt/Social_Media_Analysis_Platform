@@ -64,6 +64,8 @@ def write_to_S3(df: DataFrame, table_name: str, layer: str, mode: str = "overwri
     s3a_path = f"s3a://{bucket}/{layer}/{dataset}/" # for Spark write
     s3_path  = f"s3://{bucket}/{layer}/{dataset}/" # for Glue registration
 
+    partitions = df.select(*partition_cols).distinct().collect()
+
     (df.write
         .mode(mode)
         .partitionBy(*partition_cols)
@@ -73,6 +75,7 @@ def write_to_S3(df: DataFrame, table_name: str, layer: str, mode: str = "overwri
     )
 
     _register_glue_table(database, dataset, s3_path, df.schema, partition_cols)
+    _register_partitions(database, dataset, s3_path, partition_cols, partitions)
     logger.info(f"{layer} upload complete → {s3a_path} | glue: {database}.{dataset}")
 
 
@@ -148,3 +151,42 @@ def _register_glue_table(
     except glue.exceptions.AlreadyExistsException:
         glue.update_table(DatabaseName=database, TableInput=table_input)
         logger.info(f"Glue table updated: {database}.{table}")
+
+
+def _register_partitions(
+    database: str,
+    table: str,
+    s3_path: str,
+    partition_cols: list[str],
+    partitions: list,
+) -> None:
+    glue = get_glue_client()
+
+    partition_inputs = []
+    for row in partitions:
+        values = [str(row[col]) for col in partition_cols]
+        suffix = "/".join(f"{col}={val}" for col, val in zip(partition_cols, values))
+        partition_inputs.append({
+            "Values": values,
+            "StorageDescriptor": {
+                "Location": f"{s3_path}{suffix}/",
+                "InputFormat":  "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat",
+                "OutputFormat": "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat",
+                "Compressed": True,
+                "SerdeInfo": {
+                    "SerializationLibrary": "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe",
+                    "Parameters": {"serialization.format": "1"},
+                },
+            },
+        })
+
+    for i in range(0, len(partition_inputs), 100):
+        batch = partition_inputs[i:i + 100]
+        try:
+            glue.batch_create_partition(
+                DatabaseName=database, TableName=table, PartitionInputList=batch
+            )
+        except glue.exceptions.AlreadyExistsException:
+            pass
+
+    logger.info(f"Glue partitions registered: {len(partition_inputs)} partition(s) for {database}.{table}")
