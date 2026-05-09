@@ -1,9 +1,6 @@
 from pyspark.sql import DataFrame
 from pyspark.sql import functions as F
 from src.utils.helpers import parse_twitter_timestamp
-from src.utils.logger import get_logger
-
-logger = get_logger(__name__)
 
 
 def add_created_at_ts(df: DataFrame) -> DataFrame:
@@ -15,12 +12,7 @@ def add_author_created_at_ts(df: DataFrame) -> DataFrame:
 
 
 def drop_unparseable_timestamps(df: DataFrame) -> DataFrame:
-    before = df.count()
-    df = df.filter(F.col("created_at_ts").isNotNull())
-    dropped = before - df.count()
-    if dropped > 0:
-        logger.warning(f"Dropped {dropped} rows: could not parse createdAt timestamp")
-    return df
+    return df.filter(F.col("created_at_ts").isNotNull())
 
 
 def add_temporal_features(df: DataFrame) -> DataFrame:

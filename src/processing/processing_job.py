@@ -25,7 +25,7 @@ def historical_processing(spark: SparkSession) -> None:
     try:
         validate_tweets(df)
         logger.info("Validation passed — writing to silver...")
-        write_to_S3(df, table_name="processed.tweets", layer="silver", mode="overwrite")
+        write_to_S3(df, table_name="processed.tweets", layer="processed", mode="overwrite")
         logger.info("Silver completed")
     finally:
         df.unpersist()
@@ -44,7 +44,7 @@ def incremental_processing(spark: SparkSession) -> None:
     try:
         validate_tweets(df)
         logger.info("Validation passed — writing to silver...")
-        write_to_S3(df, table_name="processed.tweets", layer="silver", mode="append")
+        write_to_S3(df, table_name="processed.tweets", layer="processed", mode="append")
         logger.info("Silver completed")
     finally:
         df.unpersist()

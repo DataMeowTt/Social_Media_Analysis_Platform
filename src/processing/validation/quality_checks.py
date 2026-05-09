@@ -47,6 +47,23 @@ def assert_numeric_features_valid(df: DataFrame) -> None:
 
 
 def validate_tweets(df: DataFrame) -> None:
+    any_invalid = df.filter(
+        F.col("id").isNull() | F.col("text").isNull() |
+        F.col("createdAt").isNull() | F.col("author_id").isNull() | F.col("author_createdAt").isNull() |
+        (F.col("retweetCount") < 0) | (F.col("likeCount") < 0) |
+        (F.col("replyCount") < 0)   | (F.col("quoteCount") < 0) |
+        (F.col("hashtag_count") < 0) | (F.col("mention_count") < 0) |
+        F.col("tweet_hour").isNull()        | (F.col("tweet_hour") < 0)        |
+        F.col("tweet_day_of_week").isNull() | (F.col("tweet_day_of_week") < 1) |
+        F.col("year").isNull()              | (F.col("year") <= 0)              |
+        F.col("month").isNull()             | (F.col("month") <= 0)             |
+        F.col("day").isNull()               | (F.col("day") <= 0)
+    ).count()
+
+    if any_invalid == 0:
+        return
+
+    # Re-run individual checks only on failure for detailed error reporting
     assert_no_null_critical_fields(df)
     assert_engagement_non_negative(df)
     assert_numeric_features_valid(df)

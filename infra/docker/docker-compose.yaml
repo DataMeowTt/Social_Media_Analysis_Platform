@@ -239,6 +239,8 @@ services:
       - ../../:/opt/workspace
       - ../../data/raw:/opt/dataset
     command:
+      - bash
+      - -c
       - >-
         /opt/spark/bin/spark-submit
         --master spark://spark-master:7077
@@ -253,5 +255,119 @@ services:
         --conf spark.hadoop.fs.s3a.aws.credentials.provider=com.amazonaws.auth.EnvironmentVariableCredentialsProvider
         /opt/workspace/src/main.py
 
+  superset-db:
+    image: postgres:17
+    container_name: superset_db
+    env_file:
+      - ./superset/.env
+    volumes:
+      - superset-db-volume:/var/lib/postgresql/data
+      - ./superset/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "superset"]
+      interval: 10s
+      retries: 5
+      start_period: 5s
+    restart: unless-stopped
+
+  superset-redis:
+    image: redis:7
+    container_name: superset_cache
+    restart: unless-stopped
+    volumes:
+      - superset-redis-volume:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  superset-init:
+    image: apache/superset:latest
+    container_name: superset_init
+    command: ["/app/docker/docker-init.sh"]
+    env_file:
+      - ./superset/.env
+    environment:
+      DATABASE_HOST: superset-db
+      REDIS_HOST: superset-redis
+      EXAMPLES_HOST: superset-db
+    user: "root"
+    depends_on:
+      superset-db:
+        condition: service_healthy
+      superset-redis:
+        condition: service_healthy
+    volumes:
+      - ./superset:/app/docker
+      - superset-home-volume:/app/superset_home
+    restart: "no"
+
+  superset:
+    image: apache/superset:latest
+    container_name: superset_app
+    command: ["/app/docker/docker-bootstrap.sh", "app-gunicorn"]
+    env_file:
+      - ./superset/.env
+    environment:
+      DATABASE_HOST: superset-db
+      REDIS_HOST: superset-redis
+      EXAMPLES_HOST: superset-db
+    user: "root"
+    restart: unless-stopped
+    ports:
+      - "8088:8088"
+    depends_on:
+      superset-init:
+        condition: service_completed_successfully
+    volumes:
+      - ./superset:/app/docker
+      - superset-home-volume:/app/superset_home
+
+  superset-worker:
+    image: apache/superset:latest
+    container_name: superset_worker
+    command: ["/app/docker/docker-bootstrap.sh", "worker"]
+    env_file:
+      - ./superset/.env
+    environment:
+      DATABASE_HOST: superset-db
+      REDIS_HOST: superset-redis
+      EXAMPLES_HOST: superset-db
+    user: "root"
+    restart: unless-stopped
+    depends_on:
+      superset-init:
+        condition: service_completed_successfully
+    volumes:
+      - ./superset:/app/docker
+      - superset-home-volume:/app/superset_home
+    healthcheck:
+      test: ["CMD-SHELL", "celery -A superset.tasks.celery_app:app inspect ping -d celery@$$HOSTNAME"]
+
+  superset-worker-beat:
+    image: apache/superset:latest
+    container_name: superset_worker_beat
+    command: ["/app/docker/docker-bootstrap.sh", "beat"]
+    env_file:
+      - ./superset/.env
+    environment:
+      DATABASE_HOST: superset-db
+      REDIS_HOST: superset-redis
+      EXAMPLES_HOST: superset-db
+    user: "root"
+    restart: unless-stopped
+    depends_on:
+      superset-init:
+        condition: service_completed_successfully
+    volumes:
+      - ./superset:/app/docker
+      - superset-home-volume:/app/superset_home
+    healthcheck:
+      disable: true
+
 volumes:
   postgres-db-volume:
+  superset-db-volume:
+  superset-redis-volume:
+  superset-home-volume:
