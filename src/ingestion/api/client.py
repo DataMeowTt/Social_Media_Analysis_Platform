@@ -19,7 +19,15 @@ class TwitterAPIClient:
                 if response.status == 429:
                     retry_after = int(response.headers.get("Retry-After", 3))
                     return None, retry_after
-                response.raise_for_status()
+                if not response.ok:
+                    body = await response.text()
+                    key_hint = (self.api_key or "")[:6] + "..." if self.api_key else "None"
+                    logger.error(
+                        f"HTTP {response.status} from {url}\n"
+                        f"  api_key : {key_hint}\n"
+                        f"  body    : {body}"
+                    )
+                    return None, None
                 return await response.json(), None
         except aiohttp.ClientError as e:
             logger.error(f"HTTP error: {e}")
