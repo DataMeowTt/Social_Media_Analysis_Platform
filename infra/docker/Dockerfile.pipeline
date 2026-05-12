@@ -2,4 +2,29 @@ FROM apache/spark:3.5.0
 
 USER root
 
-RUN pip install --no-cache-dir pyyaml boto3 python-dotenv pyarrow
+RUN apt-get update && apt-get install -y \
+    python3 \
+    python3-pip \
+    python3-venv \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN python3 -m venv /opt/venv
+
+ENV PATH="/opt/venv/bin:$PATH"
+
+RUN pip install --upgrade pip setuptools wheel
+
+# Install ARM-compatible packages
+RUN pip install --no-cache-dir \
+    pyyaml \
+    boto3 \
+    python-dotenv \
+    pyarrow==14.0.1 \
+    pandas \
+    transformers
+
+# Install torch separately
+RUN pip install --no-cache-dir torch
+
+ENV PYSPARK_PYTHON=/opt/venv/bin/python
+ENV PYSPARK_DRIVER_PYTHON=/opt/venv/bin/python

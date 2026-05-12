@@ -1,0 +1,117 @@
+
+<style>
+#erd-wrap svg { width: 100% !important; }
+#erd-wrap svg.erDiagram .divider path { stroke-opacity: 0.4; }
+#erd-wrap svg.erDiagram .row-rect-odd path,
+#erd-wrap svg.erDiagram .row-rect-odd rect,
+#erd-wrap svg.erDiagram .row-rect-even path,
+#erd-wrap svg.erDiagram .row-rect-even rect { stroke: none !important; }
+</style>
+<div id="erd-wrap"></div>
+<script type="module">
+import mermaid from 'https://esm.sh/mermaid@11/dist/mermaid.esm.min.mjs';
+const dark = matchMedia('(prefers-color-scheme: dark)').matches;
+await document.fonts.ready;
+mermaid.initialize({
+  startOnLoad: false,
+  theme: 'base',
+  fontFamily: '"Anthropic Sans", sans-serif',
+  themeVariables: {
+    darkMode: dark,
+    fontSize: '13px',
+    fontFamily: '"Anthropic Sans", sans-serif',
+    lineColor: dark ? '#9c9a92' : '#73726c',
+    textColor: dark ? '#c2c0b6' : '#3d3d3a',
+    primaryColor: dark ? '#2a2a28' : '#f5f4f0',
+    primaryBorderColor: dark ? '#5f5e5a' : '#b4b2a9',
+    attributeBackgroundColorEven: dark ? '#222220' : '#faf9f6',
+    attributeBackgroundColorOdd: dark ? '#2e2e2c' : '#f1f0eb',
+  },
+});
+const diagram = `erDiagram
+  fact_tweets {
+    string tweet_id PK
+    string author_id FK
+    string primary_brand FK
+    array all_brands
+    timestamp created_at_ts
+    string date
+    string lang
+    float sentiment_score
+    string sentiment_label
+    float engagement_score
+    boolean is_viral
+    boolean is_bot
+    array hashtags
+  }
+  dim_authors {
+    string author_id PK
+    string author_username
+    boolean author_is_blue_verified
+    int author_followers
+    int author_following
+    int author_statuses_count
+    float author_influence_ratio
+    array top_brands
+    boolean is_bot_flag
+  }
+  dim_brands {
+    string brand_id PK
+    string brand_name
+    string brand_display_name
+    string brand_country
+    string brand_segment
+    array search_keywords
+  }
+  agg_brand_daily {
+    string date PK
+    string brand_name PK
+    string lang PK
+    int total_mentions
+    int positive_count
+    int neutral_count
+    int negative_count
+    float avg_sentiment_score
+    float avg_engagement_score
+    int viral_count
+    float share_of_voice
+    string top_influencer_id
+  }
+  agg_author_perf {
+    string author_id PK
+    int total_tweets
+    float avg_engagement
+    int viral_tweet_count
+    array top_brands
+    string dominant_sentiment
+  }
+  fact_tweets }o--|| dim_authors : "author_id"
+  fact_tweets }o--|| dim_brands : "primary_brand"
+  dim_authors ||--o| agg_author_perf : "author_id"
+  dim_brands ||--o{ agg_brand_daily : "brand_name"
+`;
+const { svg } = await mermaid.render('erd-svg', diagram);
+document.getElementById('erd-wrap').innerHTML = svg;
+document.querySelectorAll('#erd-wrap svg.erDiagram .node').forEach(node => {
+  const firstPath = node.querySelector('path[d]');
+  if (!firstPath) return;
+  const d = firstPath.getAttribute('d');
+  const nums = d.match(/-?[\d.]+/g)?.map(Number);
+  if (!nums || nums.length < 8) return;
+  const xs = [nums[0], nums[2], nums[4], nums[6]];
+  const ys = [nums[1], nums[3], nums[5], nums[7]];
+  const x = Math.min(...xs), y = Math.min(...ys);
+  const w = Math.max(...xs) - x, h = Math.max(...ys) - y;
+  const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+  rect.setAttribute('x', x); rect.setAttribute('y', y);
+  rect.setAttribute('width', w); rect.setAttribute('height', h);
+  rect.setAttribute('rx', '8');
+  for (const a of ['fill', 'stroke', 'stroke-width', 'class', 'style']) {
+    if (firstPath.hasAttribute(a)) rect.setAttribute(a, firstPath.getAttribute(a));
+  }
+  firstPath.replaceWith(rect);
+});
+document.querySelectorAll('#erd-wrap svg.erDiagram .row-rect-odd path, #erd-wrap svg.erDiagram .row-rect-even path').forEach(p => {
+  p.setAttribute('stroke', 'none');
+});
+</script>

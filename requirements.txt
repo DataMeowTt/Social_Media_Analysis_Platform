@@ -1,5 +1,6 @@
 aiohttp==3.13.2
 boto3==1.42.88
+pandas
 pyarrow==21.0.0
 PyYAML==6.0.3
 python-dotenv==1.2.2

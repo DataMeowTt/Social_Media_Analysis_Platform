@@ -8,7 +8,7 @@ import json
 import boto3
 
 BUCKET = "social-analysis-prod-bucket"
-PREFIX = "raw/tweets/year=2026/month=05/day=10/"
+PREFIX = "raw/tweets/year=2026/month=05/day=11/"
 REGION = "ap-southeast-1"
 
 

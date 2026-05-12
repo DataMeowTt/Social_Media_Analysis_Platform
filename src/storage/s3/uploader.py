@@ -55,27 +55,33 @@ def upload_to_bronze_s3(
 
 # ── Silver / Gold ─────────────────────────────────────────────────────────────
 
-def write_to_S3(df: DataFrame, table_name: str, layer: str, mode: str = "overwrite") -> None:
-    table_config = load_table_config(layer)
-    partition_cols = table_config["partition_cols"]
+def write_to_S3(
+    df: DataFrame,
+    table_name: str,
+    layer: str,
+    mode: str = "overwrite",
+    partition_cols: list[str] | None = None,
+) -> None:
+    if partition_cols is None:
+        partition_cols = load_table_config(layer)["partition_cols"]
 
     dataset = table_name.split(".")[-1]
     database = table_name.split(".")[0]
-    s3a_path = f"s3a://{bucket}/{layer}/{dataset}/" # for Spark write
-    s3_path  = f"s3://{bucket}/{layer}/{dataset}/" # for Glue registration
+    s3a_path = f"s3a://{bucket}/{layer}/{dataset}/"
+    s3_path  = f"s3://{bucket}/{layer}/{dataset}/"
 
-    partitions = df.select(*partition_cols).distinct().collect()
+    writer = df.write.mode(mode).format("parquet").option("compression", "snappy")
+    if partition_cols:
+        partitions = df.select(*partition_cols).distinct().collect()
+        writer = writer.partitionBy(*partition_cols)
+    else:
+        partitions = []
 
-    (df.write
-        .mode(mode)
-        .partitionBy(*partition_cols)
-        .format("parquet")
-        .option("compression", "snappy")
-        .save(s3a_path)
-    )
+    writer.save(s3a_path)
 
     _register_glue_table(database, dataset, s3_path, df.schema, partition_cols)
-    _register_partitions(database, dataset, s3_path, partition_cols, partitions)
+    if partitions:
+        _register_partitions(database, dataset, s3_path, partition_cols, partitions)
     logger.info(f"{layer} upload complete → {s3a_path} | glue: {database}.{dataset}")
 
 

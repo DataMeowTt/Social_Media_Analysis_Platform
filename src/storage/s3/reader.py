@@ -44,4 +44,9 @@ def read_latest_bronze(spark: SparkSession, dataset: str) -> DataFrame:
 def read_silver(spark: SparkSession, dataset: str) -> DataFrame:
     path = f"s3a://{bucket}/processed/{dataset}/"
     logger.info(f"Reading silver from {path}")
-    return spark.read.format("parquet").load(path)
+    
+    return (
+        spark.read
+        .format("parquet")
+        .load(path)
+    )

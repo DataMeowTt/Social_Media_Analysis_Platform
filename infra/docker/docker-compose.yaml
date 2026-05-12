@@ -185,7 +185,9 @@ services:
       - ../../data/raw:/opt/dataset
 
   spark-worker-1:
-    image: apache/spark:3.5.0
+    build:
+      context: .
+      dockerfile: Dockerfile.pipeline
     container_name: spark-worker-1
     command: >
       /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
@@ -204,7 +206,9 @@ services:
     cpus: 3
 
   spark-worker-2:
-    image: apache/spark:3.5.0
+    build:
+      context: .
+      dockerfile: Dockerfile.pipeline
     container_name: spark-worker-2
     command: >
       /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
@@ -249,8 +253,10 @@ services:
         --executor-cores 2
         --executor-memory 2G
         --packages org.apache.hadoop:hadoop-aws:3.3.4
+        --conf spark.pyspark.python=/opt/venv/bin/python3
         --conf spark.executorEnv.PYTHONPATH=/opt/workspace
         --conf spark.executorEnv.ENV=prod
+        --conf spark.executorEnv.PYSPARK_PYTHON=/opt/venv/bin/python3
         --conf spark.executorEnv.AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
         --conf spark.executorEnv.AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
         --conf spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem

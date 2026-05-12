@@ -9,8 +9,3 @@ s3:
     compression: snappy
     partition_cols: ["year", "month", "day"]
 
-  analytics:
-    format: parquet
-    compression: snappy
-    partition_cols: ["year", "month", "day"]
-   
