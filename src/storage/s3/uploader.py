@@ -122,15 +122,15 @@ def _register_glue_table(
         pass
 
     partition_col_set = set(partition_cols)
+    schema_type_map = {f.name: f.dataType for f in schema.fields}
     data_columns = [
         {"Name": f.name, "Type": _spark_type_to_glue(f.dataType)}
         for f in schema.fields
         if f.name not in partition_col_set
     ]
     partition_keys = [
-        {"Name": f.name, "Type": _spark_type_to_glue(f.dataType)}
-        for f in schema.fields
-        if f.name in partition_col_set
+        {"Name": col, "Type": _spark_type_to_glue(schema_type_map[col])}
+        for col in partition_cols
     ]
 
     table_input = {

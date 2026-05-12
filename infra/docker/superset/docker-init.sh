@@ -6,6 +6,9 @@ ADMIN_PASSWORD="${ADMIN_PASSWORD:-admin}"
 echo "Installing psycopg2..."
 uv pip install --quiet psycopg2-binary
 
+echo "Installing Athena driver..."
+uv pip install --quiet "pyathena[sqlalchemy]"
+
 echo "Step 1: Applying DB migrations"
 superset db upgrade
 

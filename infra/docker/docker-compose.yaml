@@ -300,6 +300,9 @@ services:
       DATABASE_HOST: superset-db
       REDIS_HOST: superset-redis
       EXAMPLES_HOST: superset-db
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+      AWS_DEFAULT_REGION: ap-southeast-1
     user: "root"
     depends_on:
       superset-db:
@@ -321,6 +324,9 @@ services:
       DATABASE_HOST: superset-db
       REDIS_HOST: superset-redis
       EXAMPLES_HOST: superset-db
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+      AWS_DEFAULT_REGION: ap-southeast-1
     user: "root"
     restart: unless-stopped
     ports:
@@ -342,6 +348,9 @@ services:
       DATABASE_HOST: superset-db
       REDIS_HOST: superset-redis
       EXAMPLES_HOST: superset-db
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+      AWS_DEFAULT_REGION: ap-southeast-1
     user: "root"
     restart: unless-stopped
     depends_on:
@@ -363,6 +372,9 @@ services:
       DATABASE_HOST: superset-db
       REDIS_HOST: superset-redis
       EXAMPLES_HOST: superset-db
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+      AWS_DEFAULT_REGION: ap-southeast-1
     user: "root"
     restart: unless-stopped
     depends_on:

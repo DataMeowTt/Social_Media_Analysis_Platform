@@ -7,6 +7,9 @@ if [[ "$DATABASE_DIALECT" == postgres* ]]; then
     uv pip install --quiet psycopg2-binary
 fi
 
+echo "Installing Athena driver..."
+uv pip install --quiet "pyathena[sqlalchemy]"
+
 case "${1}" in
   worker)
     echo "Starting Celery worker..."
