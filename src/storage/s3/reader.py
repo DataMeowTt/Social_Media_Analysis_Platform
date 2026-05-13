@@ -4,7 +4,7 @@ from pyspark.sql import DataFrame, SparkSession
 
 from src.utils.config_loader import load_config
 from src.utils.logger import get_logger
-from src.utils.aws_session import get_s3_client
+from src.utils.session import get_s3_client
 from src.processing.validation.schema import TWEET_SCHEMA
 from src.storage.s3.partitioning import get_latest_partition_prefix
 

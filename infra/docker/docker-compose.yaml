@@ -8,13 +8,16 @@ x-airflow-common:
     AIRFLOW__CORE__EXECUTOR: CeleryExecutor
     AIRFLOW__CORE__AUTH_MANAGER: airflow.providers.fab.auth_manager.fab_auth_manager.FabAuthManager
     AIRFLOW__CELERY__BROKER_URL: redis://:@redis:6379/0
-    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
+    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true' #TODO: change to false after testing
     AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
     AIRFLOW__CORE__EXECUTION_API_SERVER_URL: 'http://airflow-apiserver:8080/execution/'
     AIRFLOW__SCHEDULER__ENABLE_HEALTH_CHECK: 'true'
+    PYTHONPATH: /opt/workspace
+    AWS_DEFAULT_REGION: ap-southeast-1
   volumes:
     - ../../src/orchestration/airflow/dags:/opt/airflow/dags
     - ../../logs:/opt/airflow/logs
+    - ../../:/opt/workspace
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     &airflow-common-depends-on
@@ -98,6 +101,9 @@ services:
 
   airflow-worker:
     <<: *airflow-common
+    build:
+      context: .
+      dockerfile: Dockerfile.airflow
     command: celery worker
     healthcheck:
       test: ["CMD-SHELL", 'celery --app airflow.providers.celery.executors.celery_executor.app inspect ping -d "celery@$${HOSTNAME}"']
@@ -108,6 +114,11 @@ services:
     environment:
       <<: *airflow-common-env
       DUMB_INIT_SETSID: "0"
+    volumes:
+      - ../../src/orchestration/airflow/dags:/opt/airflow/dags
+      - ../../logs:/opt/airflow/logs
+      - ../../:/opt/workspace
+      - /var/run/docker.sock:/var/run/docker.sock
     restart: always
     depends_on:
       <<: *airflow-common-depends-on
@@ -234,34 +245,16 @@ services:
     user: root
     depends_on:
       - spark-master
+    env_file:
+      - .env.docker
     environment:
       - PYTHONPATH=/opt/workspace
       - ENV=prod
-      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
-      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
       - AWS_DEFAULT_REGION=ap-southeast-1
     volumes:
       - ../../:/opt/workspace
       - ../../data/raw:/opt/dataset
-    command:
-      - bash
-      - -c
-      - >-
-        /opt/spark/bin/spark-submit
-        --master spark://spark-master:7077
-        --total-executor-cores 6
-        --executor-cores 2
-        --executor-memory 2G
-        --packages org.apache.hadoop:hadoop-aws:3.3.4
-        --conf spark.pyspark.python=/opt/venv/bin/python3
-        --conf spark.executorEnv.PYTHONPATH=/opt/workspace
-        --conf spark.executorEnv.ENV=prod
-        --conf spark.executorEnv.PYSPARK_PYTHON=/opt/venv/bin/python3
-        --conf spark.executorEnv.AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
-        --conf spark.executorEnv.AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
-        --conf spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem
-        --conf spark.hadoop.fs.s3a.aws.credentials.provider=com.amazonaws.auth.EnvironmentVariableCredentialsProvider
-        /opt/workspace/src/main.py
+    command: ["bash"]
 
   superset-db:
     image: postgres:17
@@ -296,12 +289,11 @@ services:
     command: ["/app/docker/docker-init.sh"]
     env_file:
       - ./superset/.env
+      - .env.docker
     environment:
       DATABASE_HOST: superset-db
       REDIS_HOST: superset-redis
       EXAMPLES_HOST: superset-db
-      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
-      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
       AWS_DEFAULT_REGION: ap-southeast-1
     user: "root"
     depends_on:
@@ -320,12 +312,11 @@ services:
     command: ["/app/docker/docker-bootstrap.sh", "app-gunicorn"]
     env_file:
       - ./superset/.env
+      - .env.docker
     environment:
       DATABASE_HOST: superset-db
       REDIS_HOST: superset-redis
       EXAMPLES_HOST: superset-db
-      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
-      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
       AWS_DEFAULT_REGION: ap-southeast-1
     user: "root"
     restart: unless-stopped
@@ -344,12 +335,11 @@ services:
     command: ["/app/docker/docker-bootstrap.sh", "worker"]
     env_file:
       - ./superset/.env
+      - .env.docker
     environment:
       DATABASE_HOST: superset-db
       REDIS_HOST: superset-redis
       EXAMPLES_HOST: superset-db
-      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
-      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
       AWS_DEFAULT_REGION: ap-southeast-1
     user: "root"
     restart: unless-stopped
@@ -368,12 +358,11 @@ services:
     command: ["/app/docker/docker-bootstrap.sh", "beat"]
     env_file:
       - ./superset/.env
+      - .env.docker
     environment:
       DATABASE_HOST: superset-db
       REDIS_HOST: superset-redis
       EXAMPLES_HOST: superset-db
-      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
-      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
       AWS_DEFAULT_REGION: ap-southeast-1
     user: "root"
     restart: unless-stopped

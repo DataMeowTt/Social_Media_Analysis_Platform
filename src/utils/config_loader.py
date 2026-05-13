@@ -1,25 +1,26 @@
-import yaml
-from pathlib import Path
 import os
+from functools import lru_cache
+from pathlib import Path
 
-CONFIG_DIR = Path(__file__).resolve().parents[2] / "configs"
+import yaml
 
-def load_yaml(filename: str):
-    config_path = CONFIG_DIR / filename
+_CONFIG_DIR = Path(__file__).resolve().parents[2] / "configs"
 
-    if not config_path.exists():
-        raise FileNotFoundError(f"Configuration file {config_path} not found.")
-    
-    with open(config_path, "r") as file:
-        return yaml.safe_load(file)
 
-def load_config():
+def _load_yaml(filename: str) -> dict:
+    path = _CONFIG_DIR / filename
+    if not path.exists():
+        raise FileNotFoundError(f"Config file not found: {path}")
+    with open(path) as f:
+        return yaml.safe_load(f)
+
+
+@lru_cache(maxsize=None)
+def load_config() -> dict:
     env = os.getenv("ENV", "prod")
+    return {**_load_yaml("base.yaml"), **_load_yaml(f"{env}.yaml")}
 
-    base_config = load_yaml("base.yaml")
-    env_config = load_yaml(f"{env}.yaml")
 
-    return {**base_config, **env_config}
-
+@lru_cache(maxsize=None)
 def load_table_config(layer: str) -> dict:
-    return load_yaml("tables.yaml")["s3"][layer]
+    return _load_yaml("tables.yaml")["s3"][layer]

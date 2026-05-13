@@ -2,17 +2,15 @@ from __future__ import annotations
 import json
 import gzip
 from datetime import datetime, timezone
+from typing import TYPE_CHECKING
 
-from pyspark.sql import DataFrame
-from pyspark.sql.types import (
-    StringType, IntegerType, LongType, BooleanType,
-    TimestampType, DateType, DoubleType, FloatType, ArrayType,
-)
+if TYPE_CHECKING:
+    from pyspark.sql import DataFrame
 
 from src.storage.s3.partitioning import get_s3_key
 from src.utils.config_loader import load_config, load_table_config
 from src.utils.logger import get_logger
-from src.utils.aws_session import get_s3_client, get_glue_client
+from src.utils.session import get_s3_client, get_glue_client
 
 logger = get_logger(__name__)
 config = load_config()
@@ -88,6 +86,11 @@ def write_to_S3(
 # ── Glue Catalog registration ─────────────────────────────────────────────────
 
 def _spark_type_to_glue(spark_type) -> str:
+    from pyspark.sql.types import (
+        StringType, IntegerType, LongType, BooleanType,
+        TimestampType, DateType, DoubleType, FloatType, ArrayType,
+    )
+    
     type_map = {
         StringType:    "string",
         IntegerType:   "int",

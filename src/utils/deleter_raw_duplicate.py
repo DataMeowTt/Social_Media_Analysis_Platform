@@ -1,8 +1,3 @@
-"""
-Deduplicates tweets within raw/tweets/year=2026/month=05/day=10/.
-Prints: total tweets found, duplicates removed, tweets remaining.
-Delete this file after use.
-"""
 import gzip
 import json
 import boto3

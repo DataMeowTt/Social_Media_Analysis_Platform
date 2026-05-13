@@ -1,7 +1,3 @@
-"""
-Diagnostic: find where 514 raw tweets → 43 processed tweets drop occurs.
-Delete this file after use.
-"""
 import gzip
 import io
 import json

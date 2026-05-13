@@ -1,7 +1,7 @@
 from __future__ import annotations
 from datetime import datetime
 from src.utils.config_loader import load_config
-from src.utils.aws_session import get_s3_client
+from src.utils.session import get_s3_client
 
 config = load_config()
 bucket = config["s3"]["bucket_name"]

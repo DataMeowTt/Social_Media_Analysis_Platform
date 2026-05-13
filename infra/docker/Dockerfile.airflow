@@ -1,0 +1,18 @@
+FROM apache/airflow:3.2.0
+
+USER root
+
+RUN apt-get update -qq && \
+    apt-get install -y -qq docker.io && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* && \
+    usermod -aG docker airflow
+
+USER airflow
+
+RUN pip install --no-cache-dir \
+    aiohttp==3.13.2 \
+    boto3==1.42.88 \
+    python-dotenv==1.2.2 \
+    pyyaml==6.0.3 \
+    pyarrow==21.0.0

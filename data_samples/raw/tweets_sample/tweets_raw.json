@@ -1,0 +1,5573 @@
+[
+  {
+    "type": "tweet",
+    "id": "2051682701439275165",
+    "url": "https://x.com/VinFastofficial/status/2051682701439275165",
+    "twitterUrl": "https://twitter.com/VinFastofficial/status/2051682701439275165",
+    "text": "India momentum continues.\n4th again in April.\n\nAnother proof point that traction is building in one of the world’s most competitive EV markets.\n\n#VinFast #India #EV #ElectricVehicles #Growth #VFS",
+    "source": "Twitter for iPhone",
+    "retweetCount": 3,
+    "replyCount": 5,
+    "likeCount": 23,
+    "quoteCount": 1,
+    "viewCount": 714,
+    "createdAt": "Tue May 05 15:17:29 +0000 2026",
+    "lang": "en",
+    "bookmarkCount": 0,
+    "isReply": false,
+    "inReplyToId": null,
+    "conversationId": "2051682701439275165",
+    "displayTextRange": [0, 195],
+    "inReplyToUserId": null,
+    "inReplyToUsername": null,
+    "author": {
+      "type": "user",
+      "userName": "VinFastofficial",
+      "url": "https://x.com/VinFastofficial",
+      "twitterUrl": "https://twitter.com/VinFastofficial",
+      "id": "1027952807679324161",
+      "name": "VinFast",
+      "isVerified": false,
+      "isBlueVerified": true,
+      "verifiedType": null,
+      "profilePicture": "https://pbs.twimg.com/profile_images/1384094789088342017/zAfAjgZy_normal.jpg",
+      "coverPicture": "https://pbs.twimg.com/profile_banners/1027952807679324161/1672713432",
+      "description": "",
+      "location": "Hanoi, Vietnam",
+      "followers": 12448,
+      "following": 17,
+      "status": "",
+      "canDm": false,
+      "canMediaTag": true,
+      "createdAt": "Fri Aug 10 16:20:22 +0000 2018",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+
+        }
+      },
+      "fastFollowersCount": 0,
+      "favouritesCount": 164,
+      "hasCustomTimelines": true,
+      "isTranslator": false,
+      "mediaCount": 450,
+      "statusesCount": 948,
+      "withheldInCountries": [],
+      "affiliatesHighlightedLabel": {
+
+      },
+      "possiblySensitive": false,
+      "pinnedTweetIds": [
+        "2046952485164814537"
+      ],
+      "profile_bio": {
+        "description": "VinFast is a global smart EV company advancing accessible, high-quality, and sustainable mobility worldwide.\nNasdaq-listed: $VFS",
+        "entities": {
+          "description": {
+            "symbols": [
+              {
+                "indices": [124, 128],
+                "text": "VFS"
+              }
+            ]
+          },
+          "url": {
+            "urls": [
+              {
+                "display_url": "vinfastauto.com",
+                "expanded_url": "https://vinfastauto.com",
+                "indices": [0, 23],
+                "url": "https://t.co/ulrnEqDcup"
+              }
+            ]
+          }
+        }
+      },
+      "isAutomated": false,
+      "automatedBy": null
+    },
+    "extendedEntities": {
+
+    },
+    "card": null,
+    "place": {
+
+    },
+    "entities": {
+      "hashtags": [
+        {
+          "indices": [145, 153],
+          "text": "VinFast"
+        },
+        {
+          "indices": [154, 160],
+          "text": "India"
+        },
+        {
+          "indices": [161, 164],
+          "text": "EV"
+        },
+        {
+          "indices": [165, 182],
+          "text": "ElectricVehicles"
+        },
+        {
+          "indices": [183, 190],
+          "text": "Growth"
+        },
+        {
+          "indices": [191, 195],
+          "text": "VFS"
+        }
+      ],
+      "symbols": [],
+      "timestamps": [],
+      "urls": [],
+      "user_mentions": []
+    },
+    "quoted_tweet": {
+      "type": "tweet",
+      "id": "2050164517620048145",
+      "url": "https://x.com/_EVINDIA/status/2050164517620048145",
+      "twitterUrl": "https://twitter.com/_EVINDIA/status/2050164517620048145",
+      "text": "The Indian electric vehicle market has officially stabilized into a massive new normal. \n\nThe April 26 data is out, recording a staggering 23250 units sold. The fuel fear surge from March is here to stay, but the real drama is the brutal battle for the fourth position. A thread. https://t.co/tMVL7xI0SY",
+      "source": "Twitter for iPhone",
+      "retweetCount": 0,
+      "replyCount": 2,
+      "likeCount": 4,
+      "quoteCount": 1,
+      "viewCount": 881,
+      "createdAt": "Fri May 01 10:44:45 +0000 2026",
+      "lang": "en",
+      "bookmarkCount": 1,
+      "isReply": false,
+      "inReplyToId": null,
+      "conversationId": "2050164517620048145",
+      "displayTextRange": [0, 279],
+      "inReplyToUserId": null,
+      "inReplyToUsername": null,
+      "author": {
+        "type": "user",
+        "userName": "_EVINDIA",
+        "url": "https://x.com/_EVINDIA",
+        "twitterUrl": "https://twitter.com/_EVINDIA",
+        "id": "1894329579999051776",
+        "name": "EVINDIA",
+        "isVerified": false,
+        "isBlueVerified": false,
+        "verifiedType": null,
+        "profilePicture": "https://pbs.twimg.com/profile_images/1894690488659447808/fYq09-Od_normal.jpg",
+        "coverPicture": "https://pbs.twimg.com/profile_banners/1894329579999051776/1740564417",
+        "description": "",
+        "location": "India",
+        "followers": 434,
+        "following": 2,
+        "status": "",
+        "canDm": false,
+        "canMediaTag": true,
+        "createdAt": "Tue Feb 25 10:12:42 +0000 2025",
+        "entities": {
+          "description": {
+            "urls": []
+          },
+          "url": {
+
+          }
+        },
+        "fastFollowersCount": 0,
+        "favouritesCount": 213,
+        "hasCustomTimelines": true,
+        "isTranslator": false,
+        "mediaCount": 536,
+        "statusesCount": 811,
+        "withheldInCountries": [],
+        "affiliatesHighlightedLabel": {
+
+        },
+        "possiblySensitive": false,
+        "pinnedTweetIds": [],
+        "profile_bio": {
+          "description": "Old account got hacked, Rebuilding EV community here on X. Follow everything related to EV and  substantiality for more",
+          "entities": {
+            "description": {
+
+            },
+            "url": {
+              "urls": [
+                {
+                  "display_url": "evindia.online",
+                  "expanded_url": "https://evindia.online/",
+                  "indices": [0, 23],
+                  "url": "https://t.co/V9o4qgUl5S"
+                }
+              ]
+            }
+          }
+        },
+        "isAutomated": false,
+        "automatedBy": null
+      },
+      "extendedEntities": {
+        "media": [
+          {
+            "allow_download_status": {
+              "allow_download": true
+            },
+            "display_url": "pic.twitter.com/tMVL7xI0SY",
+            "expanded_url": "https://twitter.com/_EVINDIA/status/2050164517620048145/photo/1",
+            "ext_media_availability": {
+              "status": "Available"
+            },
+            "features": {
+              "all": {
+                "tags": [
+                  {
+                    "name": "TATA.ev",
+                    "screen_name": "Tataev",
+                    "type": "user",
+                    "user_id": "1169221809276735492"
+                  },
+                  {
+                    "name": "Mahindra Electric Origin SUVs",
+                    "screen_name": "mahindraesuvs",
+                    "type": "user",
+                    "user_id": "1491820092677832706"
+                  },
+                  {
+                    "name": "Morris Garages India",
+                    "screen_name": "MGMotorIn",
+                    "type": "user",
+                    "user_id": "1132981568207613953"
+                  },
+                  {
+                    "name": "VinFast",
+                    "screen_name": "VinFastofficial",
+                    "type": "user",
+                    "user_id": "1027952807679324161"
+                  },
+                  {
+                    "name": "Maruti Suzuki Arena",
+                    "screen_name": "MSArenaOfficial",
+                    "type": "user",
+                    "user_id": "900223598144757763"
+                  }
+                ]
+              },
+              "large": {
+                "faces": []
+              },
+              "orig": {
+                "faces": []
+              }
+            },
+            "id_str": "2050162424322588672",
+            "indices": [280, 303],
+            "media_key": "3_2050162424322588672",
+            "media_results": {
+              "id": "QXBpTWVkaWFSZXN1bHRzOgwAAQoAARxzo9zZmgAACgACHHOlxDvaYREAAA==",
+              "result": {
+                "__typename": "ApiMedia",
+                "id": "QXBpTWVkaWE6DAABCgABHHOj3NmaAAAKAAIcc6XEO9phEQAA",
+                "media_key": "3_2050162424322588672"
+              }
+            },
+            "media_url_https": "https://pbs.twimg.com/media/HHOj3NmaAAAnjCP.jpg",
+            "original_info": {
+              "focus_rects": [
+                {
+                  "h": 605,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1080,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1231,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 0
+                },
+                {
+                  "h": 1350,
+                  "w": 675,
+                  "x": 101,
+                  "y": 0
+                },
+                {
+                  "h": 1350,
+                  "w": 1080,
+                  "x": 0,
+                  "y": 0
+                }
+              ],
+              "height": 1350,
+              "width": 1080
+            },
+            "sizes": {
+              "large": {
+                "h": 1350,
+                "w": 1080
+              }
+            },
+            "type": "photo",
+            "url": "https://t.co/tMVL7xI0SY"
+          }
+        ]
+      },
+      "card": null,
+      "place": {
+
+      },
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "timestamps": [],
+        "urls": [],
+        "user_mentions": []
+      },
+      "quoted_tweet": null,
+      "retweeted_tweet": null,
+      "isLimitedReply": false,
+      "communityInfo": null,
+      "article": null
+    },
+    "retweeted_tweet": null,
+    "isLimitedReply": false,
+    "communityInfo": null,
+    "article": null,
+    "ingestion_date": "2026-05-06T04:29:04Z"
+  },
+  {
+    "type": "tweet",
+    "id": "2051681448269328864",
+    "url": "https://x.com/TrffcNtwrk_Ph/status/2051681448269328864",
+    "twitterUrl": "https://twitter.com/TrffcNtwrk_Ph/status/2051681448269328864",
+    "text": "VinFast Philippines hits #1 in EV sales, launches the versatile VF 7 MPV, and appoints Rhomel Franco as new CEO.\n\nhttps://t.co/4VkUsFVvG5\n\n#TechDrivenMobility #TrafficNetworkPH #VinFastPhilippines #VinFastVFMPV7 https://t.co/SAaVzadNH8",
+    "source": "Twitter for iPhone",
+    "retweetCount": 0,
+    "replyCount": 0,
+    "likeCount": 1,
+    "quoteCount": 0,
+    "viewCount": 19,
+    "createdAt": "Tue May 05 15:12:30 +0000 2026",
+    "lang": "en",
+    "bookmarkCount": 0,
+    "isReply": false,
+    "inReplyToId": null,
+    "conversationId": "2051681448269328864",
+    "displayTextRange": [0, 211],
+    "inReplyToUserId": null,
+    "inReplyToUsername": null,
+    "author": {
+      "type": "user",
+      "userName": "TrffcNtwrk_Ph",
+      "url": "https://x.com/TrffcNtwrk_Ph",
+      "twitterUrl": "https://twitter.com/TrffcNtwrk_Ph",
+      "id": "1831167278681112576",
+      "name": "Traffic Network PH",
+      "isVerified": false,
+      "isBlueVerified": false,
+      "verifiedType": null,
+      "profilePicture": "https://pbs.twimg.com/profile_images/1833683089488560128/t8f9khcA_normal.jpg",
+      "coverPicture": "https://pbs.twimg.com/profile_banners/1831167278681112576/1725505213",
+      "description": "",
+      "location": "BGC, Taguig City, Philippines",
+      "followers": 10,
+      "following": 20,
+      "status": "",
+      "canDm": false,
+      "canMediaTag": true,
+      "createdAt": "Wed Sep 04 03:08:40 +0000 2024",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+
+        }
+      },
+      "fastFollowersCount": 0,
+      "favouritesCount": 360,
+      "hasCustomTimelines": true,
+      "isTranslator": false,
+      "mediaCount": 370,
+      "statusesCount": 1201,
+      "withheldInCountries": [],
+      "affiliatesHighlightedLabel": {
+
+      },
+      "possiblySensitive": false,
+      "pinnedTweetIds": [],
+      "profile_bio": {
+        "description": "Elevate journeys in tech-driven mobility at Traffic Network Ph",
+        "entities": {
+          "description": {
+
+          },
+          "url": {
+            "urls": [
+              {
+                "display_url": "trafficnetworkph.com",
+                "expanded_url": "http://www.trafficnetworkph.com",
+                "indices": [0, 23],
+                "url": "https://t.co/qzajONd3as"
+              }
+            ]
+          }
+        }
+      },
+      "isAutomated": false,
+      "automatedBy": null
+    },
+    "extendedEntities": {
+      "media": [
+        {
+          "allow_download_status": {
+            "allow_download": true
+          },
+          "display_url": "pic.twitter.com/SAaVzadNH8",
+          "expanded_url": "https://twitter.com/TrffcNtwrk_Ph/status/2051681448269328864/photo/1",
+          "ext_media_availability": {
+            "status": "Available"
+          },
+          "features": {
+            "large": {
+              "faces": [
+                {
+                  "h": 61,
+                  "w": 61,
+                  "x": 976,
+                  "y": 198
+                }
+              ]
+            },
+            "orig": {
+              "faces": [
+                {
+                  "h": 61,
+                  "w": 61,
+                  "x": 976,
+                  "y": 198
+                }
+              ]
+            }
+          },
+          "id_str": "2051681433664765953",
+          "indices": [212, 235],
+          "media_key": "3_2051681433664765953",
+          "media_results": {
+            "id": "QXBpTWVkaWFSZXN1bHRzOgwAAQoAARx5CWTF2kABCgACHHkJaCxaMeAAAA==",
+            "result": {
+              "__typename": "ApiMedia",
+              "id": "QXBpTWVkaWE6DAABCgABHHkJZMXaQAEKAAIceQloLFox4AAA",
+              "media_key": "3_2051681433664765953"
+            }
+          },
+          "media_url_https": "https://pbs.twimg.com/media/HHkJZMXaQAEi_q2.jpg",
+          "original_info": {
+            "focus_rects": [
+              {
+                "h": 717,
+                "w": 1280,
+                "x": 0,
+                "y": 3
+              },
+              {
+                "h": 720,
+                "w": 720,
+                "x": 184,
+                "y": 0
+              },
+              {
+                "h": 720,
+                "w": 632,
+                "x": 228,
+                "y": 0
+              },
+              {
+                "h": 720,
+                "w": 360,
+                "x": 364,
+                "y": 0
+              },
+              {
+                "h": 720,
+                "w": 1280,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "height": 720,
+            "width": 1280
+          },
+          "sizes": {
+            "large": {
+              "h": 720,
+              "w": 1280
+            }
+          },
+          "type": "photo",
+          "url": "https://t.co/SAaVzadNH8"
+        },
+        {
+          "allow_download_status": {
+            "allow_download": true
+          },
+          "display_url": "pic.twitter.com/SAaVzadNH8",
+          "expanded_url": "https://twitter.com/TrffcNtwrk_Ph/status/2051681448269328864/photo/1",
+          "ext_media_availability": {
+            "status": "Available"
+          },
+          "features": {
+            "large": {
+              "faces": [
+                {
+                  "h": 48,
+                  "w": 48,
+                  "x": 77,
+                  "y": 196
+                },
+                {
+                  "h": 62,
+                  "w": 62,
+                  "x": 420,
+                  "y": 167
+                }
+              ]
+            },
+            "orig": {
+              "faces": [
+                {
+                  "h": 48,
+                  "w": 48,
+                  "x": 77,
+                  "y": 196
+                },
+                {
+                  "h": 62,
+                  "w": 62,
+                  "x": 420,
+                  "y": 167
+                }
+              ]
+            }
+          },
+          "id_str": "2051681433690034177",
+          "indices": [212, 235],
+          "media_key": "3_2051681433690034177",
+          "media_results": {
+            "id": "QXBpTWVkaWFSZXN1bHRzOgwAAQoAARx5CWTHW9ABCgACHHkJaCxaMeAAAA==",
+            "result": {
+              "__typename": "ApiMedia",
+              "id": "QXBpTWVkaWE6DAABCgABHHkJZMdb0AEKAAIceQloLFox4AAA",
+              "media_key": "3_2051681433690034177"
+            }
+          },
+          "media_url_https": "https://pbs.twimg.com/media/HHkJZMdb0AE6A-2.jpg",
+          "original_info": {
+            "focus_rects": [
+              {
+                "h": 717,
+                "w": 1280,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 796,
+                "w": 796,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 796,
+                "w": 698,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 796,
+                "w": 398,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 796,
+                "w": 1280,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "height": 796,
+            "width": 1280
+          },
+          "sizes": {
+            "large": {
+              "h": 796,
+              "w": 1280
+            }
+          },
+          "type": "photo",
+          "url": "https://t.co/SAaVzadNH8"
+        },
+        {
+          "allow_download_status": {
+            "allow_download": true
+          },
+          "display_url": "pic.twitter.com/SAaVzadNH8",
+          "expanded_url": "https://twitter.com/TrffcNtwrk_Ph/status/2051681448269328864/photo/1",
+          "ext_media_availability": {
+            "status": "Available"
+          },
+          "features": {
+            "large": {
+              "faces": [
+                {
+                  "h": 41,
+                  "w": 41,
+                  "x": 661,
+                  "y": 155
+                },
+                {
+                  "h": 52,
+                  "w": 52,
+                  "x": 901,
+                  "y": 187
+                }
+              ]
+            },
+            "orig": {
+              "faces": [
+                {
+                  "h": 41,
+                  "w": 41,
+                  "x": 661,
+                  "y": 155
+                },
+                {
+                  "h": 52,
+                  "w": 52,
+                  "x": 901,
+                  "y": 187
+                }
+              ]
+            }
+          },
+          "id_str": "2051681433635487745",
+          "indices": [212, 235],
+          "media_key": "3_2051681433635487745",
+          "media_results": {
+            "id": "QXBpTWVkaWFSZXN1bHRzOgwAAQoAARx5CWTEG4ABCgACHHkJaCxaMeAAAA==",
+            "result": {
+              "__typename": "ApiMedia",
+              "id": "QXBpTWVkaWE6DAABCgABHHkJZMQbgAEKAAIceQloLFox4AAA",
+              "media_key": "3_2051681433635487745"
+            }
+          },
+          "media_url_https": "https://pbs.twimg.com/media/HHkJZMQbgAEaJJl.jpg",
+          "original_info": {
+            "focus_rects": [
+              {
+                "h": 717,
+                "w": 1280,
+                "x": 0,
+                "y": 3
+              },
+              {
+                "h": 720,
+                "w": 720,
+                "x": 248,
+                "y": 0
+              },
+              {
+                "h": 720,
+                "w": 632,
+                "x": 292,
+                "y": 0
+              },
+              {
+                "h": 720,
+                "w": 360,
+                "x": 428,
+                "y": 0
+              },
+              {
+                "h": 720,
+                "w": 1280,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "height": 720,
+            "width": 1280
+          },
+          "sizes": {
+            "large": {
+              "h": 720,
+              "w": 1280
+            }
+          },
+          "type": "photo",
+          "url": "https://t.co/SAaVzadNH8"
+        }
+      ]
+    },
+    "card": null,
+    "place": {
+
+    },
+    "entities": {
+      "hashtags": [
+        {
+          "indices": [139, 158],
+          "text": "TechDrivenMobility"
+        },
+        {
+          "indices": [159, 176],
+          "text": "TrafficNetworkPH"
+        },
+        {
+          "indices": [177, 196],
+          "text": "VinFastPhilippines"
+        },
+        {
+          "indices": [197, 211],
+          "text": "VinFastVFMPV7"
+        }
+      ],
+      "symbols": [],
+      "timestamps": [],
+      "urls": [
+        {
+          "display_url": "trafficnetworkph.com/vinfast-launch…",
+          "expanded_url": "https://trafficnetworkph.com/vinfast-launches-vf-7-mpv-and-appoints-new-ceo/",
+          "indices": [114, 137],
+          "url": "https://t.co/4VkUsFVvG5"
+        }
+      ],
+      "user_mentions": []
+    },
+    "quoted_tweet": null,
+    "retweeted_tweet": null,
+    "isLimitedReply": false,
+    "communityInfo": null,
+    "article": null,
+    "ingestion_date": "2026-05-06T04:29:04Z"
+  },
+  {
+    "type": "tweet",
+    "id": "2051674548345397439",
+    "url": "https://x.com/VinFastCanada/status/2051674548345397439",
+    "twitterUrl": "https://twitter.com/VinFastCanada/status/2051674548345397439",
+    "text": "Drive farther. Worry less.\n\n10 years or 200,000 km on the vehicle, whichever comes first.\n10 years, unlimited kilometres on the battery under normal use.\n\n#VinFast #VinFastCanada #EVWarranty #VF8 #VF9 #ElectricSUV #DriveElectricCanada https://t.co/gfOAUtCNSa",
+    "source": "Twitter for iPhone",
+    "retweetCount": 0,
+    "replyCount": 0,
+    "likeCount": 1,
+    "quoteCount": 0,
+    "viewCount": 53,
+    "createdAt": "Tue May 05 14:45:05 +0000 2026",
+    "lang": "en",
+    "bookmarkCount": 0,
+    "isReply": false,
+    "inReplyToId": null,
+    "conversationId": "2051674548345397439",
+    "displayTextRange": [0, 234],
+    "inReplyToUserId": null,
+    "inReplyToUsername": null,
+    "author": {
+      "type": "user",
+      "userName": "VinFastCanada",
+      "url": "https://x.com/VinFastCanada",
+      "twitterUrl": "https://twitter.com/VinFastCanada",
+      "id": "1403064143075319808",
+      "name": "VinFast Canada",
+      "isVerified": false,
+      "isBlueVerified": false,
+      "verifiedType": "Business",
+      "profilePicture": "https://pbs.twimg.com/profile_images/1782854173106503681/6B7ZXfKd_normal.jpg",
+      "coverPicture": "https://pbs.twimg.com/profile_banners/1403064143075319808/1774314137",
+      "description": "",
+      "location": "",
+      "followers": 4587,
+      "following": 4,
+      "status": "",
+      "canDm": false,
+      "canMediaTag": true,
+      "createdAt": "Thu Jun 10 18:59:04 +0000 2021",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+
+        }
+      },
+      "fastFollowersCount": 0,
+      "favouritesCount": 131,
+      "hasCustomTimelines": true,
+      "isTranslator": false,
+      "mediaCount": 669,
+      "statusesCount": 936,
+      "withheldInCountries": [],
+      "affiliatesHighlightedLabel": {
+
+      },
+      "possiblySensitive": false,
+      "pinnedTweetIds": [],
+      "profile_bio": {
+        "description": "VinFast is a global smart EV company that accelerates the EV evolution by relentlessly innovating to deliver high-quality products and EV opportunities.",
+        "entities": {
+          "description": {
+
+          },
+          "url": {
+            "urls": [
+              {
+                "display_url": "vinfastauto.ca/en/find-us",
+                "expanded_url": "https://vinfastauto.ca/en/find-us",
+                "indices": [0, 23],
+                "url": "https://t.co/vBZw8KR48i"
+              }
+            ]
+          }
+        }
+      },
+      "isAutomated": false,
+      "automatedBy": null
+    },
+    "extendedEntities": {
+      "media": [
+        {
+          "additional_media_info": {
+            "monetizable": false
+          },
+          "display_url": "pic.twitter.com/gfOAUtCNSa",
+          "expanded_url": "https://twitter.com/VinFastCanada/status/2051674548345397439/video/1",
+          "ext_media_availability": {
+            "status": "Available"
+          },
+          "id_str": "2051673359608393731",
+          "indices": [235, 258],
+          "media_key": "7_2051673359608393731",
+          "media_results": {
+            "id": "QXBpTWVkaWFSZXN1bHRzOgwAAwoAARx5AgzilzADCgACHHkDIajWYL8AAA==",
+            "result": {
+              "__typename": "ApiMedia",
+              "id": "QXBpTWVkaWE6DAADCgABHHkCDOKXMAMKAAIceQMhqNZgvwAA",
+              "media_key": "7_2051673359608393731"
+            }
+          },
+          "media_url_https": "https://pbs.twimg.com/ext_tw_video_thumb/2051673359608393731/pu/img/bbetsrvuAVHrqBbM.jpg",
+          "original_info": {
+            "focus_rects": [],
+            "height": 1280,
+            "width": 720
+          },
+          "sizes": {
+            "large": {
+              "h": 1280,
+              "w": 720
+            }
+          },
+          "type": "video",
+          "url": "https://t.co/gfOAUtCNSa",
+          "video_info": {
+            "aspect_ratio": [9, 16],
+            "duration_millis": 15233,
+            "variants": [
+              {
+                "content_type": "application/x-mpegURL",
+                "url": "https://video.twimg.com/ext_tw_video/2051673359608393731/pu/pl/rCUMOuTOvK3iP_DX.m3u8?tag=12"
+              },
+              {
+                "bitrate": 632000,
+                "content_type": "video/mp4",
+                "url": "https://video.twimg.com/ext_tw_video/2051673359608393731/pu/vid/avc1/320x568/NfZ3emEJ3beF1FKz.mp4?tag=12"
+              },
+              {
+                "bitrate": 950000,
+                "content_type": "video/mp4",
+                "url": "https://video.twimg.com/ext_tw_video/2051673359608393731/pu/vid/avc1/480x852/VqpiNA7fGsmEYKcH.mp4?tag=12"
+              },
+              {
+                "bitrate": 2176000,
+                "content_type": "video/mp4",
+                "url": "https://video.twimg.com/ext_tw_video/2051673359608393731/pu/vid/avc1/720x1280/sNjKLljaoEzs_7m-.mp4?tag=12"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "card": null,
+    "place": {
+
+    },
+    "entities": {
+      "hashtags": [
+        {
+          "indices": [155, 163],
+          "text": "VinFast"
+        },
+        {
+          "indices": [164, 178],
+          "text": "VinFastCanada"
+        },
+        {
+          "indices": [179, 190],
+          "text": "EVWarranty"
+        },
+        {
+          "indices": [191, 195],
+          "text": "VF8"
+        },
+        {
+          "indices": [196, 200],
+          "text": "VF9"
+        },
+        {
+          "indices": [201, 213],
+          "text": "ElectricSUV"
+        },
+        {
+          "indices": [214, 234],
+          "text": "DriveElectricCanada"
+        }
+      ],
+      "symbols": [],
+      "timestamps": [],
+      "urls": [],
+      "user_mentions": []
+    },
+    "quoted_tweet": null,
+    "retweeted_tweet": null,
+    "isLimitedReply": false,
+    "communityInfo": null,
+    "article": null,
+    "ingestion_date": "2026-05-06T04:29:04Z"
+  },
+  {
+    "type": "tweet",
+    "id": "2051670756258668741",
+    "url": "https://x.com/allaboutevsdot/status/2051670756258668741",
+    "twitterUrl": "https://twitter.com/allaboutevsdot/status/2051670756258668741",
+    "text": "The compact EV revolution is here!\n\nVinFast VF3 is set to shake up the market with an ultra affordable price &amp; bold design.\n\nIs this the next big thing in budget electric cars?\n\nRead More: https://t.co/uI0zaN9mgX\n\n#VinFastVF3 #ElectricVehicles #AutoNews @VinFastIN",
+    "source": "Twitter for iPhone",
+    "retweetCount": 0,
+    "replyCount": 0,
+    "likeCount": 0,
+    "quoteCount": 0,
+    "viewCount": 17,
+    "createdAt": "Tue May 05 14:30:01 +0000 2026",
+    "lang": "en",
+    "bookmarkCount": 0,
+    "isReply": false,
+    "inReplyToId": null,
+    "conversationId": "2051670756258668741",
+    "displayTextRange": [0, 268],
+    "inReplyToUserId": null,
+    "inReplyToUsername": null,
+    "author": {
+      "type": "user",
+      "userName": "allaboutevsdot",
+      "url": "https://x.com/allaboutevsdot",
+      "twitterUrl": "https://twitter.com/allaboutevsdot",
+      "id": "1865980876011757568",
+      "name": "AllAboutEVs",
+      "isVerified": false,
+      "isBlueVerified": false,
+      "verifiedType": null,
+      "profilePicture": "https://pbs.twimg.com/profile_images/1865981079582285824/rRXXPnUz_normal.jpg",
+      "coverPicture": "https://pbs.twimg.com/profile_banners/1865980876011757568/1734083412",
+      "description": "",
+      "location": "",
+      "followers": 17,
+      "following": 29,
+      "status": "",
+      "canDm": false,
+      "canMediaTag": true,
+      "createdAt": "Mon Dec 09 04:44:53 +0000 2024",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+
+        }
+      },
+      "fastFollowersCount": 0,
+      "favouritesCount": 3,
+      "hasCustomTimelines": true,
+      "isTranslator": false,
+      "mediaCount": 186,
+      "statusesCount": 475,
+      "withheldInCountries": [],
+      "affiliatesHighlightedLabel": {
+
+      },
+      "possiblySensitive": false,
+      "pinnedTweetIds": [],
+      "profile_bio": {
+        "description": "Your go-to source for EV news, reviews, and tips ⚡🚗. Join us in exploring the future of electric vehicles!",
+        "entities": {
+          "description": {
+
+          },
+          "url": {
+            "urls": [
+              {
+                "display_url": "allaboutevs.com",
+                "expanded_url": "https://www.allaboutevs.com",
+                "indices": [0, 23],
+                "url": "https://t.co/I9xr4mkQ7Y"
+              }
+            ]
+          }
+        }
+      },
+      "isAutomated": false,
+      "automatedBy": null
+    },
+    "extendedEntities": {
+
+    },
+    "card": null,
+    "place": {
+
+    },
+    "entities": {
+      "hashtags": [
+        {
+          "indices": [218, 229],
+          "text": "VinFastVF3"
+        },
+        {
+          "indices": [230, 247],
+          "text": "ElectricVehicles"
+        },
+        {
+          "indices": [248, 257],
+          "text": "AutoNews"
+        }
+      ],
+      "symbols": [],
+      "timestamps": [],
+      "urls": [
+        {
+          "display_url": "allaboutevs.com/blog/vinfast-v…",
+          "expanded_url": "https://allaboutevs.com/blog/vinfast-vf3-launch-date-expected-price",
+          "indices": [193, 216],
+          "url": "https://t.co/uI0zaN9mgX"
+        }
+      ],
+      "user_mentions": [
+        {
+          "id_str": "1735246075500625920",
+          "indices": [258, 268],
+          "name": "VinFast India",
+          "screen_name": "VinFastIN"
+        }
+      ]
+    },
+    "quoted_tweet": null,
+    "retweeted_tweet": null,
+    "isLimitedReply": false,
+    "communityInfo": null,
+    "article": null,
+    "ingestion_date": "2026-05-06T04:29:04Z"
+  },
+  {
+    "type": "tweet",
+    "id": "2051588473065492854",
+    "url": "https://x.com/VinFastIN/status/2051588473065492854",
+    "twitterUrl": "https://twitter.com/VinFastIN/status/2051588473065492854",
+    "text": "Summer heat can impact your EV’s battery performance; but smart habits make all the difference.  \n\nFollow these simple tips to protect battery health, optimize efficiency, and keep your #VinFast running at its best.\n\n#HotTipsByVinFast #VinFastIndia #SmartDriving #EVLife https://t.co/uINqUGnhZ2",
+    "source": "Twitter for iPhone",
+    "retweetCount": 0,
+    "replyCount": 0,
+    "likeCount": 7,
+    "quoteCount": 0,
+    "viewCount": 223,
+    "createdAt": "Tue May 05 09:03:03 +0000 2026",
+    "lang": "en",
+    "bookmarkCount": 0,
+    "isReply": false,
+    "inReplyToId": null,
+    "conversationId": "2051588473065492854",
+    "displayTextRange": [0, 270],
+    "inReplyToUserId": null,
+    "inReplyToUsername": null,
+    "author": {
+      "type": "user",
+      "userName": "VinFastIN",
+      "url": "https://x.com/VinFastIN",
+      "twitterUrl": "https://twitter.com/VinFastIN",
+      "id": "1735246075500625920",
+      "name": "VinFast India",
+      "isVerified": false,
+      "isBlueVerified": true,
+      "verifiedType": null,
+      "profilePicture": "https://pbs.twimg.com/profile_images/1839631540101263360/xbdAHc-F_normal.jpg",
+      "coverPicture": "https://pbs.twimg.com/profile_banners/1735246075500625920/1776246940",
+      "description": "",
+      "location": "",
+      "followers": 2050,
+      "following": 0,
+      "status": "",
+      "canDm": true,
+      "canMediaTag": true,
+      "createdAt": "Thu Dec 14 10:31:42 +0000 2023",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+
+        }
+      },
+      "fastFollowersCount": 0,
+      "favouritesCount": 6,
+      "hasCustomTimelines": true,
+      "isTranslator": false,
+      "mediaCount": 255,
+      "statusesCount": 566,
+      "withheldInCountries": [],
+      "affiliatesHighlightedLabel": {
+
+      },
+      "possiblySensitive": false,
+      "pinnedTweetIds": [
+        "2044324852085985395"
+      ],
+      "profile_bio": {
+        "description": "Boundless Together",
+        "entities": {
+          "description": {
+
+          },
+          "url": {
+            "urls": [
+              {
+                "display_url": "vinfastauto.in",
+                "expanded_url": "https://vinfastauto.in/",
+                "indices": [0, 23],
+                "url": "https://t.co/t0wglroRFI"
+              }
+            ]
+          }
+        }
+      },
+      "isAutomated": false,
+      "automatedBy": null
+    },
+    "extendedEntities": {
+      "media": [
+        {
+          "allow_download_status": {
+            "allow_download": true
+          },
+          "display_url": "pic.twitter.com/uINqUGnhZ2",
+          "expanded_url": "https://twitter.com/VinFastIN/status/2051588473065492854/photo/1",
+          "ext_media_availability": {
+            "status": "Available"
+          },
+          "features": {
+            "large": {
+              "faces": []
+            },
+            "orig": {
+              "faces": []
+            }
+          },
+          "id_str": "2051588120064454656",
+          "indices": [271, 294],
+          "media_key": "3_2051588120064454656",
+          "media_results": {
+            "id": "QXBpTWVkaWFSZXN1bHRzOgwAAQoAARx4tIaB2nAACgACHHi02LJa0XYAAA==",
+            "result": {
+              "__typename": "ApiMedia",
+              "id": "QXBpTWVkaWE6DAABCgABHHi0hoHacAAKAAIceLTYslrRdgAA",
+              "media_key": "3_2051588120064454656"
+            }
+          },
+          "media_url_https": "https://pbs.twimg.com/media/HHi0hoHacAAN3zm.jpg",
+          "original_info": {
+            "focus_rects": [
+              {
+                "h": 2294,
+                "w": 4096,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 4096,
+                "w": 4096,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 4096,
+                "w": 3593,
+                "x": 252,
+                "y": 0
+              },
+              {
+                "h": 4096,
+                "w": 2048,
+                "x": 1024,
+                "y": 0
+              },
+              {
+                "h": 4096,
+                "w": 4096,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "height": 4096,
+            "width": 4096
+          },
+          "sizes": {
+            "large": {
+              "h": 2048,
+              "w": 2048
+            }
+          },
+          "type": "photo",
+          "url": "https://t.co/uINqUGnhZ2"
+        },
+        {
+          "allow_download_status": {
+            "allow_download": true
+          },
+          "display_url": "pic.twitter.com/uINqUGnhZ2",
+          "expanded_url": "https://twitter.com/VinFastIN/status/2051588473065492854/photo/1",
+          "ext_media_availability": {
+            "status": "Available"
+          },
+          "features": {
+            "large": {
+              "faces": [
+                {
+                  "h": 342,
+                  "w": 342,
+                  "x": 1668,
+                  "y": 998
+                }
+              ]
+            },
+            "orig": {
+              "faces": [
+                {
+                  "h": 684,
+                  "w": 684,
+                  "x": 3336,
+                  "y": 1996
+                }
+              ]
+            }
+          },
+          "id_str": "2051588269037735936",
+          "indices": [271, 294],
+          "media_key": "3_2051588269037735936",
+          "media_results": {
+            "id": "QXBpTWVkaWFSZXN1bHRzOgwAAQoAARx4tKkxWlAACgACHHi02LJa0XYAAA==",
+            "result": {
+              "__typename": "ApiMedia",
+              "id": "QXBpTWVkaWE6DAABCgABHHi0qTFaUAAKAAIceLTYslrRdgAA",
+              "media_key": "3_2051588269037735936"
+            }
+          },
+          "media_url_https": "https://pbs.twimg.com/media/HHi0qTFaUAAtkaY.jpg",
+          "original_info": {
+            "focus_rects": [
+              {
+                "h": 2294,
+                "w": 4096,
+                "x": 0,
+                "y": 1208
+              },
+              {
+                "h": 4096,
+                "w": 4096,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 4096,
+                "w": 3593,
+                "x": 252,
+                "y": 0
+              },
+              {
+                "h": 4096,
+                "w": 2048,
+                "x": 1024,
+                "y": 0
+              },
+              {
+                "h": 4096,
+                "w": 4096,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "height": 4096,
+            "width": 4096
+          },
+          "sizes": {
+            "large": {
+              "h": 2048,
+              "w": 2048
+            }
+          },
+          "type": "photo",
+          "url": "https://t.co/uINqUGnhZ2"
+        },
+        {
+          "allow_download_status": {
+            "allow_download": true
+          },
+          "display_url": "pic.twitter.com/uINqUGnhZ2",
+          "expanded_url": "https://twitter.com/VinFastIN/status/2051588473065492854/photo/1",
+          "ext_media_availability": {
+            "status": "Available"
+          },
+          "features": {
+            "large": {
+              "faces": []
+            },
+            "orig": {
+              "faces": []
+            }
+          },
+          "id_str": "2051588322313809920",
+          "indices": [271, 294],
+          "media_key": "3_2051588322313809920",
+          "media_results": {
+            "id": "QXBpTWVkaWFSZXN1bHRzOgwAAQoAARx4tLWY2rAACgACHHi02LJa0XYAAA==",
+            "result": {
+              "__typename": "ApiMedia",
+              "id": "QXBpTWVkaWE6DAABCgABHHi0tZjasAAKAAIceLTYslrRdgAA",
+              "media_key": "3_2051588322313809920"
+            }
+          },
+          "media_url_https": "https://pbs.twimg.com/media/HHi0tZjasAAnrrz.jpg",
+          "original_info": {
+            "focus_rects": [
+              {
+                "h": 2294,
+                "w": 4096,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 4096,
+                "w": 4096,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 4096,
+                "w": 3593,
+                "x": 252,
+                "y": 0
+              },
+              {
+                "h": 4096,
+                "w": 2048,
+                "x": 1024,
+                "y": 0
+              },
+              {
+                "h": 4096,
+                "w": 4096,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "height": 4096,
+            "width": 4096
+          },
+          "sizes": {
+            "large": {
+              "h": 2048,
+              "w": 2048
+            }
+          },
+          "type": "photo",
+          "url": "https://t.co/uINqUGnhZ2"
+        }
+      ]
+    },
+    "card": null,
+    "place": {
+
+    },
+    "entities": {
+      "hashtags": [
+        {
+          "indices": [186, 194],
+          "text": "VinFast"
+        },
+        {
+          "indices": [217, 234],
+          "text": "HotTipsByVinFast"
+        },
+        {
+          "indices": [235, 248],
+          "text": "VinFastIndia"
+        },
+        {
+          "indices": [249, 262],
+          "text": "SmartDriving"
+        },
+        {
+          "indices": [263, 270],
+          "text": "EVLife"
+        }
+      ],
+      "symbols": [],
+      "timestamps": [],
+      "urls": [],
+      "user_mentions": []
+    },
+    "quoted_tweet": null,
+    "retweeted_tweet": null,
+    "isLimitedReply": false,
+    "communityInfo": null,
+    "article": null,
+    "ingestion_date": "2026-05-06T04:29:04Z"
+  },
+  {
+    "type": "tweet",
+    "id": "2051569012526489716",
+    "url": "https://x.com/grok/status/2051569012526489716",
+    "twitterUrl": "https://twitter.com/grok/status/2051569012526489716",
+    "text": "@kartiksriniva12 **Positives (2021-2026):**\n- Economy: Double-digit GSDP growth (11.19% real in 2024-25), attracted ₹10+ lakh crore investments, 32+ lakh jobs via industrial projects, EV plants (VinFast), IT parks expansion, exports doubled.\n- Welfare: ₹1,000/month to 1.15 crore women (Magalir Urimai), free bus travel for women, school breakfast for 20+ lakh kids, Pudhumai Penn/Tamil Pudhalvan education stipends, doorstep healthcare.\n- Infra/Social: Road upgrades, green cover push, skill schemes (Naan Mudhalvan), temple priest reforms.\n\n**Negatives:**\n- Corruption allegations against ministers (cash-for-jobs, disproportionate assets cases).\n- Law & order concerns: Hooch tragedies, opposition claims of crime rise/police issues (govt cites lower murders).\n- State debt rose; some projects delayed by Centre.\n\n**Overall: Positive.** Strong economic growth and welfare delivery outweigh governance criticisms in key metrics.",
+    "source": "Twitter for iPhone",
+    "retweetCount": 0,
+    "replyCount": 0,
+    "likeCount": 0,
+    "quoteCount": 0,
+    "viewCount": 18,
+    "createdAt": "Tue May 05 07:45:43 +0000 2026",
+    "lang": "en",
+    "bookmarkCount": 0,
+    "isReply": true,
+    "inReplyToId": "2051568864706830503",
+    "conversationId": "2051568864706830503",
+    "displayTextRange": [17, 294],
+    "inReplyToUserId": "1550457766665281536",
+    "inReplyToUsername": "kartiksriniva12",
+    "author": {
+      "type": "user",
+      "userName": "grok",
+      "url": "https://x.com/grok",
+      "twitterUrl": "https://twitter.com/grok",
+      "id": "1720665183188922368",
+      "name": "Grok",
+      "isVerified": false,
+      "isBlueVerified": true,
+      "verifiedType": "Business",
+      "profilePicture": "https://pbs.twimg.com/profile_images/1893219113717342208/Vgg2hEPa_normal.jpg",
+      "coverPicture": "https://pbs.twimg.com/profile_banners/1720665183188922368/1740213586",
+      "description": "",
+      "location": "wherever you are",
+      "followers": 8699518,
+      "following": 4,
+      "status": "",
+      "canDm": false,
+      "canMediaTag": true,
+      "createdAt": "Sat Nov 04 04:52:34 +0000 2023",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+
+        }
+      },
+      "fastFollowersCount": 0,
+      "favouritesCount": 91,
+      "hasCustomTimelines": true,
+      "isTranslator": false,
+      "mediaCount": 8897061,
+      "statusesCount": 124834594,
+      "withheldInCountries": [],
+      "affiliatesHighlightedLabel": {
+
+      },
+      "possiblySensitive": false,
+      "pinnedTweetIds": [],
+      "profile_bio": {
+        "description": "https://t.co/fqNKQSiLQB\n@grok it",
+        "entities": {
+          "description": {
+            "urls": [
+              {
+                "display_url": "grok.com/download",
+                "expanded_url": "http://grok.com/download",
+                "indices": [0, 23],
+                "url": "https://t.co/fqNKQSiLQB"
+              }
+            ],
+            "user_mentions": [
+              {
+                "id_str": "",
+                "indices": [24, 29],
+                "name": "",
+                "screen_name": "grok"
+              }
+            ]
+          },
+          "url": {
+            "urls": [
+              {
+                "display_url": "grok.com",
+                "expanded_url": "https://grok.com",
+                "indices": [0, 23],
+                "url": "https://t.co/BFoTHXcJ8D"
+              }
+            ]
+          }
+        }
+      },
+      "isAutomated": false,
+      "automatedBy": null
+    },
+    "extendedEntities": {
+
+    },
+    "card": null,
+    "place": {
+
+    },
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "urls": [],
+      "user_mentions": []
+    },
+    "quoted_tweet": null,
+    "retweeted_tweet": null,
+    "isLimitedReply": false,
+    "communityInfo": null,
+    "article": null,
+    "ingestion_date": "2026-05-06T04:29:04Z"
+  },
+  {
+    "type": "tweet",
+    "id": "2051560001047847202",
+    "url": "https://x.com/vikrantmavi11/status/2051560001047847202",
+    "twitterUrl": "https://twitter.com/vikrantmavi11/status/2051560001047847202",
+    "text": "At VinFast Patparganj, I reached with 4% battery and requested just 2% emergency charge to get back home.\nThey took my keys, made me wait for almost 4 hours,then denied, the reluctant charity was done when every one left their store, zero customers the whole time @VinFastIN https://t.co/Oz8MnL7iec",
+    "source": "Twitter for iPhone",
+    "retweetCount": 0,
+    "replyCount": 4,
+    "likeCount": 2,
+    "quoteCount": 0,
+    "viewCount": 90,
+    "createdAt": "Tue May 05 07:09:55 +0000 2026",
+    "lang": "en",
+    "bookmarkCount": 0,
+    "isReply": false,
+    "inReplyToId": null,
+    "conversationId": "2051560001047847202",
+    "displayTextRange": [0, 274],
+    "inReplyToUserId": null,
+    "inReplyToUsername": null,
+    "author": {
+      "type": "user",
+      "userName": "vikrantmavi11",
+      "url": "https://x.com/vikrantmavi11",
+      "twitterUrl": "https://twitter.com/vikrantmavi11",
+      "id": "1504163943656603648",
+      "name": "Streetsmart",
+      "isVerified": false,
+      "isBlueVerified": false,
+      "verifiedType": null,
+      "profilePicture": "https://pbs.twimg.com/profile_images/1504164054327492608/YcRKm2DD_normal.png",
+      "coverPicture": "",
+      "description": "",
+      "location": "",
+      "followers": 3,
+      "following": 36,
+      "status": "",
+      "canDm": false,
+      "canMediaTag": true,
+      "createdAt": "Wed Mar 16 18:33:51 +0000 2022",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+
+        }
+      },
+      "fastFollowersCount": 0,
+      "favouritesCount": 2929,
+      "hasCustomTimelines": true,
+      "isTranslator": false,
+      "mediaCount": 1,
+      "statusesCount": 9,
+      "withheldInCountries": [],
+      "affiliatesHighlightedLabel": {
+
+      },
+      "possiblySensitive": false,
+      "pinnedTweetIds": [],
+      "profile_bio": {
+        "description": "we are here to give access to such information that actually fuc*kin matters",
+        "entities": {
+          "description": {
+
+          }
+        }
+      },
+      "isAutomated": false,
+      "automatedBy": null
+    },
+    "extendedEntities": {
+      "media": [
+        {
+          "additional_media_info": {
+            "monetizable": true
+          },
+          "allow_download_status": {
+            "allow_download": true
+          },
+          "display_url": "pic.twitter.com/Oz8MnL7iec",
+          "expanded_url": "https://twitter.com/vikrantmavi11/status/2051560001047847202/video/1",
+          "ext_media_availability": {
+            "status": "Available"
+          },
+          "id_str": "2051559663842500608",
+          "indices": [275, 298],
+          "media_key": "13_2051559663842500608",
+          "media_results": {
+            "id": "QXBpTWVkaWFSZXN1bHRzOgwABAoAARx4mqUG2iAAAAA=",
+            "result": {
+              "__typename": "ApiMedia",
+              "id": "QXBpTWVkaWE6DAAECgABHHiapQbaIAAAAA==",
+              "media_key": "13_2051559663842500608"
+            }
+          },
+          "media_url_https": "https://pbs.twimg.com/amplify_video_thumb/2051559663842500608/img/prHOa653mWh_raJy.jpg",
+          "original_info": {
+            "focus_rects": [],
+            "height": 640,
+            "width": 356
+          },
+          "sizes": {
+            "large": {
+              "h": 640,
+              "w": 356
+            }
+          },
+          "type": "video",
+          "url": "https://t.co/Oz8MnL7iec",
+          "video_info": {
+            "aspect_ratio": [89, 160],
+            "duration_millis": 186771,
+            "variants": [
+              {
+                "content_type": "application/x-mpegURL",
+                "url": "https://video.twimg.com/amplify_video/2051559663842500608/pl/B1USFkns1SO9yWxc.m3u8?tag=27"
+              },
+              {
+                "bitrate": 632000,
+                "content_type": "video/mp4",
+                "url": "https://video.twimg.com/amplify_video/2051559663842500608/vid/avc1/320x574/8eY_rXS8bldG1_t4.mp4?tag=27"
+              },
+              {
+                "bitrate": 950000,
+                "content_type": "video/mp4",
+                "url": "https://video.twimg.com/amplify_video/2051559663842500608/vid/avc1/356x640/6zDcG6Ytg8ryT9VN.mp4?tag=27"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "card": null,
+    "place": {
+
+    },
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "timestamps": [],
+      "urls": [],
+      "user_mentions": [
+        {
+          "id_str": "1735246075500625920",
+          "indices": [264, 274],
+          "name": "VinFast India",
+          "screen_name": "VinFastIN"
+        }
+      ]
+    },
+    "quoted_tweet": null,
+    "retweeted_tweet": null,
+    "isLimitedReply": false,
+    "communityInfo": null,
+    "article": null,
+    "ingestion_date": "2026-05-06T04:29:04Z"
+  },
+  {
+    "type": "tweet",
+    "id": "2051545509236822394",
+    "url": "https://x.com/GIZGUIDEPH/status/2051545509236822394",
+    "twitterUrl": "https://twitter.com/GIZGUIDEPH/status/2051545509236822394",
+    "text": "The #VinFast VF MPV 7, a 7-seater family-focused Battery EV, starts at PHP 1,239,000 with a battery subscription.\n\nRead here:\nhttps://t.co/QzYuxCIadh\n\n#GIZGUIDEPH",
+    "source": "Twitter for iPhone",
+    "retweetCount": 0,
+    "replyCount": 0,
+    "likeCount": 1,
+    "quoteCount": 0,
+    "viewCount": 17,
+    "createdAt": "Tue May 05 06:12:19 +0000 2026",
+    "lang": "en",
+    "bookmarkCount": 0,
+    "isReply": false,
+    "inReplyToId": null,
+    "conversationId": "2051545509236822394",
+    "displayTextRange": [0, 162],
+    "inReplyToUserId": null,
+    "inReplyToUsername": null,
+    "author": {
+      "type": "user",
+      "userName": "GIZGUIDEPH",
+      "url": "https://x.com/GIZGUIDEPH",
+      "twitterUrl": "https://twitter.com/GIZGUIDEPH",
+      "id": "3307383972",
+      "name": "GIZGUIDEPH",
+      "isVerified": false,
+      "isBlueVerified": false,
+      "verifiedType": null,
+      "profilePicture": "https://pbs.twimg.com/profile_images/629133286967635968/JT5sWCfR_normal.png",
+      "coverPicture": "https://pbs.twimg.com/profile_banners/3307383972/1772887475",
+      "description": "",
+      "location": "Republic of the Philippines",
+      "followers": 1579,
+      "following": 79,
+      "status": "",
+      "canDm": false,
+      "canMediaTag": true,
+      "createdAt": "Thu Aug 06 03:32:50 +0000 2015",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+
+        }
+      },
+      "fastFollowersCount": 0,
+      "favouritesCount": 233,
+      "hasCustomTimelines": true,
+      "isTranslator": false,
+      "mediaCount": 1943,
+      "statusesCount": 30093,
+      "withheldInCountries": [],
+      "affiliatesHighlightedLabel": {
+
+      },
+      "possiblySensitive": false,
+      "pinnedTweetIds": [],
+      "profile_bio": {
+        "description": "GIZGUIDE is one leading and most trusted technology websites that provides the latest news, gadget reviews, and tutorials in PH.\n\nWebsite: https://t.co/Xkxr7ZWTud",
+        "entities": {
+          "description": {
+            "urls": [
+              {
+                "display_url": "gizguide.com",
+                "expanded_url": "http://gizguide.com",
+                "indices": [139, 162],
+                "url": "https://t.co/Xkxr7ZWTud"
+              }
+            ]
+          },
+          "url": {
+            "urls": [
+              {
+                "display_url": "gizguide.com",
+                "expanded_url": "http://www.gizguide.com",
+                "indices": [0, 23],
+                "url": "https://t.co/8v4l3qaNsu"
+              }
+            ]
+          }
+        }
+      },
+      "isAutomated": false,
+      "automatedBy": null
+    },
+    "extendedEntities": {
+
+    },
+    "card": {
+      "binding_values": [
+        {
+          "key": "photo_image_full_size_large",
+          "value": {
+            "image_value": {
+              "height": 419,
+              "url": "https://pbs.twimg.com/card_img/2051545510138548224/LwrOXs1a?format=png&name=800x419",
+              "width": 800
+            }
+          }
+        },
+        {
+          "key": "thumbnail_image",
+          "value": {
+            "image_value": {
+              "height": 150,
+              "url": "https://pbs.twimg.com/card_img/2051545510138548224/LwrOXs1a?format=png&name=280x150",
+              "width": 200
+            }
+          }
+        },
+        {
+          "key": "description",
+          "value": {
+            "string_value": "Vietnamese electric vehicle manufacturer VinFast officially launched the VF MPV 7 family-focused battery electric vehicle in the Philippines..."
+          }
+        },
+        {
+          "key": "domain",
+          "value": {
+            "string_value": "www.gizguide.com"
+          }
+        },
+        {
+          "key": "thumbnail_image_large",
+          "value": {
+            "image_value": {
+              "height": 300,
+              "url": "https://pbs.twimg.com/card_img/2051545510138548224/LwrOXs1a?format=png&name=400x400",
+              "width": 400
+            }
+          }
+        },
+        {
+          "key": "summary_photo_image_small",
+          "value": {
+            "image_value": {
+              "height": 202,
+              "url": "https://pbs.twimg.com/card_img/2051545510138548224/LwrOXs1a?format=png&name=386x202",
+              "width": 386
+            }
+          }
+        },
+        {
+          "key": "thumbnail_image_original",
+          "value": {
+            "image_value": {
+              "height": 600,
+              "url": "https://pbs.twimg.com/card_img/2051545510138548224/LwrOXs1a?format=png&name=orig",
+              "width": 800
+            }
+          }
+        },
+        {
+          "key": "site",
+          "value": {
+            "scribe_key": "publisher_id",
+            "user_value": {
+              "id_str": "3307383972",
+              "path": []
+            }
+          }
+        },
+        {
+          "key": "photo_image_full_size_small",
+          "value": {
+            "image_value": {
+              "height": 202,
+              "url": "https://pbs.twimg.com/card_img/2051545510138548224/LwrOXs1a?format=png&name=386x202",
+              "width": 386
+            }
+          }
+        },
+        {
+          "key": "summary_photo_image_large",
+          "value": {
+            "image_value": {
+              "height": 419,
+              "url": "https://pbs.twimg.com/card_img/2051545510138548224/LwrOXs1a?format=png&name=800x419",
+              "width": 800
+            }
+          }
+        },
+        {
+          "key": "thumbnail_image_small",
+          "value": {
+            "image_value": {
+              "height": 75,
+              "url": "https://pbs.twimg.com/card_img/2051545510138548224/LwrOXs1a?format=png&name=100x100",
+              "width": 100
+            }
+          }
+        },
+        {
+          "key": "creator",
+          "value": {
+            "user_value": {
+              "id_str": "3307383972",
+              "path": []
+            }
+          }
+        },
+        {
+          "key": "thumbnail_image_x_large",
+          "value": {
+            "image_value": {
+              "height": 600,
+              "url": "https://pbs.twimg.com/card_img/2051545510138548224/LwrOXs1a?format=png&name=2048x2048_2_exp",
+              "width": 800
+            }
+          }
+        },
+        {
+          "key": "photo_image_full_size_original",
+          "value": {
+            "image_value": {
+              "height": 600,
+              "url": "https://pbs.twimg.com/card_img/2051545510138548224/LwrOXs1a?format=png&name=orig",
+              "width": 800
+            }
+          }
+        },
+        {
+          "key": "vanity_url",
+          "value": {
+            "scribe_key": "vanity_url",
+            "string_value": "gizguide.com"
+          }
+        },
+        {
+          "key": "photo_image_full_size",
+          "value": {
+            "image_value": {
+              "height": 314,
+              "url": "https://pbs.twimg.com/card_img/2051545510138548224/LwrOXs1a?format=png&name=600x314",
+              "width": 600
+            }
+          }
+        },
+        {
+          "key": "thumbnail_image_color",
+          "value": {
+            "image_color_value": {
+              "palette": [
+                {
+                  "percentage": 48.68,
+                  "rgb": {
+                    "blue": 85,
+                    "green": 56,
+                    "red": 48
+                  }
+                },
+                {
+                  "percentage": 21.21,
+                  "rgb": {
+                    "blue": 179,
+                    "green": 137,
+                    "red": 132
+                  }
+                },
+                {
+                  "percentage": 6.1,
+                  "rgb": {
+                    "blue": 129,
+                    "green": 57,
+                    "red": 48
+                  }
+                },
+                {
+                  "percentage": 5.55,
+                  "rgb": {
+                    "blue": 239,
+                    "green": 8,
+                    "red": 0
+                  }
+                },
+                {
+                  "percentage": 2.48,
+                  "rgb": {
+                    "blue": 169,
+                    "green": 48,
+                    "red": 41
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "key": "title",
+          "value": {
+            "string_value": "VinFast VF MPV 7 officially launched in the Philippines: 150kW electric motor, 450km range, and PHP..."
+          }
+        },
+        {
+          "key": "summary_photo_image_color",
+          "value": {
+            "image_color_value": {
+              "palette": [
+                {
+                  "percentage": 48.68,
+                  "rgb": {
+                    "blue": 85,
+                    "green": 56,
+                    "red": 48
+                  }
+                },
+                {
+                  "percentage": 21.21,
+                  "rgb": {
+                    "blue": 179,
+                    "green": 137,
+                    "red": 132
+                  }
+                },
+                {
+                  "percentage": 6.1,
+                  "rgb": {
+                    "blue": 129,
+                    "green": 57,
+                    "red": 48
+                  }
+                },
+                {
+                  "percentage": 5.55,
+                  "rgb": {
+                    "blue": 239,
+                    "green": 8,
+                    "red": 0
+                  }
+                },
+                {
+                  "percentage": 2.48,
+                  "rgb": {
+                    "blue": 169,
+                    "green": 48,
+                    "red": 41
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "key": "summary_photo_image_x_large",
+          "value": {
+            "image_value": {
+              "height": 600,
+              "url": "https://pbs.twimg.com/card_img/2051545510138548224/LwrOXs1a?format=png&name=2048x2048_2_exp",
+              "width": 800
+            }
+          }
+        },
+        {
+          "key": "summary_photo_image",
+          "value": {
+            "image_value": {
+              "height": 314,
+              "url": "https://pbs.twimg.com/card_img/2051545510138548224/LwrOXs1a?format=png&name=600x314",
+              "width": 600
+            }
+          }
+        },
+        {
+          "key": "photo_image_full_size_color",
+          "value": {
+            "image_color_value": {
+              "palette": [
+                {
+                  "percentage": 48.68,
+                  "rgb": {
+                    "blue": 85,
+                    "green": 56,
+                    "red": 48
+                  }
+                },
+                {
+                  "percentage": 21.21,
+                  "rgb": {
+                    "blue": 179,
+                    "green": 137,
+                    "red": 132
+                  }
+                },
+                {
+                  "percentage": 6.1,
+                  "rgb": {
+                    "blue": 129,
+                    "green": 57,
+                    "red": 48
+                  }
+                },
+                {
+                  "percentage": 5.55,
+                  "rgb": {
+                    "blue": 239,
+                    "green": 8,
+                    "red": 0
+                  }
+                },
+                {
+                  "percentage": 2.48,
+                  "rgb": {
+                    "blue": 169,
+                    "green": 48,
+                    "red": 41
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "key": "photo_image_full_size_x_large",
+          "value": {
+            "image_value": {
+              "height": 600,
+              "url": "https://pbs.twimg.com/card_img/2051545510138548224/LwrOXs1a?format=png&name=2048x2048_2_exp",
+              "width": 800
+            }
+          }
+        },
+        {
+          "key": "card_url",
+          "value": {
+            "scribe_key": "card_url",
+            "string_value": "https://t.co/QzYuxCIadh"
+          }
+        },
+        {
+          "key": "summary_photo_image_original",
+          "value": {
+            "image_value": {
+              "height": 600,
+              "url": "https://pbs.twimg.com/card_img/2051545510138548224/LwrOXs1a?format=png&name=orig",
+              "width": 800
+            }
+          }
+        }
+      ],
+      "card_platform": {
+        "platform": {
+          "audience": {
+            "name": "production"
+          },
+          "device": {
+            "name": "iPhone",
+            "version": "13"
+          }
+        }
+      },
+      "name": "summary_large_image",
+      "url": "https://t.co/QzYuxCIadh",
+      "user_refs_results": [
+        {
+          "rest_id": "3307383972",
+          "result": {
+            "__typename": "User",
+            "action_counts": {
+              "favorites_count": 233
+            },
+            "avatar": {
+              "image_url": "https://pbs.twimg.com/profile_images/629133286967635968/JT5sWCfR_normal.png"
+            },
+            "banner": {
+              "image_url": "https://pbs.twimg.com/profile_banners/3307383972/1772887475"
+            },
+            "core": {
+              "created_at": "Thu Aug 06 03:32:50 +0000 2015",
+              "name": "GIZGUIDEPH",
+              "screen_name": "GIZGUIDEPH"
+            },
+            "dm_permissions": {
+              "can_dm": false
+            },
+            "exclusive_tweet_following": false,
+            "follow_request_sent": false,
+            "identity_profile_labels_highlighted_label": {
+
+            },
+            "location": {
+              "location": "Republic of the Philippines"
+            },
+            "media_permissions": {
+              "can_media_tag": true
+            },
+            "notifications_settings": {
+              "notifications_enabled": false
+            },
+            "pinned_items": {
+
+            },
+            "privacy": {
+              "protected": false,
+              "suspended": false
+            },
+            "private_super_following": false,
+            "profile_bio": {
+              "description": "GIZGUIDE is one leading and most trusted technology websites that provides the latest news, gadget reviews, and tutorials in PH.\n\nWebsite: https://t.co/Xkxr7ZWTud",
+              "entities": {
+                "description": {
+                  "urls": [
+                    {
+                      "display_url": "gizguide.com",
+                      "expanded_url": "http://gizguide.com",
+                      "indices": [139, 162],
+                      "url": "https://t.co/Xkxr7ZWTud"
+                    }
+                  ]
+                },
+                "url": {
+                  "urls": [
+                    {
+                      "display_url": "gizguide.com",
+                      "expanded_url": "http://www.gizguide.com",
+                      "indices": [0, 23],
+                      "url": "https://t.co/8v4l3qaNsu"
+                    }
+                  ]
+                }
+              }
+            },
+            "profile_image_shape": "Circle",
+            "profile_metadata": {
+              "profile_interstitial_type": "",
+              "profile_link_color": "1DA1F2"
+            },
+            "profile_translation": {
+              "translator_type_enum": "None"
+            },
+            "properties": {
+              "has_extended_profile": true,
+              "has_no_screen_name": false
+            },
+            "relationship_counts": {
+              "followers": 1579,
+              "following": 79
+            },
+            "relationship_perspectives": {
+              "blocked_by": false,
+              "blocking": false,
+              "followed_by": false,
+              "following": false,
+              "live_following": false,
+              "muting": false
+            },
+            "rest_id": "3307383972",
+            "smart_blocked_by": false,
+            "smart_blocking": false,
+            "super_follow_eligible": false,
+            "super_followed_by": false,
+            "super_following": false,
+            "tweet_counts": {
+              "media_tweets": 1943,
+              "tweets": 30093
+            },
+            "verification": {
+              "is_blue_verified": false,
+              "verified": false
+            },
+            "website": {
+              "url": "https://t.co/8v4l3qaNsu"
+            }
+          }
+        },
+        {
+          "rest_id": "3307383972",
+          "result": {
+            "__typename": "User",
+            "action_counts": {
+              "favorites_count": 233
+            },
+            "avatar": {
+              "image_url": "https://pbs.twimg.com/profile_images/629133286967635968/JT5sWCfR_normal.png"
+            },
+            "banner": {
+              "image_url": "https://pbs.twimg.com/profile_banners/3307383972/1772887475"
+            },
+            "core": {
+              "created_at": "Thu Aug 06 03:32:50 +0000 2015",
+              "name": "GIZGUIDEPH",
+              "screen_name": "GIZGUIDEPH"
+            },
+            "dm_permissions": {
+              "can_dm": false
+            },
+            "exclusive_tweet_following": false,
+            "follow_request_sent": false,
+            "identity_profile_labels_highlighted_label": {
+
+            },
+            "location": {
+              "location": "Republic of the Philippines"
+            },
+            "media_permissions": {
+              "can_media_tag": true
+            },
+            "notifications_settings": {
+              "notifications_enabled": false
+            },
+            "pinned_items": {
+
+            },
+            "privacy": {
+              "protected": false,
+              "suspended": false
+            },
+            "private_super_following": false,
+            "profile_bio": {
+              "description": "GIZGUIDE is one leading and most trusted technology websites that provides the latest news, gadget reviews, and tutorials in PH.\n\nWebsite: https://t.co/Xkxr7ZWTud",
+              "entities": {
+                "description": {
+                  "urls": [
+                    {
+                      "display_url": "gizguide.com",
+                      "expanded_url": "http://gizguide.com",
+                      "indices": [139, 162],
+                      "url": "https://t.co/Xkxr7ZWTud"
+                    }
+                  ]
+                },
+                "url": {
+                  "urls": [
+                    {
+                      "display_url": "gizguide.com",
+                      "expanded_url": "http://www.gizguide.com",
+                      "indices": [0, 23],
+                      "url": "https://t.co/8v4l3qaNsu"
+                    }
+                  ]
+                }
+              }
+            },
+            "profile_image_shape": "Circle",
+            "profile_metadata": {
+              "profile_interstitial_type": "",
+              "profile_link_color": "1DA1F2"
+            },
+            "profile_translation": {
+              "translator_type_enum": "None"
+            },
+            "properties": {
+              "has_extended_profile": true,
+              "has_no_screen_name": false
+            },
+            "relationship_counts": {
+              "followers": 1579,
+              "following": 79
+            },
+            "relationship_perspectives": {
+              "blocked_by": false,
+              "blocking": false,
+              "followed_by": false,
+              "following": false,
+              "live_following": false,
+              "muting": false
+            },
+            "rest_id": "3307383972",
+            "smart_blocked_by": false,
+            "smart_blocking": false,
+            "super_follow_eligible": false,
+            "super_followed_by": false,
+            "super_following": false,
+            "tweet_counts": {
+              "media_tweets": 1943,
+              "tweets": 30093
+            },
+            "verification": {
+              "is_blue_verified": false,
+              "verified": false
+            },
+            "website": {
+              "url": "https://t.co/8v4l3qaNsu"
+            }
+          }
+        }
+      ]
+    },
+    "place": {
+
+    },
+    "entities": {
+      "hashtags": [
+        {
+          "indices": [4, 12],
+          "text": "VinFast"
+        },
+        {
+          "indices": [151, 162],
+          "text": "GIZGUIDEPH"
+        }
+      ],
+      "symbols": [],
+      "timestamps": [],
+      "urls": [
+        {
+          "display_url": "gizguide.com/2026/05/vinfas…",
+          "expanded_url": "https://www.gizguide.com/2026/05/vinfast-vf-mpv-7-ph-price.html",
+          "indices": [126, 149],
+          "url": "https://t.co/QzYuxCIadh"
+        }
+      ],
+      "user_mentions": []
+    },
+    "quoted_tweet": null,
+    "retweeted_tweet": null,
+    "isLimitedReply": false,
+    "communityInfo": null,
+    "article": null,
+    "ingestion_date": "2026-05-06T04:29:04Z"
+  },
+  {
+    "type": "tweet",
+    "id": "2051526491633234424",
+    "url": "https://x.com/PHLogistic69934/status/2051526491633234424",
+    "twitterUrl": "https://twitter.com/PHLogistic69934/status/2051526491633234424",
+    "text": "VinFast claims leadership in battery EVs in PH; new chief Franco vows to continue momentum started by Zara\nhttps://t.co/Bcj6wysrvy",
+    "source": "Twitter for iPhone",
+    "retweetCount": 0,
+    "replyCount": 0,
+    "likeCount": 0,
+    "quoteCount": 0,
+    "viewCount": 11,
+    "createdAt": "Tue May 05 04:56:45 +0000 2026",
+    "lang": "en",
+    "bookmarkCount": 0,
+    "isReply": false,
+    "inReplyToId": null,
+    "conversationId": "2051526491633234424",
+    "displayTextRange": [0, 130],
+    "inReplyToUserId": null,
+    "inReplyToUsername": null,
+    "author": {
+      "type": "user",
+      "userName": "PHLogistic69934",
+      "url": "https://x.com/PHLogistic69934",
+      "twitterUrl": "https://twitter.com/PHLogistic69934",
+      "id": "1868516107713478656",
+      "name": "Logistics News PH",
+      "isVerified": false,
+      "isBlueVerified": false,
+      "verifiedType": null,
+      "profilePicture": "https://pbs.twimg.com/profile_images/1882438886720450560/yOJWXErQ_normal.jpg",
+      "coverPicture": "https://pbs.twimg.com/profile_banners/1868516107713478656/1738121906",
+      "description": "",
+      "location": "",
+      "followers": 22,
+      "following": 13,
+      "status": "",
+      "canDm": false,
+      "canMediaTag": true,
+      "createdAt": "Mon Dec 16 04:39:03 +0000 2024",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+
+        }
+      },
+      "fastFollowersCount": 0,
+      "favouritesCount": 4,
+      "hasCustomTimelines": true,
+      "isTranslator": false,
+      "mediaCount": 5539,
+      "statusesCount": 6183,
+      "withheldInCountries": [],
+      "affiliatesHighlightedLabel": {
+
+      },
+      "possiblySensitive": false,
+      "pinnedTweetIds": [],
+      "profile_bio": {
+        "description": "https://t.co/GpEgjhBk5J is an endeavor founded on the vision that trade can be better. It publishes news related to logistics, mobility, and supply chain.",
+        "entities": {
+          "description": {
+            "urls": [
+              {
+                "display_url": "Logisticsnews.ph",
+                "expanded_url": "http://Logisticsnews.ph",
+                "indices": [0, 23],
+                "url": "https://t.co/GpEgjhBk5J"
+              }
+            ]
+          },
+          "url": {
+            "urls": [
+              {
+                "display_url": "Logisticsnews.ph",
+                "expanded_url": "http://Logisticsnews.ph",
+                "indices": [0, 23],
+                "url": "https://t.co/GpEgjhBk5J"
+              }
+            ]
+          }
+        }
+      },
+      "isAutomated": false,
+      "automatedBy": null
+    },
+    "extendedEntities": {
+
+    },
+    "card": {
+      "binding_values": [
+        {
+          "key": "thumbnail_image",
+          "value": {
+            "image_value": {
+              "height": 144,
+              "url": "https://pbs.twimg.com/card_img/2051476656163115009/apdTyRkq?format=jpg&name=144x144_2",
+              "width": 144
+            }
+          }
+        },
+        {
+          "key": "description",
+          "value": {
+            "string_value": "Newly appointed VinFast Philippines President Rhomel Franco vowed to continue the growth momentum built by his predecessor, Antonio “Toti” Zara III, as the number one battery electric vehicle (BEV)..."
+          }
+        },
+        {
+          "key": "domain",
+          "value": {
+            "string_value": "logisticsnews.ph"
+          }
+        },
+        {
+          "key": "thumbnail_image_large",
+          "value": {
+            "image_value": {
+              "height": 420,
+              "url": "https://pbs.twimg.com/card_img/2051476656163115009/apdTyRkq?format=jpg&name=420x420_2",
+              "width": 420
+            }
+          }
+        },
+        {
+          "key": "thumbnail_image_original",
+          "value": {
+            "image_value": {
+              "height": 640,
+              "url": "https://pbs.twimg.com/card_img/2051476656163115009/apdTyRkq?format=jpg&name=orig",
+              "width": 480
+            }
+          }
+        },
+        {
+          "key": "thumbnail_image_small",
+          "value": {
+            "image_value": {
+              "height": 100,
+              "url": "https://pbs.twimg.com/card_img/2051476656163115009/apdTyRkq?format=jpg&name=100x100_2",
+              "width": 100
+            }
+          }
+        },
+        {
+          "key": "thumbnail_image_x_large",
+          "value": {
+            "image_value": {
+              "height": 640,
+              "url": "https://pbs.twimg.com/card_img/2051476656163115009/apdTyRkq?format=png&name=2048x2048_2_exp",
+              "width": 480
+            }
+          }
+        },
+        {
+          "key": "vanity_url",
+          "value": {
+            "scribe_key": "vanity_url",
+            "string_value": "logisticsnews.ph"
+          }
+        },
+        {
+          "key": "thumbnail_image_color",
+          "value": {
+            "image_color_value": {
+              "palette": [
+                {
+                  "percentage": 57.06,
+                  "rgb": {
+                    "blue": 87,
+                    "green": 73,
+                    "red": 71
+                  }
+                },
+                {
+                  "percentage": 17.58,
+                  "rgb": {
+                    "blue": 150,
+                    "green": 169,
+                    "red": 188
+                  }
+                },
+                {
+                  "percentage": 8.39,
+                  "rgb": {
+                    "blue": 99,
+                    "green": 115,
+                    "red": 138
+                  }
+                },
+                {
+                  "percentage": 5.9,
+                  "rgb": {
+                    "blue": 134,
+                    "green": 163,
+                    "red": 201
+                  }
+                },
+                {
+                  "percentage": 1.94,
+                  "rgb": {
+                    "blue": 211,
+                    "green": 190,
+                    "red": 193
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "key": "title",
+          "value": {
+            "string_value": "VinFast claims leadership in battery EVs in PH; new chief Franco vows to continue momentum started..."
+          }
+        },
+        {
+          "key": "card_url",
+          "value": {
+            "scribe_key": "card_url",
+            "string_value": "https://t.co/Bcj6wysrvy"
+          }
+        }
+      ],
+      "card_platform": {
+        "platform": {
+          "audience": {
+            "name": "production"
+          },
+          "device": {
+            "name": "iPhone",
+            "version": "13"
+          }
+        }
+      },
+      "name": "summary",
+      "url": "https://t.co/Bcj6wysrvy",
+      "user_refs_results": []
+    },
+    "place": {
+
+    },
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "timestamps": [],
+      "urls": [
+        {
+          "display_url": "logisticsnews.ph/2026/05/05/vin…",
+          "expanded_url": "https://logisticsnews.ph/2026/05/05/vinfast-claims-leadership-in-battery-evs-in-ph-new-chief-franco-vows-to-continue-momentum-started-by-zara",
+          "indices": [107, 130],
+          "url": "https://t.co/Bcj6wysrvy"
+        }
+      ],
+      "user_mentions": []
+    },
+    "quoted_tweet": null,
+    "retweeted_tweet": null,
+    "isLimitedReply": false,
+    "communityInfo": null,
+    "article": null,
+    "ingestion_date": "2026-05-06T04:29:04Z"
+  },
+  {
+    "type": "tweet",
+    "id": "2051509583399772429",
+    "url": "https://x.com/Mayur_Somsole/status/2051509583399772429",
+    "twitterUrl": "https://twitter.com/Mayur_Somsole/status/2051509583399772429",
+    "text": "@vs62187383 @ShivrattanDhil1 it isnt that buying an ev is a scam in india, it just that buying indian ev is a scam in india. indian products are outright dogshit. its better to buy byd or mg or vinfast. they are the best",
+    "source": "Twitter for iPhone",
+    "retweetCount": 0,
+    "replyCount": 0,
+    "likeCount": 0,
+    "quoteCount": 0,
+    "viewCount": 39,
+    "createdAt": "Tue May 05 03:49:34 +0000 2026",
+    "lang": "en",
+    "bookmarkCount": 0,
+    "isReply": true,
+    "inReplyToId": "2051507270782210180",
+    "conversationId": "2051499686524060085",
+    "displayTextRange": [29, 220],
+    "inReplyToUserId": "1535688018803171329",
+    "inReplyToUsername": "vs62187383",
+    "author": {
+      "type": "user",
+      "userName": "Mayur_Somsole",
+      "url": "https://x.com/Mayur_Somsole",
+      "twitterUrl": "https://twitter.com/Mayur_Somsole",
+      "id": "1528082665378705408",
+      "name": "🐊",
+      "isVerified": false,
+      "isBlueVerified": false,
+      "verifiedType": null,
+      "profilePicture": "https://pbs.twimg.com/profile_images/1966308579461439488/BhFF436A_normal.jpg",
+      "coverPicture": "",
+      "description": "",
+      "location": "",
+      "followers": 1,
+      "following": 167,
+      "status": "",
+      "canDm": true,
+      "canMediaTag": true,
+      "createdAt": "Sat May 21 18:38:04 +0000 2022",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+
+        }
+      },
+      "fastFollowersCount": 0,
+      "favouritesCount": 2292,
+      "hasCustomTimelines": true,
+      "isTranslator": false,
+      "mediaCount": 5,
+      "statusesCount": 75,
+      "withheldInCountries": [],
+      "affiliatesHighlightedLabel": {
+
+      },
+      "possiblySensitive": false,
+      "pinnedTweetIds": [],
+      "profile_bio": {
+        "description": "",
+        "entities": {
+          "description": {
+
+          }
+        }
+      },
+      "isAutomated": false,
+      "automatedBy": null
+    },
+    "extendedEntities": {
+
+    },
+    "card": null,
+    "place": {
+
+    },
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "timestamps": [],
+      "urls": [],
+      "user_mentions": [
+        {
+          "id_str": "1535688018803171329",
+          "indices": [0, 11],
+          "name": "vs",
+          "screen_name": "vs62187383"
+        },
+        {
+          "id_str": "1335276606089166849",
+          "indices": [12, 28],
+          "name": "Rattan Dhillon",
+          "screen_name": "ShivrattanDhil1"
+        }
+      ]
+    },
+    "quoted_tweet": null,
+    "retweeted_tweet": null,
+    "isLimitedReply": false,
+    "communityInfo": null,
+    "article": null,
+    "ingestion_date": "2026-05-06T04:29:04Z"
+  },
+  {
+    "type": "tweet",
+    "id": "2051476780775817542",
+    "url": "https://x.com/PHLogistic69934/status/2051476780775817542",
+    "twitterUrl": "https://twitter.com/PHLogistic69934/status/2051476780775817542",
+    "text": "VinFast leads PH’s battery EV market\n\nhttps://t.co/zgH314qRtN",
+    "source": "Twitter for iPhone",
+    "retweetCount": 0,
+    "replyCount": 0,
+    "likeCount": 0,
+    "quoteCount": 0,
+    "viewCount": 7,
+    "createdAt": "Tue May 05 01:39:13 +0000 2026",
+    "lang": "en",
+    "bookmarkCount": 0,
+    "isReply": false,
+    "inReplyToId": null,
+    "conversationId": "2051476780775817542",
+    "displayTextRange": [0, 61],
+    "inReplyToUserId": null,
+    "inReplyToUsername": null,
+    "author": {
+      "type": "user",
+      "userName": "PHLogistic69934",
+      "url": "https://x.com/PHLogistic69934",
+      "twitterUrl": "https://twitter.com/PHLogistic69934",
+      "id": "1868516107713478656",
+      "name": "Logistics News PH",
+      "isVerified": false,
+      "isBlueVerified": false,
+      "verifiedType": null,
+      "profilePicture": "https://pbs.twimg.com/profile_images/1882438886720450560/yOJWXErQ_normal.jpg",
+      "coverPicture": "https://pbs.twimg.com/profile_banners/1868516107713478656/1738121906",
+      "description": "",
+      "location": "",
+      "followers": 22,
+      "following": 13,
+      "status": "",
+      "canDm": false,
+      "canMediaTag": true,
+      "createdAt": "Mon Dec 16 04:39:03 +0000 2024",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+
+        }
+      },
+      "fastFollowersCount": 0,
+      "favouritesCount": 4,
+      "hasCustomTimelines": true,
+      "isTranslator": false,
+      "mediaCount": 5539,
+      "statusesCount": 6183,
+      "withheldInCountries": [],
+      "affiliatesHighlightedLabel": {
+
+      },
+      "possiblySensitive": false,
+      "pinnedTweetIds": [],
+      "profile_bio": {
+        "description": "https://t.co/GpEgjhBk5J is an endeavor founded on the vision that trade can be better. It publishes news related to logistics, mobility, and supply chain.",
+        "entities": {
+          "description": {
+            "urls": [
+              {
+                "display_url": "Logisticsnews.ph",
+                "expanded_url": "http://Logisticsnews.ph",
+                "indices": [0, 23],
+                "url": "https://t.co/GpEgjhBk5J"
+              }
+            ]
+          },
+          "url": {
+            "urls": [
+              {
+                "display_url": "Logisticsnews.ph",
+                "expanded_url": "http://Logisticsnews.ph",
+                "indices": [0, 23],
+                "url": "https://t.co/GpEgjhBk5J"
+              }
+            ]
+          }
+        }
+      },
+      "isAutomated": false,
+      "automatedBy": null
+    },
+    "extendedEntities": {
+
+    },
+    "card": {
+      "binding_values": [
+        {
+          "key": "thumbnail_image",
+          "value": {
+            "image_value": {
+              "height": 144,
+              "url": "https://pbs.twimg.com/card_img/2051476656163115009/apdTyRkq?format=jpg&name=144x144_2",
+              "width": 144
+            }
+          }
+        },
+        {
+          "key": "description",
+          "value": {
+            "string_value": "Newly appointed VinFast Philippines President Rhomel Franco vowed to continue the growth momentum built by his predecessor, Antonio “Toti” Zara III, as the number one battery electric vehicle (BEV)..."
+          }
+        },
+        {
+          "key": "domain",
+          "value": {
+            "string_value": "logisticsnews.ph"
+          }
+        },
+        {
+          "key": "thumbnail_image_large",
+          "value": {
+            "image_value": {
+              "height": 420,
+              "url": "https://pbs.twimg.com/card_img/2051476656163115009/apdTyRkq?format=jpg&name=420x420_2",
+              "width": 420
+            }
+          }
+        },
+        {
+          "key": "thumbnail_image_original",
+          "value": {
+            "image_value": {
+              "height": 640,
+              "url": "https://pbs.twimg.com/card_img/2051476656163115009/apdTyRkq?format=jpg&name=orig",
+              "width": 480
+            }
+          }
+        },
+        {
+          "key": "thumbnail_image_small",
+          "value": {
+            "image_value": {
+              "height": 100,
+              "url": "https://pbs.twimg.com/card_img/2051476656163115009/apdTyRkq?format=jpg&name=100x100_2",
+              "width": 100
+            }
+          }
+        },
+        {
+          "key": "thumbnail_image_x_large",
+          "value": {
+            "image_value": {
+              "height": 640,
+              "url": "https://pbs.twimg.com/card_img/2051476656163115009/apdTyRkq?format=png&name=2048x2048_2_exp",
+              "width": 480
+            }
+          }
+        },
+        {
+          "key": "vanity_url",
+          "value": {
+            "scribe_key": "vanity_url",
+            "string_value": "logisticsnews.ph"
+          }
+        },
+        {
+          "key": "thumbnail_image_color",
+          "value": {
+            "image_color_value": {
+              "palette": [
+                {
+                  "percentage": 57.06,
+                  "rgb": {
+                    "blue": 87,
+                    "green": 73,
+                    "red": 71
+                  }
+                },
+                {
+                  "percentage": 17.58,
+                  "rgb": {
+                    "blue": 150,
+                    "green": 169,
+                    "red": 188
+                  }
+                },
+                {
+                  "percentage": 8.39,
+                  "rgb": {
+                    "blue": 99,
+                    "green": 115,
+                    "red": 138
+                  }
+                },
+                {
+                  "percentage": 5.9,
+                  "rgb": {
+                    "blue": 134,
+                    "green": 163,
+                    "red": 201
+                  }
+                },
+                {
+                  "percentage": 1.94,
+                  "rgb": {
+                    "blue": 211,
+                    "green": 190,
+                    "red": 193
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "key": "title",
+          "value": {
+            "string_value": "VinFast claims leadership in battery EVs in PH; new chief Franco vows to continue momentum started..."
+          }
+        },
+        {
+          "key": "card_url",
+          "value": {
+            "scribe_key": "card_url",
+            "string_value": "https://t.co/zgH314qRtN"
+          }
+        }
+      ],
+      "card_platform": {
+        "platform": {
+          "audience": {
+            "name": "production"
+          },
+          "device": {
+            "name": "iPhone",
+            "version": "13"
+          }
+        }
+      },
+      "name": "summary",
+      "url": "https://t.co/zgH314qRtN",
+      "user_refs_results": []
+    },
+    "place": {
+
+    },
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "timestamps": [],
+      "urls": [
+        {
+          "display_url": "logisticsnews.ph/2026/05/05/vin…",
+          "expanded_url": "https://logisticsnews.ph/2026/05/05/vinfast-claims-leadership-in-battery-evs-in-ph-new-chief-franco-vows-to-continue-momentum-started-by-zara/",
+          "indices": [38, 61],
+          "url": "https://t.co/zgH314qRtN"
+        }
+      ],
+      "user_mentions": []
+    },
+    "quoted_tweet": null,
+    "retweeted_tweet": null,
+    "isLimitedReply": false,
+    "communityInfo": null,
+    "article": null,
+    "ingestion_date": "2026-05-06T04:29:04Z"
+  },
+  {
+    "type": "tweet",
+    "id": "2051476658159534101",
+    "url": "https://x.com/BernadetteMagki/status/2051476658159534101",
+    "twitterUrl": "https://twitter.com/BernadetteMagki/status/2051476658159534101",
+    "text": "VinFast leads PH’s battery EV market\n\nhttps://t.co/w0XEeWyKGd",
+    "source": "Twitter for iPhone",
+    "retweetCount": 0,
+    "replyCount": 0,
+    "likeCount": 0,
+    "quoteCount": 0,
+    "viewCount": 11,
+    "createdAt": "Tue May 05 01:38:44 +0000 2026",
+    "lang": "en",
+    "bookmarkCount": 0,
+    "isReply": false,
+    "inReplyToId": null,
+    "conversationId": "2051476658159534101",
+    "displayTextRange": [0, 61],
+    "inReplyToUserId": null,
+    "inReplyToUsername": null,
+    "author": {
+      "type": "user",
+      "userName": "BernadetteMagki",
+      "url": "https://x.com/BernadetteMagki",
+      "twitterUrl": "https://twitter.com/BernadetteMagki",
+      "id": "390140443",
+      "name": "BerniCahilesMagkilat",
+      "isVerified": false,
+      "isBlueVerified": false,
+      "verifiedType": null,
+      "profilePicture": "https://pbs.twimg.com/profile_images/378800000169163111/01bb5e73154731750300d43b0d7dc9dd_normal.jpeg",
+      "coverPicture": "https://pbs.twimg.com/profile_banners/390140443/1734319342",
+      "description": "",
+      "location": "Manila",
+      "followers": 807,
+      "following": 418,
+      "status": "",
+      "canDm": false,
+      "canMediaTag": false,
+      "createdAt": "Thu Oct 13 14:36:38 +0000 2011",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+
+        }
+      },
+      "fastFollowersCount": 0,
+      "favouritesCount": 272,
+      "hasCustomTimelines": true,
+      "isTranslator": false,
+      "mediaCount": 1727,
+      "statusesCount": 3112,
+      "withheldInCountries": [],
+      "affiliatesHighlightedLabel": {
+
+      },
+      "possiblySensitive": false,
+      "pinnedTweetIds": [],
+      "profile_bio": {
+        "description": "Business journalist",
+        "entities": {
+          "description": {
+
+          }
+        }
+      },
+      "isAutomated": false,
+      "automatedBy": null
+    },
+    "extendedEntities": {
+
+    },
+    "card": {
+      "binding_values": [
+        {
+          "key": "thumbnail_image",
+          "value": {
+            "image_value": {
+              "height": 144,
+              "url": "https://pbs.twimg.com/card_img/2051476656163115009/apdTyRkq?format=jpg&name=144x144_2",
+              "width": 144
+            }
+          }
+        },
+        {
+          "key": "description",
+          "value": {
+            "string_value": "Newly appointed VinFast Philippines President Rhomel Franco vowed to continue the growth momentum built by his predecessor, Antonio “Toti” Zara III, as the number one battery electric vehicle (BEV)..."
+          }
+        },
+        {
+          "key": "domain",
+          "value": {
+            "string_value": "logisticsnews.ph"
+          }
+        },
+        {
+          "key": "thumbnail_image_large",
+          "value": {
+            "image_value": {
+              "height": 420,
+              "url": "https://pbs.twimg.com/card_img/2051476656163115009/apdTyRkq?format=jpg&name=420x420_2",
+              "width": 420
+            }
+          }
+        },
+        {
+          "key": "thumbnail_image_original",
+          "value": {
+            "image_value": {
+              "height": 640,
+              "url": "https://pbs.twimg.com/card_img/2051476656163115009/apdTyRkq?format=jpg&name=orig",
+              "width": 480
+            }
+          }
+        },
+        {
+          "key": "thumbnail_image_small",
+          "value": {
+            "image_value": {
+              "height": 100,
+              "url": "https://pbs.twimg.com/card_img/2051476656163115009/apdTyRkq?format=jpg&name=100x100_2",
+              "width": 100
+            }
+          }
+        },
+        {
+          "key": "thumbnail_image_x_large",
+          "value": {
+            "image_value": {
+              "height": 640,
+              "url": "https://pbs.twimg.com/card_img/2051476656163115009/apdTyRkq?format=png&name=2048x2048_2_exp",
+              "width": 480
+            }
+          }
+        },
+        {
+          "key": "vanity_url",
+          "value": {
+            "scribe_key": "vanity_url",
+            "string_value": "logisticsnews.ph"
+          }
+        },
+        {
+          "key": "thumbnail_image_color",
+          "value": {
+            "image_color_value": {
+              "palette": [
+                {
+                  "percentage": 57.06,
+                  "rgb": {
+                    "blue": 87,
+                    "green": 73,
+                    "red": 71
+                  }
+                },
+                {
+                  "percentage": 17.58,
+                  "rgb": {
+                    "blue": 150,
+                    "green": 169,
+                    "red": 188
+                  }
+                },
+                {
+                  "percentage": 8.39,
+                  "rgb": {
+                    "blue": 99,
+                    "green": 115,
+                    "red": 138
+                  }
+                },
+                {
+                  "percentage": 5.9,
+                  "rgb": {
+                    "blue": 134,
+                    "green": 163,
+                    "red": 201
+                  }
+                },
+                {
+                  "percentage": 1.94,
+                  "rgb": {
+                    "blue": 211,
+                    "green": 190,
+                    "red": 193
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "key": "title",
+          "value": {
+            "string_value": "VinFast claims leadership in battery EVs in PH; new chief Franco vows to continue momentum started..."
+          }
+        },
+        {
+          "key": "card_url",
+          "value": {
+            "scribe_key": "card_url",
+            "string_value": "https://t.co/w0XEeWyKGd"
+          }
+        }
+      ],
+      "card_platform": {
+        "platform": {
+          "audience": {
+            "name": "production"
+          },
+          "device": {
+            "name": "iPhone",
+            "version": "13"
+          }
+        }
+      },
+      "name": "summary",
+      "url": "https://t.co/w0XEeWyKGd",
+      "user_refs_results": []
+    },
+    "place": {
+
+    },
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "timestamps": [],
+      "urls": [
+        {
+          "display_url": "logisticsnews.ph/2026/05/05/vin…",
+          "expanded_url": "https://logisticsnews.ph/2026/05/05/vinfast-claims-leadership-in-battery-evs-in-ph-new-chief-franco-vows-to-continue-momentum-started-by-zara/",
+          "indices": [38, 61],
+          "url": "https://t.co/w0XEeWyKGd"
+        }
+      ],
+      "user_mentions": []
+    },
+    "quoted_tweet": null,
+    "retweeted_tweet": null,
+    "isLimitedReply": false,
+    "communityInfo": null,
+    "article": null,
+    "ingestion_date": "2026-05-06T04:29:04Z"
+  },
+  {
+    "type": "tweet",
+    "id": "2051455924033003876",
+    "url": "https://x.com/prasad_jati/status/2051455924033003876",
+    "twitterUrl": "https://twitter.com/prasad_jati/status/2051455924033003876",
+    "text": "I hv to pay 1.5l more coz  1st vehicle n 1st choice of my life ll b vinfast???\nIf there is such inequalities I think i should go for tata nexon or curve ev. Thank you for ur intellect and business management .",
+    "source": "Twitter for iPhone",
+    "retweetCount": 0,
+    "replyCount": 0,
+    "likeCount": 0,
+    "quoteCount": 0,
+    "viewCount": 21,
+    "createdAt": "Tue May 05 00:16:21 +0000 2026",
+    "lang": "en",
+    "bookmarkCount": 0,
+    "isReply": true,
+    "inReplyToId": "2051455068860461206",
+    "conversationId": "2051455068860461206",
+    "displayTextRange": [0, 209],
+    "inReplyToUserId": "1977331558433337344",
+    "inReplyToUsername": "prasad_jati",
+    "author": {
+      "type": "user",
+      "userName": "prasad_jati",
+      "url": "https://x.com/prasad_jati",
+      "twitterUrl": "https://twitter.com/prasad_jati",
+      "id": "1977331558433337344",
+      "name": "JP",
+      "isVerified": false,
+      "isBlueVerified": false,
+      "verifiedType": null,
+      "profilePicture": "https://pbs.twimg.com/profile_images/1977331862335795200/CoBIw8SM_normal.jpg",
+      "coverPicture": "",
+      "description": "",
+      "location": "",
+      "followers": 4,
+      "following": 6,
+      "status": "",
+      "canDm": false,
+      "canMediaTag": true,
+      "createdAt": "Sun Oct 12 11:12:46 +0000 2025",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+
+        }
+      },
+      "fastFollowersCount": 0,
+      "favouritesCount": 1696,
+      "hasCustomTimelines": true,
+      "isTranslator": false,
+      "mediaCount": 0,
+      "statusesCount": 278,
+      "withheldInCountries": [],
+      "affiliatesHighlightedLabel": {
+
+      },
+      "possiblySensitive": false,
+      "pinnedTweetIds": [],
+      "profile_bio": {
+        "description": "",
+        "entities": {
+          "description": {
+
+          }
+        }
+      },
+      "isAutomated": false,
+      "automatedBy": null
+    },
+    "extendedEntities": {
+
+    },
+    "card": null,
+    "place": {
+
+    },
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "timestamps": [],
+      "urls": [],
+      "user_mentions": []
+    },
+    "quoted_tweet": null,
+    "retweeted_tweet": null,
+    "isLimitedReply": false,
+    "communityInfo": null,
+    "article": null,
+    "ingestion_date": "2026-05-06T04:29:04Z"
+  },
+  {
+    "type": "tweet",
+    "id": "2051440485403619615",
+    "url": "https://x.com/contextdotph/status/2051440485403619615",
+    "twitterUrl": "https://twitter.com/contextdotph/status/2051440485403619615",
+    "text": "Determined to retain its lead as the Philippines’ top battery electric vehicle (BEV) brand, VinFast is pursuing a parallel ambition: becoming the country’s foremost provider of electric vehicle charging stations (EVCS).\n\nhttps://t.co/Py2xcgD955",
+    "source": "Twitter for iPhone",
+    "retweetCount": 0,
+    "replyCount": 0,
+    "likeCount": 0,
+    "quoteCount": 0,
+    "viewCount": 11,
+    "createdAt": "Mon May 04 23:15:00 +0000 2026",
+    "lang": "en",
+    "bookmarkCount": 0,
+    "isReply": false,
+    "inReplyToId": null,
+    "conversationId": "2051440485403619615",
+    "displayTextRange": [0, 244],
+    "inReplyToUserId": null,
+    "inReplyToUsername": null,
+    "author": {
+      "type": "user",
+      "userName": "contextdotph",
+      "url": "https://x.com/contextdotph",
+      "twitterUrl": "https://twitter.com/contextdotph",
+      "id": "1615328066129252354",
+      "name": "Context.ph",
+      "isVerified": false,
+      "isBlueVerified": false,
+      "verifiedType": null,
+      "profilePicture": "https://pbs.twimg.com/profile_images/1700985974594154496/BGxVLt3B_normal.jpg",
+      "coverPicture": "https://pbs.twimg.com/profile_banners/1615328066129252354/1674127278",
+      "description": "",
+      "location": "",
+      "followers": 81,
+      "following": 76,
+      "status": "",
+      "canDm": false,
+      "canMediaTag": true,
+      "createdAt": "Tue Jan 17 12:40:40 +0000 2023",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+
+        }
+      },
+      "fastFollowersCount": 0,
+      "favouritesCount": 0,
+      "hasCustomTimelines": true,
+      "isTranslator": false,
+      "mediaCount": 136,
+      "statusesCount": 12680,
+      "withheldInCountries": [],
+      "affiliatesHighlightedLabel": {
+
+      },
+      "possiblySensitive": false,
+      "pinnedTweetIds": [],
+      "profile_bio": {
+        "description": "https://t.co/sM8nasfjXB is a business news and features website based in the Philippines.",
+        "entities": {
+          "description": {
+            "urls": [
+              {
+                "display_url": "Context.ph",
+                "expanded_url": "http://Context.ph",
+                "indices": [0, 23],
+                "url": "https://t.co/sM8nasfjXB"
+              }
+            ]
+          }
+        }
+      },
+      "isAutomated": false,
+      "automatedBy": null
+    },
+    "extendedEntities": {
+
+    },
+    "card": {
+      "binding_values": [
+        {
+          "key": "photo_image_full_size_large",
+          "value": {
+            "image_value": {
+              "height": 370,
+              "url": "https://pbs.twimg.com/card_img/2051440489199542272/tKxOuo9z?format=jpg&name=800x419",
+              "width": 706
+            }
+          }
+        },
+        {
+          "key": "thumbnail_image",
+          "value": {
+            "image_value": {
+              "height": 150,
+              "url": "https://pbs.twimg.com/card_img/2051440489199542272/tKxOuo9z?format=jpg&name=280x150",
+              "width": 267
+            }
+          }
+        },
+        {
+          "key": "description",
+          "value": {
+            "string_value": "Determined to retain its lead as the Philippines’ top battery electric vehicle (BEV) brand, VinFast is pursuing a parallel ambition: becoming the country’s foremost provider of electric vehicle..."
+          }
+        },
+        {
+          "key": "domain",
+          "value": {
+            "string_value": "context.ph"
+          }
+        },
+        {
+          "key": "thumbnail_image_large",
+          "value": {
+            "image_value": {
+              "height": 320,
+              "url": "https://pbs.twimg.com/card_img/2051440489199542272/tKxOuo9z?format=jpg&name=800x320_1",
+              "width": 569
+            }
+          }
+        },
+        {
+          "key": "summary_photo_image_small",
+          "value": {
+            "image_value": {
+              "height": 202,
+              "url": "https://pbs.twimg.com/card_img/2051440489199542272/tKxOuo9z?format=jpg&name=386x202",
+              "width": 386
+            }
+          }
+        },
+        {
+          "key": "thumbnail_image_original",
+          "value": {
+            "image_value": {
+              "height": 397,
+              "url": "https://pbs.twimg.com/card_img/2051440489199542272/tKxOuo9z?format=jpg&name=orig",
+              "width": 706
+            }
+          }
+        },
+        {
+          "key": "photo_image_full_size_small",
+          "value": {
+            "image_value": {
+              "height": 202,
+              "url": "https://pbs.twimg.com/card_img/2051440489199542272/tKxOuo9z?format=jpg&name=386x202",
+              "width": 386
+            }
+          }
+        },
+        {
+          "key": "summary_photo_image_large",
+          "value": {
+            "image_value": {
+              "height": 370,
+              "url": "https://pbs.twimg.com/card_img/2051440489199542272/tKxOuo9z?format=jpg&name=800x419",
+              "width": 706
+            }
+          }
+        },
+        {
+          "key": "thumbnail_image_small",
+          "value": {
+            "image_value": {
+              "height": 81,
+              "url": "https://pbs.twimg.com/card_img/2051440489199542272/tKxOuo9z?format=jpg&name=144x144",
+              "width": 144
+            }
+          }
+        },
+        {
+          "key": "thumbnail_image_x_large",
+          "value": {
+            "image_value": {
+              "height": 397,
+              "url": "https://pbs.twimg.com/card_img/2051440489199542272/tKxOuo9z?format=png&name=2048x2048_2_exp",
+              "width": 706
+            }
+          }
+        },
+        {
+          "key": "photo_image_full_size_original",
+          "value": {
+            "image_value": {
+              "height": 397,
+              "url": "https://pbs.twimg.com/card_img/2051440489199542272/tKxOuo9z?format=jpg&name=orig",
+              "width": 706
+            }
+          }
+        },
+        {
+          "key": "vanity_url",
+          "value": {
+            "scribe_key": "vanity_url",
+            "string_value": "context.ph"
+          }
+        },
+        {
+          "key": "photo_image_full_size",
+          "value": {
+            "image_value": {
+              "height": 314,
+              "url": "https://pbs.twimg.com/card_img/2051440489199542272/tKxOuo9z?format=jpg&name=600x314",
+              "width": 600
+            }
+          }
+        },
+        {
+          "key": "thumbnail_image_color",
+          "value": {
+            "image_color_value": {
+              "palette": [
+                {
+                  "percentage": 29.59,
+                  "rgb": {
+                    "blue": 47,
+                    "green": 49,
+                    "red": 46
+                  }
+                },
+                {
+                  "percentage": 25.58,
+                  "rgb": {
+                    "blue": 217,
+                    "green": 173,
+                    "red": 170
+                  }
+                },
+                {
+                  "percentage": 13.11,
+                  "rgb": {
+                    "blue": 158,
+                    "green": 163,
+                    "red": 176
+                  }
+                },
+                {
+                  "percentage": 7.28,
+                  "rgb": {
+                    "blue": 55,
+                    "green": 31,
+                    "red": 25
+                  }
+                },
+                {
+                  "percentage": 3.83,
+                  "rgb": {
+                    "blue": 26,
+                    "green": 46,
+                    "red": 43
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "key": "title",
+          "value": {
+            "string_value": "VinFast pushes EV dominance as Philippines accelerates → Context.ph"
+          }
+        },
+        {
+          "key": "summary_photo_image_color",
+          "value": {
+            "image_color_value": {
+              "palette": [
+                {
+                  "percentage": 29.59,
+                  "rgb": {
+                    "blue": 47,
+                    "green": 49,
+                    "red": 46
+                  }
+                },
+                {
+                  "percentage": 25.58,
+                  "rgb": {
+                    "blue": 217,
+                    "green": 173,
+                    "red": 170
+                  }
+                },
+                {
+                  "percentage": 13.11,
+                  "rgb": {
+                    "blue": 158,
+                    "green": 163,
+                    "red": 176
+                  }
+                },
+                {
+                  "percentage": 7.28,
+                  "rgb": {
+                    "blue": 55,
+                    "green": 31,
+                    "red": 25
+                  }
+                },
+                {
+                  "percentage": 3.83,
+                  "rgb": {
+                    "blue": 26,
+                    "green": 46,
+                    "red": 43
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "key": "summary_photo_image_x_large",
+          "value": {
+            "image_value": {
+              "height": 397,
+              "url": "https://pbs.twimg.com/card_img/2051440489199542272/tKxOuo9z?format=png&name=2048x2048_2_exp",
+              "width": 706
+            }
+          }
+        },
+        {
+          "key": "summary_photo_image",
+          "value": {
+            "image_value": {
+              "height": 314,
+              "url": "https://pbs.twimg.com/card_img/2051440489199542272/tKxOuo9z?format=jpg&name=600x314",
+              "width": 600
+            }
+          }
+        },
+        {
+          "key": "photo_image_full_size_color",
+          "value": {
+            "image_color_value": {
+              "palette": [
+                {
+                  "percentage": 29.59,
+                  "rgb": {
+                    "blue": 47,
+                    "green": 49,
+                    "red": 46
+                  }
+                },
+                {
+                  "percentage": 25.58,
+                  "rgb": {
+                    "blue": 217,
+                    "green": 173,
+                    "red": 170
+                  }
+                },
+                {
+                  "percentage": 13.11,
+                  "rgb": {
+                    "blue": 158,
+                    "green": 163,
+                    "red": 176
+                  }
+                },
+                {
+                  "percentage": 7.28,
+                  "rgb": {
+                    "blue": 55,
+                    "green": 31,
+                    "red": 25
+                  }
+                },
+                {
+                  "percentage": 3.83,
+                  "rgb": {
+                    "blue": 26,
+                    "green": 46,
+                    "red": 43
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "key": "photo_image_full_size_x_large",
+          "value": {
+            "image_value": {
+              "height": 397,
+              "url": "https://pbs.twimg.com/card_img/2051440489199542272/tKxOuo9z?format=png&name=2048x2048_2_exp",
+              "width": 706
+            }
+          }
+        },
+        {
+          "key": "card_url",
+          "value": {
+            "scribe_key": "card_url",
+            "string_value": "https://t.co/Py2xcgD955"
+          }
+        },
+        {
+          "key": "summary_photo_image_original",
+          "value": {
+            "image_value": {
+              "height": 397,
+              "url": "https://pbs.twimg.com/card_img/2051440489199542272/tKxOuo9z?format=jpg&name=orig",
+              "width": 706
+            }
+          }
+        }
+      ],
+      "card_platform": {
+        "platform": {
+          "audience": {
+            "name": "production"
+          },
+          "device": {
+            "name": "iPhone",
+            "version": "13"
+          }
+        }
+      },
+      "name": "summary_large_image",
+      "url": "https://t.co/Py2xcgD955",
+      "user_refs_results": []
+    },
+    "place": {
+
+    },
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "timestamps": [],
+      "urls": [
+        {
+          "display_url": "context.ph/2026/05/05/vin…",
+          "expanded_url": "https://context.ph/2026/05/05/vinfast-pushes-ev-dominance-as-philippines-accelerates/",
+          "indices": [221, 244],
+          "url": "https://t.co/Py2xcgD955"
+        }
+      ],
+      "user_mentions": []
+    },
+    "quoted_tweet": null,
+    "retweeted_tweet": null,
+    "isLimitedReply": false,
+    "communityInfo": null,
+    "article": null,
+    "ingestion_date": "2026-05-06T04:29:04Z"
+  },
+  {
+    "type": "tweet",
+    "id": "2051321060474450055",
+    "url": "https://x.com/VinFastofficial/status/2051321060474450055",
+    "twitterUrl": "https://twitter.com/VinFastofficial/status/2051321060474450055",
+    "text": "More EVs on the road.\nMore drivers on the platform.\nMore momentum in Southeast Asia.\n\nGSM has launched the Green SM Platform in Indonesia and the Philippines, opening a new path for VinFast EV owners and renters to become service partners. The platform includes structured training, support for vehicle access through purchase and rental programs, and partner economics of up to 90% revenue share.\n\nThis is bigger than a platform launch.\n\nIt is another layer of ecosystem execution—built to expand green mobility while improving driver access and operating economics.\n\n#GSM #VinFast #Indonesia #Philippines #ElectricMobility #EV #VFS",
+    "source": "Twitter for iPhone",
+    "retweetCount": 0,
+    "replyCount": 1,
+    "likeCount": 5,
+    "quoteCount": 0,
+    "viewCount": 380,
+    "createdAt": "Mon May 04 15:20:27 +0000 2026",
+    "lang": "en",
+    "bookmarkCount": 0,
+    "isReply": false,
+    "inReplyToId": null,
+    "conversationId": "2051321060474450055",
+    "displayTextRange": [0, 272],
+    "inReplyToUserId": null,
+    "inReplyToUsername": null,
+    "author": {
+      "type": "user",
+      "userName": "VinFastofficial",
+      "url": "https://x.com/VinFastofficial",
+      "twitterUrl": "https://twitter.com/VinFastofficial",
+      "id": "1027952807679324161",
+      "name": "VinFast",
+      "isVerified": false,
+      "isBlueVerified": true,
+      "verifiedType": null,
+      "profilePicture": "https://pbs.twimg.com/profile_images/1384094789088342017/zAfAjgZy_normal.jpg",
+      "coverPicture": "https://pbs.twimg.com/profile_banners/1027952807679324161/1672713432",
+      "description": "",
+      "location": "Hanoi, Vietnam",
+      "followers": 12448,
+      "following": 17,
+      "status": "",
+      "canDm": false,
+      "canMediaTag": true,
+      "createdAt": "Fri Aug 10 16:20:22 +0000 2018",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+
+        }
+      },
+      "fastFollowersCount": 0,
+      "favouritesCount": 164,
+      "hasCustomTimelines": true,
+      "isTranslator": false,
+      "mediaCount": 450,
+      "statusesCount": 948,
+      "withheldInCountries": [],
+      "affiliatesHighlightedLabel": {
+
+      },
+      "possiblySensitive": false,
+      "pinnedTweetIds": [
+        "2046952485164814537"
+      ],
+      "profile_bio": {
+        "description": "VinFast is a global smart EV company advancing accessible, high-quality, and sustainable mobility worldwide.\nNasdaq-listed: $VFS",
+        "entities": {
+          "description": {
+            "symbols": [
+              {
+                "indices": [124, 128],
+                "text": "VFS"
+              }
+            ]
+          },
+          "url": {
+            "urls": [
+              {
+                "display_url": "vinfastauto.com",
+                "expanded_url": "https://vinfastauto.com",
+                "indices": [0, 23],
+                "url": "https://t.co/ulrnEqDcup"
+              }
+            ]
+          }
+        }
+      },
+      "isAutomated": false,
+      "automatedBy": null
+    },
+    "extendedEntities": {
+      "media": [
+        {
+          "display_url": "pic.twitter.com/hiBZC6pY8z",
+          "expanded_url": "https://twitter.com/VinFastofficial/status/2051321060474450055/photo/1",
+          "ext_media_availability": {
+            "status": "Available"
+          },
+          "features": {
+            "large": {
+              "faces": [
+                {
+                  "h": 80,
+                  "w": 80,
+                  "x": 1448,
+                  "y": 510
+                },
+                {
+                  "h": 74,
+                  "w": 74,
+                  "x": 1284,
+                  "y": 524
+                },
+                {
+                  "h": 74,
+                  "w": 74,
+                  "x": 546,
+                  "y": 566
+                },
+                {
+                  "h": 72,
+                  "w": 72,
+                  "x": 1096,
+                  "y": 568
+                },
+                {
+                  "h": 72,
+                  "w": 72,
+                  "x": 682,
+                  "y": 600
+                },
+                {
+                  "h": 396,
+                  "w": 396,
+                  "x": 1544,
+                  "y": 708
+                }
+              ]
+            },
+            "orig": {
+              "faces": [
+                {
+                  "h": 160,
+                  "w": 160,
+                  "x": 2896,
+                  "y": 1020
+                },
+                {
+                  "h": 148,
+                  "w": 148,
+                  "x": 2568,
+                  "y": 1048
+                },
+                {
+                  "h": 148,
+                  "w": 148,
+                  "x": 1092,
+                  "y": 1132
+                },
+                {
+                  "h": 144,
+                  "w": 144,
+                  "x": 2192,
+                  "y": 1136
+                },
+                {
+                  "h": 144,
+                  "w": 144,
+                  "x": 1364,
+                  "y": 1200
+                },
+                {
+                  "h": 792,
+                  "w": 792,
+                  "x": 3088,
+                  "y": 1416
+                }
+              ]
+            }
+          },
+          "id_str": "2051321053566394368",
+          "indices": [273, 296],
+          "media_key": "3_2051321053566394368",
+          "media_results": {
+            "id": "QXBpTWVkaWFSZXN1bHRzOgwAAQoAARx3waE+GuAACgACHHfBotnbcIcAAA==",
+            "result": {
+              "__typename": "ApiMedia",
+              "id": "QXBpTWVkaWE6DAABCgABHHfBoT4a4AAKAAIcd8Gi2dtwhwAA",
+              "media_key": "3_2051321053566394368"
+            }
+          },
+          "media_url_https": "https://pbs.twimg.com/media/HHfBoT4a4AAVlnj.jpg",
+          "original_info": {
+            "focus_rects": [
+              {
+                "h": 2294,
+                "w": 4096,
+                "x": 0,
+                "y": 389
+              },
+              {
+                "h": 2731,
+                "w": 2731,
+                "x": 375,
+                "y": 0
+              },
+              {
+                "h": 2731,
+                "w": 2396,
+                "x": 542,
+                "y": 0
+              },
+              {
+                "h": 2731,
+                "w": 1366,
+                "x": 1057,
+                "y": 0
+              },
+              {
+                "h": 2731,
+                "w": 4096,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "height": 2731,
+            "width": 4096
+          },
+          "sizes": {
+            "large": {
+              "h": 1366,
+              "w": 2048
+            }
+          },
+          "type": "photo",
+          "url": "https://t.co/hiBZC6pY8z"
+        },
+        {
+          "display_url": "pic.twitter.com/hiBZC6pY8z",
+          "expanded_url": "https://twitter.com/VinFastofficial/status/2051321060474450055/photo/1",
+          "ext_media_availability": {
+            "status": "Available"
+          },
+          "features": {
+            "large": {
+              "faces": []
+            },
+            "orig": {
+              "faces": []
+            }
+          },
+          "id_str": "2051321053566455808",
+          "indices": [273, 296],
+          "media_key": "3_2051321053566455808",
+          "media_results": {
+            "id": "QXBpTWVkaWFSZXN1bHRzOgwAAQoAARx3waE+G9AACgACHHfBotnbcIcAAA==",
+            "result": {
+              "__typename": "ApiMedia",
+              "id": "QXBpTWVkaWE6DAABCgABHHfBoT4b0AAKAAIcd8Gi2dtwhwAA",
+              "media_key": "3_2051321053566455808"
+            }
+          },
+          "media_url_https": "https://pbs.twimg.com/media/HHfBoT4b0AAUv-b.jpg",
+          "original_info": {
+            "focus_rects": [
+              {
+                "h": 1343,
+                "w": 2398,
+                "x": 0,
+                "y": 227
+              },
+              {
+                "h": 1580,
+                "w": 1580,
+                "x": 348,
+                "y": 0
+              },
+              {
+                "h": 1580,
+                "w": 1386,
+                "x": 445,
+                "y": 0
+              },
+              {
+                "h": 1580,
+                "w": 790,
+                "x": 743,
+                "y": 0
+              },
+              {
+                "h": 1580,
+                "w": 2398,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "height": 1580,
+            "width": 2398
+          },
+          "sizes": {
+            "large": {
+              "h": 1349,
+              "w": 2048
+            }
+          },
+          "type": "photo",
+          "url": "https://t.co/hiBZC6pY8z"
+        }
+      ]
+    },
+    "card": null,
+    "place": {
+
+    },
+    "entities": {
+      "hashtags": [
+        {
+          "indices": [569, 573],
+          "text": "GSM"
+        },
+        {
+          "indices": [574, 582],
+          "text": "VinFast"
+        },
+        {
+          "indices": [583, 593],
+          "text": "Indonesia"
+        },
+        {
+          "indices": [594, 606],
+          "text": "Philippines"
+        },
+        {
+          "indices": [607, 624],
+          "text": "ElectricMobility"
+        },
+        {
+          "indices": [625, 628],
+          "text": "EV"
+        },
+        {
+          "indices": [629, 633],
+          "text": "VFS"
+        }
+      ],
+      "symbols": [],
+      "urls": [],
+      "user_mentions": []
+    },
+    "quoted_tweet": null,
+    "retweeted_tweet": null,
+    "isLimitedReply": false,
+    "communityInfo": null,
+    "article": null,
+    "ingestion_date": "2026-05-06T04:29:04Z"
+  },
+  {
+    "type": "tweet",
+    "id": "2051214270810190012",
+    "url": "https://x.com/AUTOTODAYMAG/status/2051214270810190012",
+    "twitterUrl": "https://twitter.com/AUTOTODAYMAG/status/2051214270810190012",
+    "text": "[Vinfast MPV 7, Mercedes-Benz G450D, BMW M440i Convertible,  Royal Enfield Guerrilla 450, Flying Flea C6, Yamaha Aerox EV, Yamaha EC-06, Triumph 350, Kinetic DX ] https://t.co/bCDSZtCafr",
+    "source": "Twitter for iPhone",
+    "retweetCount": 0,
+    "replyCount": 0,
+    "likeCount": 0,
+    "quoteCount": 0,
+    "viewCount": 90,
+    "createdAt": "Mon May 04 08:16:06 +0000 2026",
+    "lang": "en",
+    "bookmarkCount": 0,
+    "isReply": true,
+    "inReplyToId": "2051214258650964390",
+    "conversationId": "2051214245455630553",
+    "displayTextRange": [0, 162],
+    "inReplyToUserId": "2318696720",
+    "inReplyToUsername": "AUTOTODAYMAG",
+    "author": {
+      "type": "user",
+      "userName": "AUTOTODAYMAG",
+      "url": "https://x.com/AUTOTODAYMAG",
+      "twitterUrl": "https://twitter.com/AUTOTODAYMAG",
+      "id": "2318696720",
+      "name": "AUTO TODAY",
+      "isVerified": false,
+      "isBlueVerified": false,
+      "verifiedType": null,
+      "profilePicture": "https://pbs.twimg.com/profile_images/1408459858009989120/Yj-M0oeI_normal.jpg",
+      "coverPicture": "https://pbs.twimg.com/profile_banners/2318696720/1732267961",
+      "description": "",
+      "location": "NOIDA, INDIA",
+      "followers": 11088,
+      "following": 119,
+      "status": "",
+      "canDm": false,
+      "canMediaTag": true,
+      "createdAt": "Thu Jan 30 11:00:06 +0000 2014",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+
+        }
+      },
+      "fastFollowersCount": 0,
+      "favouritesCount": 498,
+      "hasCustomTimelines": true,
+      "isTranslator": false,
+      "mediaCount": 11587,
+      "statusesCount": 22854,
+      "withheldInCountries": [],
+      "affiliatesHighlightedLabel": {
+
+      },
+      "possiblySensitive": false,
+      "pinnedTweetIds": [
+        "2051214245455630553"
+      ],
+      "profile_bio": {
+        "description": "Official handle of Auto Today Magazine (an @IndiaToday Group Publication) |  https://t.co/lRYnIb2cqn",
+        "entities": {
+          "description": {
+            "urls": [
+              {
+                "display_url": "youtube.com/@autotodayoffi…",
+                "expanded_url": "https://www.youtube.com/@autotodayofficial",
+                "indices": [77, 100],
+                "url": "https://t.co/lRYnIb2cqn"
+              }
+            ],
+            "user_mentions": [
+              {
+                "id_str": "",
+                "indices": [43, 54],
+                "name": "",
+                "screen_name": "IndiaToday"
+              }
+            ]
+          },
+          "url": {
+            "urls": [
+              {
+                "display_url": "linktr.ee/autotodaymag",
+                "expanded_url": "http://linktr.ee/autotodaymag",
+                "indices": [0, 23],
+                "url": "https://t.co/yWmOFonBWB"
+              }
+            ]
+          }
+        }
+      },
+      "isAutomated": false,
+      "automatedBy": null
+    },
+    "extendedEntities": {
+      "media": [
+        {
+          "display_url": "pic.twitter.com/bCDSZtCafr",
+          "expanded_url": "https://twitter.com/AUTOTODAYMAG/status/2051214270810190012/photo/1",
+          "ext_media_availability": {
+            "status": "Available"
+          },
+          "features": {
+            "large": {
+              "faces": [
+                {
+                  "h": 418,
+                  "w": 418,
+                  "x": 78,
+                  "y": 71
+                }
+              ]
+            },
+            "orig": {
+              "faces": [
+                {
+                  "h": 418,
+                  "w": 418,
+                  "x": 78,
+                  "y": 71
+                }
+              ]
+            }
+          },
+          "id_str": "2051214266804670465",
+          "indices": [163, 186],
+          "media_key": "3_2051214266804670465",
+          "media_results": {
+            "id": "QXBpTWVkaWFSZXN1bHRzOgwAAQoAARx3YIIDGxABCgACHHdggvHacLwAAA==",
+            "result": {
+              "__typename": "ApiMedia",
+              "id": "QXBpTWVkaWE6DAABCgABHHdgggMbEAEKAAIcd2CC8dpwvAAA",
+              "media_key": "3_2051214266804670465"
+            }
+          },
+          "media_url_https": "https://pbs.twimg.com/media/HHdgggMbEAEhXdl.jpg",
+          "original_info": {
+            "focus_rects": [
+              {
+                "h": 717,
+                "w": 1280,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1280,
+                "w": 1280,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1459,
+                "w": 1280,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1600,
+                "w": 800,
+                "x": 280,
+                "y": 0
+              },
+              {
+                "h": 1600,
+                "w": 1280,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "height": 1600,
+            "width": 1280
+          },
+          "sizes": {
+            "large": {
+              "h": 1600,
+              "w": 1280
+            }
+          },
+          "type": "photo",
+          "url": "https://t.co/bCDSZtCafr"
+        },
+        {
+          "display_url": "pic.twitter.com/bCDSZtCafr",
+          "expanded_url": "https://twitter.com/AUTOTODAYMAG/status/2051214270810190012/photo/1",
+          "ext_media_availability": {
+            "status": "Available"
+          },
+          "features": {
+            "large": {
+              "faces": []
+            },
+            "orig": {
+              "faces": []
+            }
+          },
+          "id_str": "2051214267773530112",
+          "indices": [163, 186],
+          "media_key": "3_2051214267773530112",
+          "media_results": {
+            "id": "QXBpTWVkaWFSZXN1bHRzOgwAAQoAARx3YII82rAACgACHHdggvHacLwAAA==",
+            "result": {
+              "__typename": "ApiMedia",
+              "id": "QXBpTWVkaWE6DAABCgABHHdggjzasAAKAAIcd2CC8dpwvAAA",
+              "media_key": "3_2051214267773530112"
+            }
+          },
+          "media_url_https": "https://pbs.twimg.com/media/HHdggjzasAA8Lea.jpg",
+          "original_info": {
+            "focus_rects": [
+              {
+                "h": 717,
+                "w": 1280,
+                "x": 0,
+                "y": 882
+              },
+              {
+                "h": 1280,
+                "w": 1280,
+                "x": 0,
+                "y": 320
+              },
+              {
+                "h": 1459,
+                "w": 1280,
+                "x": 0,
+                "y": 141
+              },
+              {
+                "h": 1600,
+                "w": 800,
+                "x": 480,
+                "y": 0
+              },
+              {
+                "h": 1600,
+                "w": 1280,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "height": 1600,
+            "width": 1280
+          },
+          "sizes": {
+            "large": {
+              "h": 1600,
+              "w": 1280
+            }
+          },
+          "type": "photo",
+          "url": "https://t.co/bCDSZtCafr"
+        }
+      ]
+    },
+    "card": null,
+    "place": {
+
+    },
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "timestamps": [],
+      "urls": [],
+      "user_mentions": []
+    },
+    "quoted_tweet": null,
+    "retweeted_tweet": null,
+    "isLimitedReply": false,
+    "communityInfo": null,
+    "article": null,
+    "ingestion_date": "2026-05-06T04:29:04Z"
+  },
+  {
+    "type": "tweet",
+    "id": "2051214258650964390",
+    "url": "https://x.com/AUTOTODAYMAG/status/2051214258650964390",
+    "twitterUrl": "https://twitter.com/AUTOTODAYMAG/status/2051214258650964390",
+    "text": "▶️ Feature: WCOTY 2026, NYIAS 2026\n▶️ First Drives: Vinfast MPV 7, Mercedes-Benz G450D, BMW M440i Convertible\n▶️ First Rides: Royal Enfield Guerrilla 450, Flying Flea C6, Yamaha Aerox EV, Yamaha EC-06, Triumph 350, Kinetic DX https://t.co/2iIWv3UC3d",
+    "source": "Twitter for iPhone",
+    "retweetCount": 0,
+    "replyCount": 1,
+    "likeCount": 0,
+    "quoteCount": 0,
+    "viewCount": 82,
+    "createdAt": "Mon May 04 08:16:03 +0000 2026",
+    "lang": "en",
+    "bookmarkCount": 0,
+    "isReply": true,
+    "inReplyToId": "2051214245455630553",
+    "conversationId": "2051214245455630553",
+    "displayTextRange": [0, 225],
+    "inReplyToUserId": "2318696720",
+    "inReplyToUsername": "AUTOTODAYMAG",
+    "author": {
+      "type": "user",
+      "userName": "AUTOTODAYMAG",
+      "url": "https://x.com/AUTOTODAYMAG",
+      "twitterUrl": "https://twitter.com/AUTOTODAYMAG",
+      "id": "2318696720",
+      "name": "AUTO TODAY",
+      "isVerified": false,
+      "isBlueVerified": false,
+      "verifiedType": null,
+      "profilePicture": "https://pbs.twimg.com/profile_images/1408459858009989120/Yj-M0oeI_normal.jpg",
+      "coverPicture": "https://pbs.twimg.com/profile_banners/2318696720/1732267961",
+      "description": "",
+      "location": "NOIDA, INDIA",
+      "followers": 11088,
+      "following": 119,
+      "status": "",
+      "canDm": false,
+      "canMediaTag": true,
+      "createdAt": "Thu Jan 30 11:00:06 +0000 2014",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+
+        }
+      },
+      "fastFollowersCount": 0,
+      "favouritesCount": 498,
+      "hasCustomTimelines": true,
+      "isTranslator": false,
+      "mediaCount": 11587,
+      "statusesCount": 22854,
+      "withheldInCountries": [],
+      "affiliatesHighlightedLabel": {
+
+      },
+      "possiblySensitive": false,
+      "pinnedTweetIds": [
+        "2051214245455630553"
+      ],
+      "profile_bio": {
+        "description": "Official handle of Auto Today Magazine (an @IndiaToday Group Publication) |  https://t.co/lRYnIb2cqn",
+        "entities": {
+          "description": {
+            "urls": [
+              {
+                "display_url": "youtube.com/@autotodayoffi…",
+                "expanded_url": "https://www.youtube.com/@autotodayofficial",
+                "indices": [77, 100],
+                "url": "https://t.co/lRYnIb2cqn"
+              }
+            ],
+            "user_mentions": [
+              {
+                "id_str": "",
+                "indices": [43, 54],
+                "name": "",
+                "screen_name": "IndiaToday"
+              }
+            ]
+          },
+          "url": {
+            "urls": [
+              {
+                "display_url": "linktr.ee/autotodaymag",
+                "expanded_url": "http://linktr.ee/autotodaymag",
+                "indices": [0, 23],
+                "url": "https://t.co/yWmOFonBWB"
+              }
+            ]
+          }
+        }
+      },
+      "isAutomated": false,
+      "automatedBy": null
+    },
+    "extendedEntities": {
+      "media": [
+        {
+          "display_url": "pic.twitter.com/2iIWv3UC3d",
+          "expanded_url": "https://twitter.com/AUTOTODAYMAG/status/2051214258650964390/photo/1",
+          "ext_media_availability": {
+            "status": "Available"
+          },
+          "features": {
+            "all": {
+              "tags": [
+                {
+                  "name": "BMW",
+                  "screen_name": "BMW",
+                  "type": "user",
+                  "user_id": "1545994664"
+                },
+                {
+                  "name": "BMW",
+                  "screen_name": "BMW",
+                  "type": "user",
+                  "user_id": "1545994664"
+                },
+                {
+                  "name": "BMW",
+                  "screen_name": "BMW",
+                  "type": "user",
+                  "user_id": "1545994664"
+                },
+                {
+                  "name": "BMW",
+                  "screen_name": "BMW",
+                  "type": "user",
+                  "user_id": "1545994664"
+                }
+              ]
+            },
+            "large": {
+              "faces": []
+            },
+            "orig": {
+              "faces": []
+            }
+          },
+          "id_str": "2051214253894639616",
+          "indices": [226, 249],
+          "media_key": "3_2051214253894639616",
+          "media_results": {
+            "id": "QXBpTWVkaWFSZXN1bHRzOgwAAQoAARx3YH8Bm6AACgACHHdggB0bYaYAAA==",
+            "result": {
+              "__typename": "ApiMedia",
+              "id": "QXBpTWVkaWE6DAABCgABHHdgfwGboAAKAAIcd2CAHRthpgAA",
+              "media_key": "3_2051214253894639616"
+            }
+          },
+          "media_url_https": "https://pbs.twimg.com/media/HHdgfwGboAAG9M3.jpg",
+          "original_info": {
+            "focus_rects": [
+              {
+                "h": 717,
+                "w": 1280,
+                "x": 0,
+                "y": 883
+              },
+              {
+                "h": 1280,
+                "w": 1280,
+                "x": 0,
+                "y": 320
+              },
+              {
+                "h": 1459,
+                "w": 1280,
+                "x": 0,
+                "y": 141
+              },
+              {
+                "h": 1600,
+                "w": 800,
+                "x": 200,
+                "y": 0
+              },
+              {
+                "h": 1600,
+                "w": 1280,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "height": 1600,
+            "width": 1280
+          },
+          "sizes": {
+            "large": {
+              "h": 1600,
+              "w": 1280
+            }
+          },
+          "type": "photo",
+          "url": "https://t.co/2iIWv3UC3d"
+        },
+        {
+          "display_url": "pic.twitter.com/2iIWv3UC3d",
+          "expanded_url": "https://twitter.com/AUTOTODAYMAG/status/2051214258650964390/photo/1",
+          "ext_media_availability": {
+            "status": "Available"
+          },
+          "features": {
+            "all": {
+              "tags": [
+                {
+                  "name": "BMW",
+                  "screen_name": "BMW",
+                  "type": "user",
+                  "user_id": "1545994664"
+                },
+                {
+                  "name": "BMW",
+                  "screen_name": "BMW",
+                  "type": "user",
+                  "user_id": "1545994664"
+                },
+                {
+                  "name": "BMW",
+                  "screen_name": "BMW",
+                  "type": "user",
+                  "user_id": "1545994664"
+                },
+                {
+                  "name": "BMW",
+                  "screen_name": "BMW",
+                  "type": "user",
+                  "user_id": "1545994664"
+                }
+              ]
+            },
+            "large": {
+              "faces": [
+                {
+                  "h": 78,
+                  "w": 78,
+                  "x": 304,
+                  "y": 673
+                }
+              ]
+            },
+            "orig": {
+              "faces": [
+                {
+                  "h": 78,
+                  "w": 78,
+                  "x": 304,
+                  "y": 673
+                }
+              ]
+            }
+          },
+          "id_str": "2051214254855049216",
+          "indices": [226, 249],
+          "media_key": "3_2051214254855049216",
+          "media_results": {
+            "id": "QXBpTWVkaWFSZXN1bHRzOgwAAQoAARx3YH862lAACgACHHdggB0bYaYAAA==",
+            "result": {
+              "__typename": "ApiMedia",
+              "id": "QXBpTWVkaWE6DAABCgABHHdgfzraUAAKAAIcd2CAHRthpgAA",
+              "media_key": "3_2051214254855049216"
+            }
+          },
+          "media_url_https": "https://pbs.twimg.com/media/HHdgfzraUAAZbBf.jpg",
+          "original_info": {
+            "focus_rects": [
+              {
+                "h": 717,
+                "w": 1280,
+                "x": 0,
+                "y": 883
+              },
+              {
+                "h": 1280,
+                "w": 1280,
+                "x": 0,
+                "y": 320
+              },
+              {
+                "h": 1459,
+                "w": 1280,
+                "x": 0,
+                "y": 141
+              },
+              {
+                "h": 1600,
+                "w": 800,
+                "x": 440,
+                "y": 0
+              },
+              {
+                "h": 1600,
+                "w": 1280,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "height": 1600,
+            "width": 1280
+          },
+          "sizes": {
+            "large": {
+              "h": 1600,
+              "w": 1280
+            }
+          },
+          "type": "photo",
+          "url": "https://t.co/2iIWv3UC3d"
+        },
+        {
+          "display_url": "pic.twitter.com/2iIWv3UC3d",
+          "expanded_url": "https://twitter.com/AUTOTODAYMAG/status/2051214258650964390/photo/1",
+          "ext_media_availability": {
+            "status": "Available"
+          },
+          "features": {
+            "all": {
+              "tags": [
+                {
+                  "name": "BMW",
+                  "screen_name": "BMW",
+                  "type": "user",
+                  "user_id": "1545994664"
+                },
+                {
+                  "name": "BMW",
+                  "screen_name": "BMW",
+                  "type": "user",
+                  "user_id": "1545994664"
+                },
+                {
+                  "name": "BMW",
+                  "screen_name": "BMW",
+                  "type": "user",
+                  "user_id": "1545994664"
+                },
+                {
+                  "name": "BMW",
+                  "screen_name": "BMW",
+                  "type": "user",
+                  "user_id": "1545994664"
+                }
+              ]
+            },
+            "large": {
+              "faces": []
+            },
+            "orig": {
+              "faces": []
+            }
+          },
+          "id_str": "2051214255081533440",
+          "indices": [226, 249],
+          "media_key": "3_2051214255081533440",
+          "media_results": {
+            "id": "QXBpTWVkaWFSZXN1bHRzOgwAAQoAARx3YH9IWjAACgACHHdggB0bYaYAAA==",
+            "result": {
+              "__typename": "ApiMedia",
+              "id": "QXBpTWVkaWE6DAABCgABHHdgf0haMAAKAAIcd2CAHRthpgAA",
+              "media_key": "3_2051214255081533440"
+            }
+          },
+          "media_url_https": "https://pbs.twimg.com/media/HHdgf0haMAAmcqj.jpg",
+          "original_info": {
+            "focus_rects": [
+              {
+                "h": 717,
+                "w": 1280,
+                "x": 0,
+                "y": 82
+              },
+              {
+                "h": 1280,
+                "w": 1280,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1459,
+                "w": 1280,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1600,
+                "w": 800,
+                "x": 480,
+                "y": 0
+              },
+              {
+                "h": 1600,
+                "w": 1280,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "height": 1600,
+            "width": 1280
+          },
+          "sizes": {
+            "large": {
+              "h": 1600,
+              "w": 1280
+            }
+          },
+          "type": "photo",
+          "url": "https://t.co/2iIWv3UC3d"
+        },
+        {
+          "display_url": "pic.twitter.com/2iIWv3UC3d",
+          "expanded_url": "https://twitter.com/AUTOTODAYMAG/status/2051214258650964390/photo/1",
+          "ext_media_availability": {
+            "status": "Available"
+          },
+          "features": {
+            "all": {
+              "tags": [
+                {
+                  "name": "BMW",
+                  "screen_name": "BMW",
+                  "type": "user",
+                  "user_id": "1545994664"
+                },
+                {
+                  "name": "BMW",
+                  "screen_name": "BMW",
+                  "type": "user",
+                  "user_id": "1545994664"
+                },
+                {
+                  "name": "BMW",
+                  "screen_name": "BMW",
+                  "type": "user",
+                  "user_id": "1545994664"
+                },
+                {
+                  "name": "BMW",
+                  "screen_name": "BMW",
+                  "type": "user",
+                  "user_id": "1545994664"
+                }
+              ]
+            },
+            "large": {
+              "faces": [
+                {
+                  "h": 78,
+                  "w": 78,
+                  "x": 937,
+                  "y": 493
+                }
+              ]
+            },
+            "orig": {
+              "faces": [
+                {
+                  "h": 78,
+                  "w": 78,
+                  "x": 937,
+                  "y": 493
+                }
+              ]
+            }
+          },
+          "id_str": "2051214255593345024",
+          "indices": [226, 249],
+          "media_key": "3_2051214255593345024",
+          "media_results": {
+            "id": "QXBpTWVkaWFSZXN1bHRzOgwAAQoAARx3YH9m29AACgACHHdggB0bYaYAAA==",
+            "result": {
+              "__typename": "ApiMedia",
+              "id": "QXBpTWVkaWE6DAABCgABHHdgf2bb0AAKAAIcd2CAHRthpgAA",
+              "media_key": "3_2051214255593345024"
+            }
+          },
+          "media_url_https": "https://pbs.twimg.com/media/HHdgf2bb0AABDyK.jpg",
+          "original_info": {
+            "focus_rects": [
+              {
+                "h": 717,
+                "w": 1280,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1280,
+                "w": 1280,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1459,
+                "w": 1280,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 1600,
+                "w": 800,
+                "x": 480,
+                "y": 0
+              },
+              {
+                "h": 1600,
+                "w": 1280,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "height": 1600,
+            "width": 1280
+          },
+          "sizes": {
+            "large": {
+              "h": 1600,
+              "w": 1280
+            }
+          },
+          "type": "photo",
+          "url": "https://t.co/2iIWv3UC3d"
+        }
+      ]
+    },
+    "card": null,
+    "place": {
+
+    },
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "timestamps": [],
+      "urls": [],
+      "user_mentions": []
+    },
+    "quoted_tweet": null,
+    "retweeted_tweet": null,
+    "isLimitedReply": false,
+    "communityInfo": null,
+    "article": null,
+    "ingestion_date": "2026-05-06T04:29:04Z"
+  },
+  {
+    "type": "tweet",
+    "id": "2050980744953287060",
+    "url": "https://x.com/JulehMobility/status/2050980744953287060",
+    "twitterUrl": "https://twitter.com/JulehMobility/status/2050980744953287060",
+    "text": "@VinFastofficial  is going all-in on India!\n \n3 new EVs incoming:  @VinFastIN \n• VF3 – affordable city micro-SUV to take on MG Comet & Tiago EV \n• VF5 – feature-rich sub-4m rival to Nexon EV \n• Limo Green – stripped-down 7-seater MPV for fleets (500km range!)\n\nLocal assembly + aggressive expansion = serious volume play. Who else is excited for more affordable EVs in India?\n\n#JulehEvNews #ElectricCars #ElectricVehicles",
+    "source": "Twitter for iPhone",
+    "retweetCount": 1,
+    "replyCount": 0,
+    "likeCount": 1,
+    "quoteCount": 0,
+    "viewCount": 63,
+    "createdAt": "Sun May 03 16:48:09 +0000 2026",
+    "lang": "en",
+    "bookmarkCount": 0,
+    "isReply": false,
+    "inReplyToId": null,
+    "conversationId": "2050980744953287060",
+    "displayTextRange": [0, 281],
+    "inReplyToUserId": "1027952807679324161",
+    "inReplyToUsername": "VinFastofficial",
+    "author": {
+      "type": "user",
+      "userName": "JulehMobility",
+      "url": "https://x.com/JulehMobility",
+      "twitterUrl": "https://twitter.com/JulehMobility",
+      "id": "1831274455047286785",
+      "name": "Juleh EV News",
+      "isVerified": false,
+      "isBlueVerified": true,
+      "verifiedType": null,
+      "profilePicture": "https://pbs.twimg.com/profile_images/2016484121808371712/xdL1oQD1_normal.jpg",
+      "coverPicture": "https://pbs.twimg.com/profile_banners/1831274455047286785/1770638383",
+      "description": "",
+      "location": "",
+      "followers": 34,
+      "following": 67,
+      "status": "",
+      "canDm": false,
+      "canMediaTag": true,
+      "createdAt": "Wed Sep 04 10:14:00 +0000 2024",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+
+        }
+      },
+      "fastFollowersCount": 0,
+      "favouritesCount": 816,
+      "hasCustomTimelines": true,
+      "isTranslator": false,
+      "mediaCount": 767,
+      "statusesCount": 913,
+      "withheldInCountries": [],
+      "affiliatesHighlightedLabel": {
+
+      },
+      "possiblySensitive": false,
+      "pinnedTweetIds": [],
+      "profile_bio": {
+        "description": "FOLLOW for the latest EV Updates. Policy Changes. New EV Launches. Charging & Battery Tech. E-Bus Roll Outs. Global Perspective, India Focus. #EVIndia #JulehEV",
+        "entities": {
+          "description": {
+            "hashtags": [
+              {
+                "indices": [142, 150],
+                "text": "EVIndia"
+              },
+              {
+                "indices": [151, 159],
+                "text": "JulehEV"
+              }
+            ]
+          },
+          "url": {
+            "urls": [
+              {
+                "display_url": "juleh.org",
+                "expanded_url": "http://www.juleh.org",
+                "indices": [0, 23],
+                "url": "https://t.co/A2qw08Fw2a"
+              }
+            ]
+          }
+        }
+      },
+      "isAutomated": false,
+      "automatedBy": null
+    },
+    "extendedEntities": {
+      "media": [
+        {
+          "allow_download_status": {
+            "allow_download": true
+          },
+          "display_url": "pic.twitter.com/qgLUxABSdz",
+          "expanded_url": "https://twitter.com/JulehMobility/status/2050980744953287060/photo/1",
+          "ext_media_availability": {
+            "status": "Available"
+          },
+          "features": {
+            "large": {
+              "faces": []
+            },
+            "orig": {
+              "faces": []
+            }
+          },
+          "id_str": "2050980734505287680",
+          "indices": [282, 305],
+          "media_key": "3_2050980734505287680",
+          "media_results": {
+            "id": "QXBpTWVkaWFSZXN1bHRzOgwAAQoAARx2jByJW4AACgACHHaMHvgbUZQAAA==",
+            "result": {
+              "__typename": "ApiMedia",
+              "id": "QXBpTWVkaWE6DAABCgABHHaMHIlbgAAKAAIcdowe+BtRlAAA",
+              "media_key": "3_2050980734505287680"
+            }
+          },
+          "media_url_https": "https://pbs.twimg.com/media/HHaMHIlbgAAT5PF.jpg",
+          "original_info": {
+            "focus_rects": [
+              {
+                "h": 523,
+                "w": 934,
+                "x": 0,
+                "y": 0
+              },
+              {
+                "h": 523,
+                "w": 523,
+                "x": 64,
+                "y": 0
+              },
+              {
+                "h": 523,
+                "w": 459,
+                "x": 96,
+                "y": 0
+              },
+              {
+                "h": 523,
+                "w": 262,
+                "x": 194,
+                "y": 0
+              },
+              {
+                "h": 523,
+                "w": 1000,
+                "x": 0,
+                "y": 0
+              }
+            ],
+            "height": 523,
+            "width": 1000
+          },
+          "sizes": {
+            "large": {
+              "h": 523,
+              "w": 1000
+            }
+          },
+          "type": "photo",
+          "url": "https://t.co/qgLUxABSdz"
+        }
+      ]
+    },
+    "card": null,
+    "place": {
+
+    },
+    "entities": {
+      "hashtags": [
+        {
+          "indices": [377, 389],
+          "text": "JulehEvNews"
+        },
+        {
+          "indices": [390, 403],
+          "text": "ElectricCars"
+        },
+        {
+          "indices": [404, 421],
+          "text": "ElectricVehicles"
+        }
+      ],
+      "symbols": [],
+      "urls": [],
+      "user_mentions": [
+        {
+          "id_str": "1027952807679324161",
+          "indices": [0, 16],
+          "name": "VinFast",
+          "screen_name": "VinFastofficial"
+        },
+        {
+          "id_str": "1735246075500625920",
+          "indices": [67, 77],
+          "name": "VinFast India",
+          "screen_name": "VinFastIN"
+        }
+      ]
+    },
+    "quoted_tweet": null,
+    "retweeted_tweet": null,
+    "isLimitedReply": false,
+    "communityInfo": null,
+    "article": null,
+    "ingestion_date": "2026-05-06T04:29:04Z"
+  },
+  {
+    "type": "tweet",
+    "id": "2050945168900329650",
+    "url": "https://x.com/VahanWarta/status/2050945168900329650",
+    "twitterUrl": "https://twitter.com/VahanWarta/status/2050945168900329650",
+    "text": "@vikash42 Good point, VinFast is quietly building.\nBut rewriting the EV story will need scale, pricing &amp; network. Still early, but definitely one to watch.",
+    "source": "Twitter for iPhone",
+    "retweetCount": 0,
+    "replyCount": 0,
+    "likeCount": 8,
+    "quoteCount": 0,
+    "viewCount": 208,
+    "createdAt": "Sun May 03 14:26:47 +0000 2026",
+    "lang": "en",
+    "bookmarkCount": 0,
+    "isReply": true,
+    "inReplyToId": "2050944099453436265",
+    "conversationId": "2050944099453436265",
+    "displayTextRange": [10, 159],
+    "inReplyToUserId": "91057903",
+    "inReplyToUsername": "vikash42",
+    "author": {
+      "type": "user",
+      "userName": "VahanWarta",
+      "url": "https://x.com/VahanWarta",
+      "twitterUrl": "https://twitter.com/VahanWarta",
+      "id": "1104561326918033409",
+      "name": "Vahan Warta (वाहन वार्ता )",
+      "isVerified": false,
+      "isBlueVerified": true,
+      "verifiedType": null,
+      "profilePicture": "https://pbs.twimg.com/profile_images/1966050524865671169/5JjVXzwQ_normal.jpg",
+      "coverPicture": "https://pbs.twimg.com/profile_banners/1104561326918033409/1768474590",
+      "description": "",
+      "location": "India",
+      "followers": 4064,
+      "following": 397,
+      "status": "",
+      "canDm": false,
+      "canMediaTag": false,
+      "createdAt": "Sun Mar 10 01:55:16 +0000 2019",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+
+        }
+      },
+      "fastFollowersCount": 0,
+      "favouritesCount": 3635,
+      "hasCustomTimelines": true,
+      "isTranslator": false,
+      "mediaCount": 975,
+      "statusesCount": 2587,
+      "withheldInCountries": [],
+      "affiliatesHighlightedLabel": {
+
+      },
+      "possiblySensitive": false,
+      "pinnedTweetIds": [
+        "2051264700810473949"
+      ],
+      "profile_bio": {
+        "description": "VahanWarta – Breaking auto news, decoding leaks, guiding your drive.\n\n📨 vahanwarta@gmail.com",
+        "entities": {
+          "description": {
+
+          },
+          "url": {
+            "urls": [
+              {
+                "display_url": "youtube.com/@VahanWarta",
+                "expanded_url": "https://www.youtube.com/@VahanWarta",
+                "indices": [0, 23],
+                "url": "https://t.co/ze4X9MnCUr"
+              }
+            ]
+          }
+        }
+      },
+      "isAutomated": false,
+      "automatedBy": null
+    },
+    "extendedEntities": {
+
+    },
+    "card": null,
+    "place": {
+
+    },
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "timestamps": [],
+      "urls": [],
+      "user_mentions": [
+        {
+          "id_str": "91057903",
+          "indices": [0, 9],
+          "name": "Vikash Bansal",
+          "screen_name": "vikash42"
+        }
+      ]
+    },
+    "quoted_tweet": null,
+    "retweeted_tweet": null,
+    "isLimitedReply": false,
+    "communityInfo": null,
+    "article": null,
+    "ingestion_date": "2026-05-06T04:29:04Z"
+  },
+  {
+    "type": "tweet",
+    "id": "2050944099453436265",
+    "url": "https://x.com/vikash42/status/2050944099453436265",
+    "twitterUrl": "https://twitter.com/vikash42/status/2050944099453436265",
+    "text": "There is another challenger who is few months old and slowly but surely building volume - Vinfast can actually rewrite ev story for India.",
+    "source": "Twitter for iPhone",
+    "retweetCount": 0,
+    "replyCount": 1,
+    "likeCount": 3,
+    "quoteCount": 0,
+    "viewCount": 312,
+    "createdAt": "Sun May 03 14:22:32 +0000 2026",
+    "lang": "en",
+    "bookmarkCount": 0,
+    "isReply": false,
+    "inReplyToId": null,
+    "conversationId": "2050944099453436265",
+    "displayTextRange": [0, 138],
+    "inReplyToUserId": null,
+    "inReplyToUsername": null,
+    "author": {
+      "type": "user",
+      "userName": "vikash42",
+      "url": "https://x.com/vikash42",
+      "twitterUrl": "https://twitter.com/vikash42",
+      "id": "91057903",
+      "name": "Vikash Bansal",
+      "isVerified": false,
+      "isBlueVerified": false,
+      "verifiedType": null,
+      "profilePicture": "https://pbs.twimg.com/profile_images/853263137528725504/jXqNSreW_normal.jpg",
+      "coverPicture": "",
+      "description": "",
+      "location": "Pune, India",
+      "followers": 95,
+      "following": 177,
+      "status": "",
+      "canDm": false,
+      "canMediaTag": false,
+      "createdAt": "Thu Nov 19 07:37:08 +0000 2009",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+
+        }
+      },
+      "fastFollowersCount": 0,
+      "favouritesCount": 56612,
+      "hasCustomTimelines": true,
+      "isTranslator": false,
+      "mediaCount": 7,
+      "statusesCount": 1149,
+      "withheldInCountries": [],
+      "affiliatesHighlightedLabel": {
+
+      },
+      "possiblySensitive": false,
+      "pinnedTweetIds": [],
+      "profile_bio": {
+        "description": "Automobile enthusiast, love traveling, music and movies.",
+        "entities": {
+          "description": {
+
+          }
+        }
+      },
+      "isAutomated": false,
+      "automatedBy": null
+    },
+    "extendedEntities": {
+
+    },
+    "card": null,
+    "place": {
+
+    },
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "timestamps": [],
+      "urls": [],
+      "user_mentions": []
+    },
+    "quoted_tweet": {
+      "type": "tweet",
+      "id": "2050941133539418474",
+      "url": "https://x.com/VahanWarta/status/2050941133539418474",
+      "twitterUrl": "https://twitter.com/VahanWarta/status/2050941133539418474",
+      "text": "@hormazdsorabjee True, and the shift has been quick. XEV 9S seems to have pushed Mahindra ahead, overtaking MG to secure the 2 spot in recent months.",
+      "source": "Twitter for iPhone",
+      "retweetCount": 0,
+      "replyCount": 0,
+      "likeCount": 1,
+      "quoteCount": 1,
+      "viewCount": 722,
+      "createdAt": "Sun May 03 14:10:45 +0000 2026",
+      "lang": "en",
+      "bookmarkCount": 0,
+      "isReply": true,
+      "inReplyToId": "2050933578108682717",
+      "conversationId": "2050933578108682717",
+      "displayTextRange": [17, 149],
+      "inReplyToUserId": null,
+      "inReplyToUsername": null,
+      "author": {
+        "type": "user",
+        "userName": "VahanWarta",
+        "url": "https://x.com/VahanWarta",
+        "twitterUrl": "https://twitter.com/VahanWarta",
+        "id": "1104561326918033409",
+        "name": "Vahan Warta (वाहन वार्ता )",
+        "isVerified": false,
+        "isBlueVerified": true,
+        "verifiedType": null,
+        "profilePicture": "https://pbs.twimg.com/profile_images/1966050524865671169/5JjVXzwQ_normal.jpg",
+        "coverPicture": "https://pbs.twimg.com/profile_banners/1104561326918033409/1768474590",
+        "description": "",
+        "location": "India",
+        "followers": 4064,
+        "following": 397,
+        "status": "",
+        "canDm": false,
+        "canMediaTag": false,
+        "createdAt": "Sun Mar 10 01:55:16 +0000 2019",
+        "entities": {
+          "description": {
+            "urls": []
+          },
+          "url": {
+
+          }
+        },
+        "fastFollowersCount": 0,
+        "favouritesCount": 3635,
+        "hasCustomTimelines": true,
+        "isTranslator": false,
+        "mediaCount": 975,
+        "statusesCount": 2587,
+        "withheldInCountries": [],
+        "affiliatesHighlightedLabel": {
+
+        },
+        "possiblySensitive": false,
+        "pinnedTweetIds": [
+          "2051264700810473949"
+        ],
+        "profile_bio": {
+          "description": "VahanWarta – Breaking auto news, decoding leaks, guiding your drive.\n\n📨 vahanwarta@gmail.com",
+          "entities": {
+            "description": {
+
+            },
+            "url": {
+              "urls": [
+                {
+                  "display_url": "youtube.com/@VahanWarta",
+                  "expanded_url": "https://www.youtube.com/@VahanWarta",
+                  "indices": [0, 23],
+                  "url": "https://t.co/ze4X9MnCUr"
+                }
+              ]
+            }
+          }
+        },
+        "isAutomated": false,
+        "automatedBy": null
+      },
+      "extendedEntities": {
+
+      },
+      "card": null,
+      "place": {
+
+      },
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "timestamps": [],
+        "urls": [],
+        "user_mentions": [
+          {
+            "id_str": "177643755",
+            "indices": [0, 16],
+            "name": "Hormazd Sorabjee",
+            "screen_name": "hormazdsorabjee"
+          }
+        ]
+      },
+      "quoted_tweet": null,
+      "retweeted_tweet": null,
+      "isLimitedReply": false,
+      "communityInfo": null,
+      "article": null
+    },
+    "retweeted_tweet": null,
+    "isLimitedReply": false,
+    "communityInfo": null,
+    "article": null,
+    "ingestion_date": "2026-05-06T04:29:04Z"
+  }
+]

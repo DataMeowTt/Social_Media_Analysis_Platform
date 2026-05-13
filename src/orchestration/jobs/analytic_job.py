@@ -1,12 +1,12 @@
-from src.processing.processing_job import incremental_processing
+from src.analytics.analytics_job import gold_processing
 from src.utils.logger import get_logger
 from src.utils.session import create_spark_session
 
 logger = get_logger(__name__)
 
 if __name__ == "__main__":
-    spark = create_spark_session("SocialMedia-Processing")
+    spark = create_spark_session("SocialMedia-Analytics")
     try:
-        incremental_processing(spark)
+        gold_processing(spark)
     finally:
         spark.stop()

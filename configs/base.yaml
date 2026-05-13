@@ -1,17 +1,2 @@
-project:
-  name: Social Media Analysis Platform
-  description: A platform for analyzing social media data, including tweets and trends.
-  version: 1.0.0
-  random_seed: 42 
-
 api:
   url: "https://api.twitterapi.io"
-
-data:
-  datasets:
-    - tweets
-    - trends
-    - comments
-
-  default_dataset: tweets
-
