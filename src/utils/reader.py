@@ -134,6 +134,31 @@ def load_processed_ids() -> set:
         ids.update(table.column("id").to_pylist())
     return ids
 
+
+def check_processed_duplicates() -> None:
+    from collections import Counter
+    s3 = s3_client()
+    ids = []
+    for obj in list_objects("processed/tweets/"):
+        if not obj["Key"].endswith(".parquet"):
+            continue
+        body = s3.get_object(Bucket=BUCKET, Key=obj["Key"])["Body"].read()
+        table = pq.read_table(io.BytesIO(body), columns=["id"])
+        ids.extend(table.column("id").to_pylist())
+
+    total = len(ids)
+    unique = len(set(ids))
+    print(f"Processed total : {total}")
+    print(f"Processed unique: {unique}  (lost {total - unique} duplicates)")
+
+    if total != unique:
+        counts = Counter(ids)
+        dups = [(id_, cnt) for id_, cnt in counts.items() if cnt > 1]
+        print(f"\nSample duplicate IDs in processed:")
+        for id_, cnt in dups[:5]:
+            print(f"  id={id_}  count={cnt}")
+
+
 # ── Main ─────────────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
@@ -141,6 +166,5 @@ if __name__ == "__main__":
     raw_tweets = load_raw_tweets()
     simulate_pipeline(raw_tweets)
 
-    print("\n=== Processed layer count ===")
-    processed_ids = load_processed_ids()
-    print(f"Processed IDs   : {len(processed_ids)}")
+    print("\n=== Processed layer ===")
+    check_processed_duplicates()

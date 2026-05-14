@@ -69,7 +69,8 @@ checkpoints/
 # =========================
 # Docker
 # =========================
-*.env.docker
+src/ml/models/
+src/ml/train_sentiment.py
 
 # =========================
 # Terraform (infra/)

@@ -1,6 +1,6 @@
-from transformers import pipeline
+from src.ml.inference.predictor import SentimentPredictor
 
-pipe = pipeline("text-classification", model="cardiffnlp/twitter-roberta-base-sentiment-latest")
+predictor = SentimentPredictor()
 
 texts = [
     "I love this product, it's amazing!",
@@ -9,7 +9,7 @@ texts = [
     "@nytpolitics Finally some great news, hope they lose",  # tweet thực từ data
 ]
 
-results = pipe(texts, truncation=True, max_length=512)
+results = predictor.predict(texts)
 
 for text, result in zip(texts, results):
     label = result["label"]

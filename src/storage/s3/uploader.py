@@ -68,12 +68,13 @@ def write_to_S3(
     s3a_path = f"s3a://{bucket}/{layer}/{dataset}/"
     s3_path  = f"s3://{bucket}/{layer}/{dataset}/"
 
-    writer = df.write.mode(mode).format("parquet").option("compression", "snappy")
     if partition_cols:
-        partitions = df.select(*partition_cols).distinct().collect()
-        writer = writer.partitionBy(*partition_cols)
+        df = df.repartition(*partition_cols)
+        partitions = [row.asDict() for row in df.select(*partition_cols).distinct().collect()]
+        writer = df.write.mode(mode).format("parquet").option("compression", "snappy").partitionBy(*partition_cols)
     else:
         partitions = []
+        writer = df.coalesce(1).write.mode(mode).format("parquet").option("compression", "snappy")
 
     writer.save(s3a_path)
 
@@ -189,13 +190,20 @@ def _register_partitions(
             },
         })
 
-    for i in range(0, len(partition_inputs), 100):
-        batch = partition_inputs[i:i + 100]
+    existing_values = [pi["Values"] for pi in partition_inputs]
+    for i in range(0, len(existing_values), 25):
         try:
-            glue.batch_create_partition(
-                DatabaseName=database, TableName=table, PartitionInputList=batch
+            glue.batch_delete_partition(
+                DatabaseName=database,
+                TableName=table,
+                PartitionsToDelete=[{"Values": v} for v in existing_values[i:i + 25]],
             )
-        except glue.exceptions.AlreadyExistsException:
+        except Exception:
             pass
+
+    for i in range(0, len(partition_inputs), 100):
+        glue.batch_create_partition(
+            DatabaseName=database, TableName=table, PartitionInputList=partition_inputs[i:i + 100]
+        )
 
     logger.info(f"Glue partitions registered: {len(partition_inputs)} partition(s) for {database}.{table}")

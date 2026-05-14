@@ -34,6 +34,7 @@ def create_spark_session(app_name: str):
         .config("spark.pyspark.python", "/opt/venv/bin/python3")
         .config("spark.executorEnv.PYSPARK_PYTHON", "/opt/venv/bin/python3")
         .config("spark.executorEnv.PYTHONPATH", "/opt/workspace")
+        .config("spark.sql.sources.partitionOverwriteMode", "dynamic")
         .config("spark.executorEnv.ENV", "prod")
         .config("spark.executorEnv.AWS_ACCESS_KEY_ID", os.environ["AWS_ACCESS_KEY_ID"])
         .config("spark.executorEnv.AWS_SECRET_ACCESS_KEY", os.environ["AWS_SECRET_ACCESS_KEY"])

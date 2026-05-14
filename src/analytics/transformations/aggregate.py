@@ -30,6 +30,8 @@ def build_fact_tweets(df: DataFrame) -> DataFrame:
     return df.select(
         F.col("id").alias("tweet_id"),
         F.col("author_id"),
+        F.col("author_username"),
+        F.col("author_followers"),
         F.col("primary_brand"),
         F.col("all_brands"),
         F.col("created_at_ts"),
@@ -80,17 +82,6 @@ def build_agg_brand_daily(df: DataFrame) -> DataFrame:
         .filter(F.col("brand_name").isNotNull())
     )
 
-    # Top influencer: author with highest total engagement per brand/date/lang
-    w_inf = Window.partitionBy("date", "brand_name", "lang").orderBy(F.col("_eng").desc())
-    top_inf = (
-        exploded
-        .groupBy("date", "brand_name", "lang", "author_id")
-        .agg(F.sum("engagement_score").alias("_eng"))
-        .withColumn("_rank", F.row_number().over(w_inf))
-        .filter(F.col("_rank") == 1)
-        .select("date", "brand_name", "lang", F.col("author_id").alias("top_influencer_id"))
-    )
-
     agg = (
         exploded
         .groupBy("date", "brand_name", "lang")
@@ -102,17 +93,15 @@ def build_agg_brand_daily(df: DataFrame) -> DataFrame:
             F.avg("sentiment_score").alias("avg_sentiment_score"),
             F.avg("engagement_score").alias("avg_engagement_score"),
             F.sum(F.col("is_viral").cast("int")).alias("viral_count"),
+            F.max(F.struct(F.col("engagement_score"), F.col("author_id")))["author_id"].alias("top_influencer_id"),
         )
     )
 
-    # Share of voice: brand's mentions / total brand mentions for that date+lang
     w_sov = Window.partitionBy("date", "lang")
-    agg = agg.withColumn(
+    return agg.withColumn(
         "share_of_voice",
         F.round(F.col("total_mentions") / F.sum("total_mentions").over(w_sov), 4),
     )
-
-    return agg.join(top_inf, on=["date", "brand_name", "lang"], how="left")
 
 
 def build_agg_author_perf(df: DataFrame) -> DataFrame:

@@ -26,5 +26,7 @@ RUN pip install --no-cache-dir \
 # Install torch separately
 RUN pip install --no-cache-dir torch
 
+COPY src/ml/models/sentiment /opt/models/sentiment
+
 ENV PYSPARK_PYTHON=/opt/venv/bin/python
 ENV PYSPARK_DRIVER_PYTHON=/opt/venv/bin/python

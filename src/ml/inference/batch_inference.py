@@ -15,10 +15,10 @@ def _get_predictor():
     return SentimentPredictor()
 
 @pandas_udf(_schema)
-def predict_sentiment_udf(texts: pd.Series) -> pd.DataFrame:  
+def predict_sentiment_udf(texts: pd.Series) -> pd.DataFrame:
     predictor = _get_predictor()
-    results = [predictor.predict(t) for t in texts]
-    
+    results = predictor.predict(texts.tolist())
+
     return pd.DataFrame({
         "sentiment_label": [r["label"] for r in results],
         "sentiment_score": [r["score"] for r in results]

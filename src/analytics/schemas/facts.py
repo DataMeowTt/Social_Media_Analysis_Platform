@@ -1,11 +1,13 @@
 from pyspark.sql.types import (
     StructType, StructField,
-    StringType, DoubleType, BooleanType, TimestampType, DateType, ArrayType,
+    StringType, LongType, DoubleType, BooleanType, TimestampType, DateType, ArrayType,
 )
 
 FACT_TWEETS_SCHEMA = StructType([
     StructField("tweet_id",         StringType(),             False),
     StructField("author_id",        StringType(),             False),
+    StructField("author_username",  StringType(),             True),
+    StructField("author_followers", LongType(),               True),
     StructField("primary_brand",    StringType(),             True),
     StructField("all_brands",       ArrayType(StringType()), True),
     StructField("created_at_ts",    TimestampType(),          False),

@@ -2,18 +2,18 @@ x-airflow-common:
   &airflow-common
   image: ${AIRFLOW_IMAGE_NAME:-apache/airflow:3.2.0}
   env_file:
-    - .env.docker
+    - .env
   environment:
     &airflow-common-env
-    AIRFLOW__CORE__EXECUTOR: CeleryExecutor
+    AIRFLOW__CORE__EXECUTOR: LocalExecutor
     AIRFLOW__CORE__AUTH_MANAGER: airflow.providers.fab.auth_manager.fab_auth_manager.FabAuthManager
-    AIRFLOW__CELERY__BROKER_URL: redis://:@redis:6379/0
     AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true' #TODO: change to false after testing
     AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
     AIRFLOW__CORE__EXECUTION_API_SERVER_URL: 'http://airflow-apiserver:8080/execution/'
     AIRFLOW__SCHEDULER__ENABLE_HEALTH_CHECK: 'true'
     PYTHONPATH: /opt/workspace
     AWS_DEFAULT_REGION: ap-southeast-1
+    ENV: prod
   volumes:
     - ../../src/orchestration/airflow/dags:/opt/airflow/dags
     - ../../logs:/opt/airflow/logs
@@ -21,8 +21,6 @@ x-airflow-common:
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     &airflow-common-depends-on
-    redis:
-      condition: service_healthy
     postgres:
       condition: service_healthy
 
@@ -30,7 +28,7 @@ services:
   postgres:
     image: postgres:16
     env_file:
-      - .env.docker
+      - .env
     volumes:
       - postgres-db-volume:/var/lib/postgresql/data
     healthcheck:
@@ -38,18 +36,6 @@ services:
       interval: 10s
       retries: 5
       start_period: 5s
-    restart: always
-
-  redis:
-    image: redis:7.2-bookworm
-    expose:
-      - 6379
-    healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
-      interval: 10s
-      timeout: 30s
-      retries: 50
-      start_period: 30s
     restart: always
 
   airflow-apiserver:
@@ -79,6 +65,11 @@ services:
       retries: 5
       start_period: 30s
     restart: always
+    volumes:
+      - ../../src/orchestration/airflow/dags:/opt/airflow/dags
+      - ../../logs:/opt/airflow/logs
+      - ../../:/opt/workspace
+      - /var/run/docker.sock:/var/run/docker.sock
     depends_on:
       <<: *airflow-common-depends-on
       airflow-init:
@@ -89,49 +80,6 @@ services:
     command: dag-processor
     healthcheck:
       test: ["CMD-SHELL", 'airflow jobs check --job-type DagProcessorJob --hostname "$${HOSTNAME}"']
-      interval: 30s
-      timeout: 10s
-      retries: 5
-      start_period: 30s
-    restart: always
-    depends_on:
-      <<: *airflow-common-depends-on
-      airflow-init:
-        condition: service_completed_successfully
-
-  airflow-worker:
-    <<: *airflow-common
-    build:
-      context: .
-      dockerfile: Dockerfile.airflow
-    command: celery worker
-    healthcheck:
-      test: ["CMD-SHELL", 'celery --app airflow.providers.celery.executors.celery_executor.app inspect ping -d "celery@$${HOSTNAME}"']
-      interval: 30s
-      timeout: 10s
-      retries: 5
-      start_period: 30s
-    environment:
-      <<: *airflow-common-env
-      DUMB_INIT_SETSID: "0"
-    volumes:
-      - ../../src/orchestration/airflow/dags:/opt/airflow/dags
-      - ../../logs:/opt/airflow/logs
-      - ../../:/opt/workspace
-      - /var/run/docker.sock:/var/run/docker.sock
-    restart: always
-    depends_on:
-      <<: *airflow-common-depends-on
-      airflow-apiserver:
-        condition: service_healthy
-      airflow-init:
-        condition: service_completed_successfully
-
-  airflow-triggerer:
-    <<: *airflow-common
-    command: triggerer
-    healthcheck:
-      test: ["CMD-SHELL", 'airflow jobs check --job-type TriggererJob --hostname "$${HOSTNAME}"']
       interval: 30s
       timeout: 10s
       retries: 5
@@ -164,25 +112,6 @@ services:
     depends_on:
       <<: *airflow-common-depends-on
 
-  flower:
-    <<: *airflow-common
-    command: celery flower
-    profiles:
-      - flower
-    ports:
-      - "5555:5555"
-    healthcheck:
-      test: ["CMD", "curl", "--fail", "http://localhost:5555/"]
-      interval: 30s
-      timeout: 10s
-      retries: 5
-      start_period: 30s
-    restart: always
-    depends_on:
-      <<: *airflow-common-depends-on
-      airflow-init:
-        condition: service_completed_successfully
-
   spark-master:
     image: apache/spark:3.5.0
     container_name: spark-master
@@ -192,68 +121,67 @@ services:
       - "8090:8080"
       - "7077:7077"
     volumes:
-      - ../../:/opt/workspace
-      - ../../data/raw:/opt/dataset
+      - ${HOST_WORKSPACE}:/opt/workspace
 
   spark-worker-1:
     build:
-      context: .
-      dockerfile: Dockerfile.pipeline
+      context: ../..
+      dockerfile: infra/docker/Dockerfile.pipeline
     container_name: spark-worker-1
     command: >
       /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
     environment:
       - SPARK_WORKER_CORES=3
       - SPARK_WORKER_MEMORY=4G
+      - TRANSFORMERS_OFFLINE=1
     depends_on:
       - spark-master
     ports:
       - "8081:8081"
     volumes:
-      - ../../:/opt/workspace
-      - ../../data/raw:/opt/dataset
+      - ${HOST_WORKSPACE}:/opt/workspace
       - ~/.aws:/root/.aws:ro
-    mem_limit: 4g
+    mem_limit: 6g
     cpus: 3
 
   spark-worker-2:
     build:
-      context: .
-      dockerfile: Dockerfile.pipeline
+      context: ../..
+      dockerfile: infra/docker/Dockerfile.pipeline
     container_name: spark-worker-2
     command: >
       /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
     environment:
       - SPARK_WORKER_CORES=3
       - SPARK_WORKER_MEMORY=4G
+      - TRANSFORMERS_OFFLINE=1
     depends_on:
       - spark-master
     ports:
       - "8082:8081"
     volumes:
-      - ../../:/opt/workspace
-      - ../../data/raw:/opt/dataset
+      - ${HOST_WORKSPACE}:/opt/workspace
       - ~/.aws:/root/.aws:ro
-    mem_limit: 4g
+    mem_limit: 6g
     cpus: 3
 
   spark-submit:
     build:
-      context: .
-      dockerfile: Dockerfile.pipeline
+      context: ../..
+      dockerfile: infra/docker/Dockerfile.pipeline
     container_name: spark-submit
     user: root
     depends_on:
       - spark-master
     env_file:
-      - .env.docker
+      - .env
     environment:
       - PYTHONPATH=/opt/workspace
       - ENV=prod
       - AWS_DEFAULT_REGION=ap-southeast-1
+      - TRANSFORMERS_OFFLINE=1
     volumes:
-      - ../../:/opt/workspace
-      - ../../data/raw:/opt/dataset
+      - ${HOST_WORKSPACE}:/opt/workspace
     command: ["bash"]
 
   superset-db:
@@ -289,7 +217,7 @@ services:
     command: ["/app/docker/docker-init.sh"]
     env_file:
       - ./superset/.env
-      - .env.docker
+      - .env
     environment:
       DATABASE_HOST: superset-db
       REDIS_HOST: superset-redis
@@ -312,7 +240,7 @@ services:
     command: ["/app/docker/docker-bootstrap.sh", "app-gunicorn"]
     env_file:
       - ./superset/.env
-      - .env.docker
+      - .env
     environment:
       DATABASE_HOST: superset-db
       REDIS_HOST: superset-redis
@@ -335,7 +263,7 @@ services:
     command: ["/app/docker/docker-bootstrap.sh", "worker"]
     env_file:
       - ./superset/.env
-      - .env.docker
+      - .env
     environment:
       DATABASE_HOST: superset-db
       REDIS_HOST: superset-redis
@@ -358,7 +286,7 @@ services:
     command: ["/app/docker/docker-bootstrap.sh", "beat"]
     env_file:
       - ./superset/.env
-      - .env.docker
+      - .env
     environment:
       DATABASE_HOST: superset-db
       REDIS_HOST: superset-redis

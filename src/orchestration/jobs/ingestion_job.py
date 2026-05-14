@@ -14,6 +14,6 @@ def run_ingestion_task(**context):
         run_ingestion_tweets(
             query=_QUERY,
             query_type=QueryType.LATEST,
-            tweets_number=int(os.getenv("TWEETS_NUMBER", "10000")),
+            tweets_number=int(os.getenv("TWEETS_NUMBER", "200")),
         )
     )
