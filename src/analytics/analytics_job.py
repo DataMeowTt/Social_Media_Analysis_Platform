@@ -25,7 +25,9 @@ LAYER = "analytics"
 def gold_processing(spark: SparkSession) -> None:
     logger.info("Starting silver → gold pipeline")
 
-    enriched_df = enrich_analytics(read_latest_silver(spark, dataset="tweets"))
+    enriched_df = enrich_analytics(
+        read_latest_silver(spark, dataset="tweets").dropDuplicates(["id"]) # avoiding accidents duplicate in silver layer by code 
+    )
     enriched_df.cache()
 
     validate_analytics(enriched_df)

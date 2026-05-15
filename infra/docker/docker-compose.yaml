@@ -13,7 +13,7 @@ x-airflow-common:
     AIRFLOW__SCHEDULER__ENABLE_HEALTH_CHECK: 'true'
     PYTHONPATH: /opt/workspace
     AWS_DEFAULT_REGION: ap-southeast-1
-    ENV: prod
+    ENV: ${ENV:-prod}
   volumes:
     - ../../src/orchestration/airflow/dags:/opt/airflow/dags
     - ../../logs:/opt/airflow/logs
@@ -177,7 +177,7 @@ services:
       - .env
     environment:
       - PYTHONPATH=/opt/workspace
-      - ENV=prod
+      - ENV=${ENV:-prod}
       - AWS_DEFAULT_REGION=ap-southeast-1
       - TRANSFORMERS_OFFLINE=1
     volumes:

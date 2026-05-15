@@ -62,18 +62,7 @@ def read_fact_tweets_window(spark: SparkSession, days: int) -> DataFrame:
 
 def read_latest_silver(spark: SparkSession, dataset: str) -> DataFrame:
     today = date.today()
-    s3 = get_s3_client()
-    paginator = s3.get_paginator("list_objects_v2")
-
-    paths = [
-        f"s3a://{bucket}/{obj['Key']}"
-        for page in paginator.paginate(Bucket=bucket, Prefix=f"processed/{dataset}/")
-        for obj in page.get("Contents", [])
-        if obj["LastModified"].date() == today
-    ]
-
-    if not paths:
-        raise ValueError(f"No silver files modified today ({today}) for dataset '{dataset}'")
-
-    logger.info(f"Reading {len(paths)} silver file(s) modified today ({today})")
-    return spark.read.format("parquet").load(paths)
+    prefix = f"processed/{dataset}/year={today.year}/month={today.month}/day={today.day}/"
+    path = f"s3a://{bucket}/{prefix}"
+    logger.info(f"Reading today's silver partition from {path}")
+    return spark.read.format("parquet").load(path)

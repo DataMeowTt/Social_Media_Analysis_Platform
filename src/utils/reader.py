@@ -5,8 +5,11 @@ import re
 import boto3
 import pyarrow.parquet as pq
 
-BUCKET = "social-analysis-prod-bucket"
-REGION = "ap-southeast-1"
+from src.utils.config_loader import load_config
+
+_config = load_config()
+BUCKET = _config["s3"]["bucket_name"]
+REGION = _config["aws"]["region"]
 
 # ── Helpers ──────────────────────────────────────────────────────────────────
 

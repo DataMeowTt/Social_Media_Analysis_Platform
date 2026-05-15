@@ -1,17 +1,35 @@
--- Tổng quan sentiment theo brand (7 hoặc 30 ngày gần nhất)
+-- Tổng quan sentiment theo brand (30 ngày gần nhất)
 SELECT
-    brand_name,
-    SUM(total_mentions)                                                          AS total_mentions,
-    SUM(positive_count)                                                          AS positive_count,
-    SUM(neutral_count)                                                           AS neutral_count,
-    SUM(negative_count)                                                          AS negative_count,
-    ROUND(100.0 * SUM(positive_count) / NULLIF(SUM(total_mentions), 0), 2)      AS positive_pct,
-    ROUND(100.0 * SUM(negative_count) / NULLIF(SUM(total_mentions), 0), 2)      AS negative_pct,
-    ROUND(AVG(avg_sentiment_score), 4)                                           AS avg_sentiment,
-    ROUND(AVG(avg_engagement_score), 4)                                          AS avg_engagement,
-    SUM(viral_count)                                                             AS total_viral
-FROM analytics.agg_brand_daily
+    primary_brand,
+    COUNT(*)                                                                             AS total_mentions,
+
+    -- Sentiment counts
+    SUM(CASE WHEN sentiment_label = 'positive' THEN 1 ELSE 0 END)                       AS positive_count,
+    SUM(CASE WHEN sentiment_label = 'neutral'  THEN 1 ELSE 0 END)                       AS neutral_count,
+    SUM(CASE WHEN sentiment_label = 'negative' THEN 1 ELSE 0 END)                       AS negative_count,
+
+    -- Tỉ lệ sentiment trên tổng sentiment của chính brand đó
+    ROUND(
+        SUM(CASE WHEN sentiment_label = 'positive' THEN 1 ELSE 0 END) * 100.0
+        / NULLIF(SUM(CASE WHEN sentiment_label IN ('positive','neutral','negative') THEN 1 ELSE 0 END), 0),
+    2) AS positive_pct,
+    ROUND(
+        SUM(CASE WHEN sentiment_label = 'neutral' THEN 1 ELSE 0 END) * 100.0
+        / NULLIF(SUM(CASE WHEN sentiment_label IN ('positive','neutral','negative') THEN 1 ELSE 0 END), 0),
+    2) AS neutral_pct,
+    ROUND(
+        SUM(CASE WHEN sentiment_label = 'negative' THEN 1 ELSE 0 END) * 100.0
+        / NULLIF(SUM(CASE WHEN sentiment_label IN ('positive','neutral','negative') THEN 1 ELSE 0 END), 0),
+    2) AS negative_pct,
+
+    -- Bot ratio
+    SUM(CASE WHEN is_bot = TRUE THEN 1 ELSE 0 END)                                      AS bot_count,
+    ROUND(
+        SUM(CASE WHEN is_bot = TRUE THEN 1 ELSE 0 END) * 100.0 / NULLIF(COUNT(*), 0),
+    2) AS bot_pct
+
+FROM analytics.fact_tweets
 WHERE date >= CURRENT_DATE - INTERVAL '30' DAY
--- WHERE date >= CURRENT_DATE - INTERVAL '7' DAY
-GROUP BY brand_name
-ORDER BY total_mentions DESC;
+  AND primary_brand IS NOT NULL
+GROUP BY primary_brand
+ORDER BY total_mentions DESC

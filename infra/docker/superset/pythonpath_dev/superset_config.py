@@ -110,7 +110,13 @@ FEATURE_FLAGS = {
     "DATASET_FOLDERS": True,
     "ENABLE_EXTENSIONS": True,
     "SEMANTIC_LAYERS": True,
+    "EMBEDDED_SUPERSET": True,
 }
+GUEST_TOKEN_JWT_SECRET = os.getenv("SUPERSET_GUEST_TOKEN_SECRET", "guest_token_secret_dev")
+HTTP_HEADERS = {}
+TALISMAN_ENABLED = False  
+WTF_CSRF_ENABLED = False
+PUBLIC_ROLE_LIKE = "Gamma"  
 EXTENSIONS_PATH = "/app/docker/extensions"
 ALERT_REPORTS_NOTIFICATION_DRY_RUN = True
 WEBDRIVER_BASEURL = f"http://superset_app{os.environ.get('SUPERSET_APP_ROOT', '/')}/"  # When using docker compose baseurl should be http://superset_nginx{ENV{BASEPATH}}/  # noqa: E501

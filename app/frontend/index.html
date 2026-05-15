@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Media Pipeline</title>
+    <link rel="icon" type="image/svg+xml" href="/image/favicon.svg" />
+    <script>if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark')</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --c-surface: #fff;
+        --c-app:     #f8f9fa;
+        --c-hover:   #f1f3f4;
+        --c-border:  #dadce0;
+        --c-text:    #202124;
+        --c-muted:   #5f6368;
+        --c-shadow:  rgba(0,0,0,0.12);
+      }
+      [data-theme="dark"] {
+        --c-surface: #1e1e1e;
+        --c-app:     #121212;
+        --c-hover:   #2d2d2d;
+        --c-border:  #3c3c3c;
+        --c-text:    #e8eaed;
+        --c-muted:   #9aa0a6;
+        --c-shadow:  rgba(0,0,0,0.4);
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; transition: background 0.2s, border-color 0.2s, color 0.2s; }
+      body { font-family: 'Roboto', sans-serif; background: var(--c-app); color: var(--c-text); }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

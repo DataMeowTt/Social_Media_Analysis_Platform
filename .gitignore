@@ -87,6 +87,17 @@ src/ml/train_sentiment.py
 .idea/
 
 # =========================
+# Node / Frontend
+# =========================
+node_modules/
+app/frontend/.vite/
+
+# =========================
+# ML training data
+# =========================
+src/ml/data_training/
+
+# =========================
 # Misc
 # =========================
 *.tmp
