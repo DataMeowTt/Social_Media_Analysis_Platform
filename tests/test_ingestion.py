@@ -2,10 +2,10 @@ import pytest
 from unittest.mock import AsyncMock, MagicMock, patch
 from datetime import datetime, timezone
 
-from src.ingestion.api.client import CreditsExhaustedError
-from src.ingestion.api.fetcher import TwitterDataFetcher
-from src.ingestion.api.enums.query_type import QueryType
-from src.ingestion.ingestion_job import add_ingestion_date, run_ingestion_tweets
+from src.twitter.ingestion.api.client import CreditsExhaustedError
+from src.twitter.ingestion.api.fetcher import TwitterDataFetcher
+from src.twitter.ingestion.api.enums.query_type import QueryType
+from src.twitter.ingestion.ingestion_job import add_ingestion_date, run_ingestion_tweets
 
 
 def make_tweets(n: int, id_offset: int = 0) -> list[dict]:
@@ -85,7 +85,7 @@ async def test_fetch_tweets_stops_when_no_next_page():
 
 @pytest.mark.asyncio
 async def test_no_api_keys_returns_empty():
-    with patch("src.ingestion.ingestion_job._load_api_keys", return_value=[]):
+    with patch("src.twitter.ingestion.ingestion_job._load_api_keys", return_value=[]):
         result = await run_ingestion_tweets("q", QueryType.LATEST, 100)
     assert result == []
 
@@ -94,9 +94,9 @@ async def test_no_api_keys_returns_empty():
 async def test_run_ingestion_returns_s3_paths():
     fake_response = (make_api_response(make_tweets(20), has_next=False), None)
 
-    with patch("src.ingestion.ingestion_job._load_api_keys", return_value=["key1"]), \
-         patch("src.ingestion.ingestion_job.TwitterAPIClient") as MockClient, \
-         patch("src.ingestion.ingestion_job.upload_to_bronze_s3", return_value="s3://bucket/key"):
+    with patch("src.twitter.ingestion.ingestion_job._load_api_keys", return_value=["key1"]), \
+         patch("src.twitter.ingestion.ingestion_job.TwitterAPIClient") as MockClient, \
+         patch("src.twitter.ingestion.ingestion_job.upload_to_bronze_s3", return_value="s3://bucket/key"):
 
         MockClient.return_value.get = AsyncMock(return_value=fake_response)
         result = await run_ingestion_tweets("q", QueryType.LATEST, 20)
@@ -118,9 +118,9 @@ async def test_credits_exhausted_switches_to_next_key():
             mock.get = AsyncMock(return_value=fake_response)
         return mock
 
-    with patch("src.ingestion.ingestion_job._load_api_keys", return_value=["key1", "key2"]), \
-         patch("src.ingestion.ingestion_job.TwitterAPIClient", side_effect=make_client), \
-         patch("src.ingestion.ingestion_job.upload_to_bronze_s3", return_value="s3://bucket/key"):
+    with patch("src.twitter.ingestion.ingestion_job._load_api_keys", return_value=["key1", "key2"]), \
+         patch("src.twitter.ingestion.ingestion_job.TwitterAPIClient", side_effect=make_client), \
+         patch("src.twitter.ingestion.ingestion_job.upload_to_bronze_s3", return_value="s3://bucket/key"):
 
         result = await run_ingestion_tweets("q", QueryType.LATEST, 10)
 
@@ -134,8 +134,8 @@ async def test_all_keys_exhausted_returns_empty():
         mock.get = AsyncMock(side_effect=CreditsExhaustedError(api_key))
         return mock
 
-    with patch("src.ingestion.ingestion_job._load_api_keys", return_value=["key1", "key2"]), \
-         patch("src.ingestion.ingestion_job.TwitterAPIClient", side_effect=make_client):
+    with patch("src.twitter.ingestion.ingestion_job._load_api_keys", return_value=["key1", "key2"]), \
+         patch("src.twitter.ingestion.ingestion_job.TwitterAPIClient", side_effect=make_client):
 
         result = await run_ingestion_tweets("q", QueryType.LATEST, 100)
 

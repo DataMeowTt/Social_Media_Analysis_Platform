@@ -6,15 +6,15 @@ from pyspark.sql.types import (
     IntegerType, BooleanType, ArrayType, TimestampType, DoubleType,
 )
 
-from src.analytics.transformations.enrich import (
+from src.twitter.analytics.transformations.enrich import (
     add_engagement_score, add_is_viral, add_author_influence, add_brands, add_is_bot,
     enrich_analytics,
 )
-from src.analytics.transformations.aggregate import (
+from src.twitter.analytics.transformations.aggregate import (
     build_fact_tweets, build_dim_brands, build_dim_authors,
     build_agg_brand_daily, build_agg_author_perf,
 )
-from src.analytics.validate.quality_checks import validate_analytics, validate_gold
+from src.twitter.analytics.validate.quality_checks import validate_analytics, validate_gold
 
 # ── Silver schema (output of processing pipeline) ─────────────────────────────
 

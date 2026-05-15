@@ -5,10 +5,10 @@ import os
 from dotenv import load_dotenv
 from datetime import datetime, timezone
 
-from src.ingestion.api.fetcher import TwitterDataFetcher
-from src.ingestion.api.client import TwitterAPIClient, CreditsExhaustedError
+from src.twitter.ingestion.api.fetcher import TwitterDataFetcher
+from src.twitter.ingestion.api.client import TwitterAPIClient, CreditsExhaustedError
 from src.storage.s3.uploader import upload_to_bronze_s3
-from src.ingestion.api.enums.query_type import QueryType
+from src.twitter.ingestion.api.enums.query_type import QueryType
 from src.utils.config_loader import load_config
 from src.utils.logger import get_logger
 
@@ -20,7 +20,6 @@ BUFFER_LIMIT_BYTES = 150 * 1024 * 1024  # 150MB
 
 
 def _load_api_keys() -> list[str]:
-    """Return [MY_API_KEY_1, MY_API_KEY_2, ...] in order, stopping at the first missing index."""
     keys = []
     i = 1
     while True:

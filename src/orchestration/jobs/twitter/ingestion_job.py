@@ -2,8 +2,8 @@ import asyncio
 import os
 from datetime import date
 
-from src.ingestion.ingestion_job import run_ingestion_tweets
-from src.ingestion.api.enums.query_type import QueryType
+from src.twitter.ingestion.ingestion_job import run_ingestion_tweets
+from src.twitter.ingestion.api.enums.query_type import QueryType
 
 _QUERY_BASE = (
     "(VinFast OR Tesla OR BYD OR Toyota OR BMW "

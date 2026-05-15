@@ -5,11 +5,11 @@ from pyspark.sql.types import (
     IntegerType, BooleanType, ArrayType,
 )
 
-from src.processing.transformations.clean import clean_tweets
-from src.processing.transformations.enrich import enrich_tweets
-from src.processing.transformations.normalize import flatten_tweets
-from src.processing.validation.quality_checks import validate_tweets
-from src.processing.validation.schema import TWEET_SCHEMA
+from src.twitter.processing.transformations.clean import clean_tweets
+from src.twitter.processing.transformations.enrich import enrich_tweets
+from src.twitter.processing.transformations.normalize import flatten_tweets
+from src.twitter.processing.validation.quality_checks import validate_tweets
+from src.twitter.processing.validation.schema import TWEET_SCHEMA
 
 # ── Schema for flat tweets (output of flatten_tweets) ─────────────────────────
 

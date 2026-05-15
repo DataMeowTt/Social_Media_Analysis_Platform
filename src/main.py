@@ -1,6 +1,6 @@
 from src.utils.session import create_spark_session
-from src.analytics.analytics_job import gold_processing
-from src.processing.processing_job import historical_processing
+from src.twitter.analytics.analytics_job import gold_processing
+from src.twitter.processing.processing_job import historical_processing
 from src.utils.logger import get_logger
 
 logger = get_logger(__name__)

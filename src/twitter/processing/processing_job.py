@@ -4,10 +4,10 @@ from pyspark.sql import functions as F
 from src.utils.logger import get_logger
 from src.storage.s3.uploader import write_to_S3   
 from src.storage.s3.reader import read_all_bronze, read_latest_bronze
-from src.processing.transformations.clean import clean_tweets
-from src.processing.transformations.enrich import enrich_tweets
-from src.processing.transformations.normalize import flatten_tweets
-from src.processing.validation.quality_checks import validate_tweets
+from src.twitter.processing.transformations.clean import clean_tweets
+from src.twitter.processing.transformations.enrich import enrich_tweets
+from src.twitter.processing.transformations.normalize import flatten_tweets
+from src.twitter.processing.validation.quality_checks import validate_tweets
 
 logger = get_logger(__name__)
 

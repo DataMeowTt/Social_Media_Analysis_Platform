@@ -1,5 +1,5 @@
-from src.ingestion.api.enums.query_type import QueryType
-from src.ingestion.api.enums.woeid import Woeid
+from src.twitter.ingestion.api.enums.query_type import QueryType
+from src.twitter.ingestion.api.enums.woeid import Woeid
 
 class TwitterEndpoints:
     SEARCH_TWEETS = "/twitter/tweet/advanced_search"

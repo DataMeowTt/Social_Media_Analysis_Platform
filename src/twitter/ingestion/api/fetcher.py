@@ -2,9 +2,9 @@ import asyncio
 import aiohttp
 from typing import AsyncGenerator
 
-from src.ingestion.api.client import TwitterAPIClient
-from src.ingestion.api.endpoints import TwitterEndpoints
-from src.ingestion.api.enums.query_type import QueryType
+from src.twitter.ingestion.api.client import TwitterAPIClient
+from src.twitter.ingestion.api.endpoints import TwitterEndpoints
+from src.twitter.ingestion.api.enums.query_type import QueryType
 from src.utils.logger import get_logger
 
 logger = get_logger(__name__)

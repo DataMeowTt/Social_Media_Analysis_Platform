@@ -3,15 +3,15 @@ from pyspark.sql import SparkSession
 from src.utils.logger import get_logger
 from src.storage.s3.reader import read_all_silver, read_fact_tweets_window, read_latest_silver
 from src.storage.s3.uploader import write_to_S3
-from src.analytics.transformations.enrich import enrich_analytics
-from src.analytics.transformations.aggregate import (
+from src.twitter.analytics.transformations.enrich import enrich_analytics
+from src.twitter.analytics.transformations.aggregate import (
     build_fact_tweets,
     build_dim_brands,
     build_dim_authors,
     build_agg_brand_daily,
     build_agg_author_perf,
 )
-from src.analytics.validate.quality_checks import (
+from src.twitter.analytics.validate.quality_checks import (
     validate_analytics,
     validate_gold,
     validate_agg_author_perf,

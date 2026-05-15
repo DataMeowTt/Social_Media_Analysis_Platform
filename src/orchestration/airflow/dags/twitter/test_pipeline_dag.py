@@ -4,7 +4,7 @@ from airflow import DAG
 from airflow.providers.standard.operators.python import PythonOperator
 from airflow.providers.standard.operators.bash import BashOperator
 
-from src.orchestration.jobs.ingestion_job import run_ingestion_task
+from src.orchestration.jobs.twitter.ingestion_job import run_ingestion_task
 from src.utils.deleter_duplicate import delete_raw_duplicates, delete_processed_duplicates
 from src.orchestration.airflow.dags._spark import spark_cmd as _spark_cmd
 
@@ -38,7 +38,7 @@ with DAG(
     processing = BashOperator(
         task_id="processing_silver",
         bash_command=_spark_cmd(
-            "/opt/workspace/src/orchestration/jobs/processing_job.py"
+            "/opt/workspace/src/orchestration/jobs/twitter/processing_job.py"
         ),
         execution_timeout=timedelta(hours=2),
     )
@@ -51,7 +51,7 @@ with DAG(
     analytics = BashOperator(
         task_id="analytics_gold",
         bash_command=_spark_cmd(
-            "/opt/workspace/src/orchestration/jobs/analytic_job.py"
+            "/opt/workspace/src/orchestration/jobs/twitter/analytic_job.py"
         ),
         execution_timeout=timedelta(hours=3),
     )
