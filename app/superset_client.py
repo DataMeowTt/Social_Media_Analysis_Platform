@@ -7,11 +7,10 @@ _USER = os.getenv("SUPERSET_ADMIN_USER", "admin")
 _PASS = os.getenv("SUPERSET_ADMIN_PASS", "admin")
 
 
-def _parse_dashboards() -> list[dict]:
-    raw = os.getenv("SUPERSET_DASHBOARDS", "")
+def _parse_dashboards(env_key: str) -> list[dict]:
+    raw = os.getenv(env_key, "")
     if not raw:
-        single = os.getenv("SUPERSET_DASHBOARD_ID", "")
-        return [{"id": single, "label": "Dashboard"}] if single else []
+        return []
     result = []
     for item in raw.split(","):
         parts = item.strip().split(":", 1)
@@ -19,7 +18,10 @@ def _parse_dashboards() -> list[dict]:
     return result
 
 
-DASHBOARDS = _parse_dashboards()
+PLATFORM_DASHBOARDS = {
+    "twitter": _parse_dashboards("SUPERSET_DASHBOARDS_TWITTER") or _parse_dashboards("SUPERSET_DASHBOARDS"),
+    "youtube": _parse_dashboards("SUPERSET_DASHBOARDS_YOUTUBE"),
+}
 
 
 async def _access_token() -> str:

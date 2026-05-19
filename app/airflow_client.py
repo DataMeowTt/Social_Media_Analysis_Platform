@@ -23,6 +23,10 @@ DAGS = {
         "delete_processed_duplicates",
         "analytics_gold",
     ],
+    "youtube_pipeline": [
+        "analytics_sentiment",
+        "analytics_stance",
+    ],
 }
 
 _token: Optional[str] = None

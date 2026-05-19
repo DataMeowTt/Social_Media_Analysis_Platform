@@ -1,15 +1,16 @@
 import asyncio
 import os
+import uuid
 from pathlib import Path
 
 from dotenv import load_dotenv
 load_dotenv(Path(__file__).parent.parent / ".env")
 
 import httpx
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Depends, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import HTMLResponse
-from fastapi.templating import Jinja2Templates
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+from pydantic import BaseModel
 
 import airflow_client as ac
 import superset_client as sc
@@ -19,17 +20,40 @@ app = FastAPI(title="Social Media Pipeline Dashboard")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
-    allow_methods=["GET"],
+    allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )
 
-_TEMPLATES_DIR = Path(__file__).parent / "templates"
-templates = Jinja2Templates(directory=str(_TEMPLATES_DIR))
+_USERNAME = os.getenv("USERNAME", "admin")
+_PASSWORD = os.getenv("PASSWORD", "admin")
+_valid_tokens: set[str] = set()
+
+security = HTTPBearer()
 
 
-@app.get("/", response_class=HTMLResponse)
-async def index(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
+def require_auth(credentials: HTTPAuthorizationCredentials = Depends(security)):
+    if credentials.credentials not in _valid_tokens:
+        raise HTTPException(status_code=401, detail="Invalid or expired token")
+
+
+class LoginRequest(BaseModel):
+    username: str
+    password: str
+
+
+@app.post("/api/auth/login")
+async def login(body: LoginRequest):
+    if body.username != _USERNAME or body.password != _PASSWORD:
+        raise HTTPException(status_code=401, detail="Invalid credentials")
+    token = str(uuid.uuid4())
+    _valid_tokens.add(token)
+    return {"token": token}
+
+
+@app.post("/api/auth/logout")
+async def logout(credentials: HTTPAuthorizationCredentials = Depends(security)):
+    _valid_tokens.discard(credentials.credentials)
+    return {"ok": True}
 
 
 async def _fetch_status(dag_id: str) -> dict:
@@ -48,24 +72,24 @@ async def _fetch_runs(dag_id: str) -> list:
         return []
 
 
-@app.get("/api/status")
+@app.get("/api/status", dependencies=[Depends(require_auth)])
 async def api_status():
     results = await asyncio.gather(*[_fetch_status(dag_id) for dag_id in ac.DAGS])
     return dict(zip(ac.DAGS.keys(), results))
 
 
-@app.get("/api/runs")
+@app.get("/api/runs", dependencies=[Depends(require_auth)])
 async def api_runs():
     results = await asyncio.gather(*[_fetch_runs(dag_id) for dag_id in ac.DAGS])
     return dict(zip(ac.DAGS.keys(), results))
 
 
-@app.get("/api/superset/config")
+@app.get("/api/superset/config", dependencies=[Depends(require_auth)])
 async def superset_config():
-    return {"dashboards": sc.DASHBOARDS, "superset_url": sc.SUPERSET_URL}
+    return {"platforms": sc.PLATFORM_DASHBOARDS, "superset_url": sc.SUPERSET_URL}
 
 
-@app.get("/api/superset/guest-token")
+@app.get("/api/superset/guest-token", dependencies=[Depends(require_auth)])
 async def superset_guest_token(dashboard_id: str):
     token = await sc.get_guest_token(dashboard_id)
     return {"token": token}

@@ -6,6 +6,8 @@ const DISPLAY_NAME = {
   processing_silver:           'Processing',
   delete_processed_duplicates: 'Dedup Silver',
   analytics_gold:              'Analytics',
+  analytics_sentiment:         'Sentiment',
+  analytics_stance:            'Stance',
 }
 
 const STATE_ICON = {
@@ -18,40 +20,21 @@ const STATE_ICON = {
   none:            '—',
 }
 
-function Connector({ prevState, nextState }) {
+function ArrowConnector({ prevState, nextState }) {
   const flowing = prevState === 'success' && nextState === 'running'
   const done    = prevState === 'success' && nextState === 'success'
   const failed  = nextState === 'failed' || nextState === 'upstream_failed'
 
-  const lineColor  = done ? '#34A853' : failed ? '#EA4335' : '#dadce0'
-  const arrowColor = done ? '#34A853' : flowing ? '#1a73e8' : failed ? '#EA4335' : '#9aa0a6'
+  const color = done ? '#34A853' : failed ? '#EA4335' : flowing ? '#1a73e8' : 'var(--c-border)'
 
   return (
-    <div style={{
-      flexShrink: 0,
-      width: 36,
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      gap: 3,
-    }}>
-      {/* Connector line */}
-      <div style={{
-        position: 'relative',
-        width: 28,
-        height: 3,
-        background: lineColor,
-        borderRadius: 2,
-        overflow: 'hidden',
-      }}>
+    <div style={{ flexShrink: 0, width: 44, display: 'flex', alignItems: 'center', gap: 0 }}>
+      <div style={{ position: 'relative', flex: 1, height: 2, background: color, borderRadius: 1, overflow: 'hidden' }}>
         {flowing && <div className="flow-pulse" />}
       </div>
-
-      {/* Arrow */}
-      <span style={{ fontSize: 13, color: arrowColor, lineHeight: 1, fontWeight: 600 }}>
-        ›
-      </span>
+      <svg width="9" height="14" viewBox="0 0 9 14" fill="none" style={{ flexShrink: 0 }}>
+        <path d="M1 1L8 7L1 13" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
     </div>
   )
 }
@@ -66,37 +49,42 @@ function TaskCard({ task }) {
       flex: 1,
       background: 'var(--c-surface)',
       border: '1px solid var(--c-border)',
-      borderLeft: `4px solid ${colors.border}`,
-      borderRadius: 8,
-      boxShadow: '0 1px 3px var(--c-shadow)',
-      padding: '16px 18px',
+      borderTop: `3px solid ${colors.border}`,
+      borderRadius: 10,
+      boxShadow: '0 2px 8px var(--c-shadow)',
+      padding: '14px 16px',
       minWidth: 0,
     }}>
-      <div style={{ fontSize: 13, fontWeight: 500, color: 'var(--c-muted)', marginBottom: 8 }}>
+      <div style={{
+        fontSize: 11, fontWeight: 700,
+        color: 'var(--c-muted)',
+        textTransform: 'uppercase', letterSpacing: '0.07em',
+        marginBottom: 10,
+      }}>
         {DISPLAY_NAME[taskId] ?? taskId}
       </div>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 7, marginBottom: 10 }}>
         <span
           className={state === 'running' ? 'spin' : undefined}
-          style={{ fontSize: 16, color: colors.border, fontWeight: 700, lineHeight: 1 }}
+          style={{ fontSize: 14, color: colors.border, fontWeight: 700, lineHeight: 1, flexShrink: 0 }}
         >
           {STATE_ICON[state] ?? '—'}
         </span>
         <span style={{
-          fontSize: 12,
-          fontWeight: 500,
+          fontSize: 11, fontWeight: 600,
           color: colors.text,
           background: colors.bg,
-          borderRadius: 12,
-          padding: '2px 10px',
+          borderRadius: 10, padding: '2px 9px',
           textTransform: 'capitalize',
+          border: `1px solid ${colors.border}28`,
+          whiteSpace: 'nowrap',
         }}>
           {state.replace(/_/g, ' ')}
         </span>
       </div>
 
-      <div style={{ fontSize: 12, color: 'var(--c-muted)' }}>
+      <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--c-text)', letterSpacing: '-0.01em' }}>
         {formatDuration(task?.duration_seconds)}
       </div>
     </div>
@@ -104,13 +92,14 @@ function TaskCard({ task }) {
 }
 
 export default function TaskFlow({ tasks }) {
+  if (!tasks?.length) return null
   return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: 0 }}>
-      {(tasks ?? []).map((task, i) => (
+    <div style={{ display: 'flex', alignItems: 'stretch', gap: 0 }}>
+      {tasks.map((task, i) => (
         <div key={task.task_id} style={{ display: 'flex', alignItems: 'center', flex: 1, minWidth: 0 }}>
           <TaskCard task={task} />
           {i < tasks.length - 1 && (
-            <Connector
+            <ArrowConnector
               prevState={task.state}
               nextState={tasks[i + 1]?.state}
             />

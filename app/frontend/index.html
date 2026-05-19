@@ -15,12 +15,17 @@
     <style>
       :root {
         --c-surface: #fff;
-        --c-app:     #f8f9fa;
+        --c-app:     #f0f2f5;
         --c-hover:   #f1f3f4;
         --c-border:  #dadce0;
         --c-text:    #202124;
         --c-muted:   #5f6368;
-        --c-shadow:  rgba(0,0,0,0.12);
+        --c-shadow:  rgba(0,0,0,0.10);
+        --c-nav:        #16202d;
+        --c-nav-text:   #e2e8f0;
+        --c-nav-muted:  #8896a7;
+        --c-nav-hover:  rgba(255,255,255,0.07);
+        --c-nav-border: rgba(255,255,255,0.07);
       }
       [data-theme="dark"] {
         --c-surface: #1e1e1e;
@@ -30,6 +35,11 @@
         --c-text:    #e8eaed;
         --c-muted:   #9aa0a6;
         --c-shadow:  rgba(0,0,0,0.4);
+        --c-nav:        #0d1117;
+        --c-nav-text:   #c9d1d9;
+        --c-nav-muted:  #6e7681;
+        --c-nav-hover:  rgba(255,255,255,0.06);
+        --c-nav-border: rgba(255,255,255,0.08);
       }
       * { box-sizing: border-box; margin: 0; padding: 0; transition: background 0.2s, border-color 0.2s, color 0.2s; }
       body { font-family: 'Roboto', sans-serif; background: var(--c-app); color: var(--c-text); }

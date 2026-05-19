@@ -30,6 +30,16 @@ function MoonIcon() {
   )
 }
 
+function LogoutIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+      <polyline points="16 17 21 12 16 7" />
+      <line x1="21" y1="12" x2="9" y2="12" />
+    </svg>
+  )
+}
+
 const iconBtn = {
   display: 'flex', alignItems: 'center', justifyContent: 'center',
   width: 36, height: 36, border: 'none', borderRadius: '50%',
@@ -37,7 +47,7 @@ const iconBtn = {
   cursor: 'pointer', transition: 'background 0.15s',
 }
 
-export default function Header({ lastRefreshed, onRefresh, dark, onToggleDark }) {
+export default function Header({ lastRefreshed, onRefresh, dark, onToggleDark, onLogout }) {
   return (
     <header style={{
       background: 'var(--c-surface)',
@@ -51,13 +61,13 @@ export default function Header({ lastRefreshed, onRefresh, dark, onToggleDark })
       top: 0,
       zIndex: 10,
     }}>
-      <span style={{ fontSize: 18, fontWeight: 500, color: '#1a73e8', letterSpacing: '-0.01em' }}>
-        Social Media Pipeline
+      <span style={{ fontSize: 18, fontWeight: 600, color: '#1a73e8', letterSpacing: '-0.01em' }}>
+        Social Media Analytics
       </span>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
         {lastRefreshed && (
-          <span style={{ fontSize: 12, color: 'var(--c-muted)', fontWeight: 400 }}>
+          <span style={{ fontSize: 12, color: 'var(--c-muted)', fontWeight: 400, marginRight: 4 }}>
             Updated {formatDate(lastRefreshed.toISOString())}
           </span>
         )}
@@ -78,6 +88,16 @@ export default function Header({ lastRefreshed, onRefresh, dark, onToggleDark })
           onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
         >
           <RefreshIcon />
+        </button>
+        <div style={{ width: 1, height: 20, background: 'var(--c-border)', margin: '0 4px' }} />
+        <button
+          onClick={onLogout}
+          title="Logout"
+          style={iconBtn}
+          onMouseEnter={e => e.currentTarget.style.background = 'var(--c-hover)'}
+          onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
+        >
+          <LogoutIcon />
         </button>
       </div>
     </header>

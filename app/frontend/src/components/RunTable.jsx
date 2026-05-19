@@ -3,27 +3,24 @@ import { getStateColor, formatDate, formatDuration } from '../utils.js'
 const CARD = {
   background: 'var(--c-surface)',
   border: '1px solid var(--c-border)',
-  borderRadius: 8,
-  boxShadow: '0 1px 3px rgba(0,0,0,0.12)',
+  borderRadius: 12,
+  boxShadow: '0 2px 8px var(--c-shadow)',
   overflow: 'hidden',
 }
 
 function StateBadge({ state }) {
   const colors = getStateColor(state ?? 'none')
   return (
-    <span
-      style={{
-        display: 'inline-block',
-        fontSize: 11,
-        fontWeight: 500,
-        color: colors.text,
-        background: colors.bg,
-        borderRadius: 12,
-        padding: '2px 10px',
-        textTransform: 'capitalize',
-        whiteSpace: 'nowrap',
-      }}
-    >
+    <span style={{
+      display: 'inline-flex', alignItems: 'center', gap: 5,
+      fontSize: 11, fontWeight: 600,
+      color: colors.text,
+      background: colors.bg,
+      border: `1px solid ${colors.border}28`,
+      borderRadius: 10, padding: '2px 9px',
+      textTransform: 'capitalize', whiteSpace: 'nowrap',
+    }}>
+      <span style={{ width: 5, height: 5, borderRadius: '50%', background: colors.border, display: 'inline-block', flexShrink: 0 }} />
       {(state ?? 'none').replace('_', ' ')}
     </span>
   )
@@ -34,14 +31,38 @@ function truncateId(id) {
   return id.length > 20 ? `…${id.slice(-18)}` : id
 }
 
-const TH = { fontSize: 11, fontWeight: 500, color: 'var(--c-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', padding: '10px 16px', textAlign: 'left', borderBottom: '1px solid var(--c-border)', whiteSpace: 'nowrap' }
+const TH = {
+  fontSize: 11, fontWeight: 600, color: 'var(--c-muted)',
+  textTransform: 'uppercase', letterSpacing: '0.06em',
+  padding: '10px 16px', textAlign: 'left',
+  borderBottom: '1px solid var(--c-border)', whiteSpace: 'nowrap',
+  background: 'var(--c-app)',
+}
 const TD = { fontSize: 13, color: 'var(--c-text)', padding: '10px 16px', whiteSpace: 'nowrap' }
 
 export default function RunTable({ runs }) {
   return (
     <div style={CARD}>
-      <div style={{ fontSize: 14, fontWeight: 500, color: 'var(--c-text)', padding: '20px 24px 12px' }}>
-        Run History
+      {/* Card header */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '20px 24px 16px' }}>
+        <div style={{
+          width: 30, height: 30, borderRadius: 8,
+          background: 'rgba(52,168,83,0.10)',
+          display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+        }}>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34A853" strokeWidth="2.5" strokeLinecap="round">
+            <line x1="8" y1="6" x2="21" y2="6"/>
+            <line x1="8" y1="12" x2="21" y2="12"/>
+            <line x1="8" y1="18" x2="21" y2="18"/>
+            <line x1="3" y1="6" x2="3.01" y2="6"/>
+            <line x1="3" y1="12" x2="3.01" y2="12"/>
+            <line x1="3" y1="18" x2="3.01" y2="18"/>
+          </svg>
+        </div>
+        <div>
+          <div style={{ fontSize: 14, fontWeight: 600, color: 'var(--c-text)', lineHeight: 1.2 }}>Run History</div>
+          <div style={{ fontSize: 11.5, color: 'var(--c-muted)', marginTop: 1 }}>Recent pipeline runs</div>
+        </div>
       </div>
 
       <div style={{ overflowX: 'auto' }}>
@@ -58,7 +79,7 @@ export default function RunTable({ runs }) {
           <tbody>
             {runs.length === 0 ? (
               <tr>
-                <td colSpan={5} style={{ ...TD, color: '#5f6368', textAlign: 'center', padding: 32 }}>
+                <td colSpan={5} style={{ ...TD, color: 'var(--c-muted)', textAlign: 'center', padding: 36 }}>
                   No runs found
                 </td>
               </tr>
@@ -66,17 +87,19 @@ export default function RunTable({ runs }) {
               runs.map((run, i) => (
                 <tr
                   key={run.run_id ?? i}
-                  style={{ background: i % 2 === 0 ? 'var(--c-app)' : 'var(--c-surface)' }}
+                  style={{ background: 'var(--c-surface)', transition: 'background 0.12s', cursor: 'default' }}
+                  onMouseEnter={e => e.currentTarget.style.background = 'var(--c-hover)'}
+                  onMouseLeave={e => e.currentTarget.style.background = 'var(--c-surface)'}
                 >
-                  <td style={{ ...TD, fontFamily: 'monospace', fontSize: 12, color: '#5f6368' }}>
+                  <td style={{ ...TD, fontFamily: 'monospace', fontSize: 11.5, color: 'var(--c-muted)' }}>
                     {truncateId(run.run_id)}
                   </td>
                   <td style={TD}>
                     <StateBadge state={run.state} />
                   </td>
                   <td style={TD}>{formatDate(run.start_date)}</td>
-                  <td style={TD}>{formatDuration(run.duration_seconds)}</td>
-                  <td style={{ ...TD, color: '#5f6368' }}>{run.triggered_by ?? '—'}</td>
+                  <td style={{ ...TD, fontWeight: 500 }}>{formatDuration(run.duration_seconds)}</td>
+                  <td style={{ ...TD, color: 'var(--c-muted)' }}>{run.triggered_by ?? '—'}</td>
                 </tr>
               ))
             )}
