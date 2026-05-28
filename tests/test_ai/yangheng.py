@@ -2,7 +2,7 @@ import torch
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch.nn.functional as F
 
-model_name = "src/ml/models/ml_ytb"
+model_name = "src/ml/models/ytb_sentiment"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForSequenceClassification.from_pretrained(model_name)
 
@@ -12,6 +12,8 @@ texts = [
     "The iPhone's screen is beautiful, but the operating system feels way too restrictive compared to Android.",
     "Android has terrible battery optimization, making the iPhone look like a lifesaver.",
     "I don't think iPhone is a bad phone, but Android just offers so much more freedom for power users.",
+    "iphone vs android",
+    "Everyone knows iPhone is king Android is for try Hards who think their tech is better"
 ]
 aspects = ["iPhone", "Android"]
 

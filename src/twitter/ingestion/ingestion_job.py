@@ -16,7 +16,7 @@ load_dotenv()
 CONFIG = load_config()
 logger = get_logger(__name__)
 
-BUFFER_LIMIT_BYTES = 150 * 1024 * 1024  # 150MB
+BUFFER_LIMIT_BYTES = 300 * 1024 * 1024  # 300MB
 
 
 def _load_api_keys() -> list[str]:

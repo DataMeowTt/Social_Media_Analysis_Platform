@@ -21,12 +21,18 @@ RUN pip install --no-cache-dir \
     python-dotenv \
     pyarrow==14.0.1 \
     pandas \
-    transformers
+    transformers \
+    sentencepiece \
+    protobuf \
+    accelerate>=0.26.0 \
+    safetensors
 
 # Install torch separately
 RUN pip install --no-cache-dir torch
 
 COPY src/ml/models/sentiment /opt/models/sentiment
+COPY src/ml/models/ytb_sentiment /opt/models/ytb_sentiment
+COPY src/ml/models/zeroshot /opt/models/zeroshot
 
 ENV PYSPARK_PYTHON=/opt/venv/bin/python
 ENV PYSPARK_DRIVER_PYTHON=/opt/venv/bin/python

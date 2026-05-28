@@ -114,3 +114,23 @@ def delete_processed_duplicates() -> None:
                   ContentType="application/octet-stream")
 
     print(f"[processed] total={total}  duplicates={duplicates}  remaining={len(deduped)}")
+
+
+# ── Full prefix wipe ──────────────────────────────────────────────────────────
+
+def delete_full(prefix: str) -> None:
+    s3 = _s3()
+    keys = [
+        obj["Key"]
+        for page in s3.get_paginator("list_objects_v2").paginate(Bucket=BUCKET, Prefix=prefix)
+        for obj in page.get("Contents", [])
+    ]
+    if not keys:
+        print(f"[delete_full] No objects found under {prefix}")
+        return
+    for i in range(0, len(keys), 1000):
+        s3.delete_objects(
+            Bucket=BUCKET,
+            Delete={"Objects": [{"Key": k} for k in keys[i:i + 1000]]},
+        )
+    print(f"[delete_full] Deleted {len(keys)} objects under {prefix}")

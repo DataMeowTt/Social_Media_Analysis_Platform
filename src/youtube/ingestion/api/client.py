@@ -9,6 +9,22 @@ class YouTubeAPIClient:
     def __init__(self, api_key: str):
         self._youtube = build("youtube", "v3", developerKey=api_key)
 
+    def get_reply_comments(self, parent_id: str, page_token: str | None = None) -> dict | None:
+        try:
+            return (
+                self._youtube.comments()
+                .list(
+                    part="snippet",
+                    parentId=parent_id,
+                    maxResults=100,
+                    pageToken=page_token,
+                )
+                .execute()
+            )
+        except HttpError as e:
+            logger.error(f"YouTube API error fetching replies for {parent_id}: {e}")
+            return None
+
     def get_comment_threads(self, video_id: str, page_token: str | None = None) -> dict | None:
         try:
             return (

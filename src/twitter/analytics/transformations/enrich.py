@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import math
+
 from pyspark.sql import DataFrame
 from pyspark.sql import functions as F
 from pyspark.sql.column import Column
@@ -40,13 +42,27 @@ def _brand_match(keywords: list[str]) -> Column:
 # ── Enrichment steps ──────────────────────────────────────────────────────────
 
 def add_engagement_score(df: DataFrame) -> DataFrame:
-    return df.withColumn(
-        "engagement_score",
-        F.col("retweetCount") * 2
-        + F.col("likeCount")
-        + F.col("replyCount") * 1.5
-        + F.col("quoteCount") * 1.5,
+    raw_engagement = (
+        F.coalesce(F.col("likeCount"),    F.lit(0)) * 1.0
+        + F.coalesce(F.col("retweetCount"), F.lit(0)) * 2.0
+        + F.coalesce(F.col("replyCount"),   F.lit(0)) * 1.5
+        + F.coalesce(F.col("quoteCount"),   F.lit(0)) * 2.0
     )
+
+    author_weight = F.log10(F.coalesce(F.col("author_followers"), F.lit(0)) + 1) * F.when(
+        F.col("author_is_blue_verified") == True, F.lit(1.2)
+    ).otherwise(F.lit(1.0))
+
+    age_hours = F.greatest(
+        (F.unix_timestamp(F.current_timestamp()) - F.unix_timestamp(F.col("created_at_ts"))) / 3600.0,
+        F.lit(0.0),
+    )
+
+    time_decay = F.lit(1.0) / F.log(age_hours + F.lit(math.e))
+
+    score = (F.log(raw_engagement + 1) * 0.5 + author_weight * 0.3) * time_decay
+
+    return df.withColumn("engagement_score", score)
 
 
 def add_is_viral(df: DataFrame, threshold: int = 1000) -> DataFrame:

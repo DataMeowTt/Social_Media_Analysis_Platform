@@ -132,7 +132,7 @@ services:
       /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
     environment:
       - SPARK_WORKER_CORES=3
-      - SPARK_WORKER_MEMORY=4G
+      - SPARK_WORKER_MEMORY=6G
       - TRANSFORMERS_OFFLINE=1
     depends_on:
       - spark-master
@@ -140,8 +140,7 @@ services:
       - "8081:8081"
     volumes:
       - ${HOST_WORKSPACE}:/opt/workspace
-      - ~/.aws:/root/.aws:ro
-    mem_limit: 6g
+    mem_limit: 10g
     cpus: 3
 
   spark-worker-2:
@@ -153,7 +152,7 @@ services:
       /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
     environment:
       - SPARK_WORKER_CORES=3
-      - SPARK_WORKER_MEMORY=4G
+      - SPARK_WORKER_MEMORY=6G
       - TRANSFORMERS_OFFLINE=1
     depends_on:
       - spark-master
@@ -161,8 +160,7 @@ services:
       - "8082:8081"
     volumes:
       - ${HOST_WORKSPACE}:/opt/workspace
-      - ~/.aws:/root/.aws:ro
-    mem_limit: 6g
+    mem_limit: 10g
     cpus: 3
 
   spark-submit:
@@ -182,7 +180,9 @@ services:
       - TRANSFORMERS_OFFLINE=1
     volumes:
       - ${HOST_WORKSPACE}:/opt/workspace
-    command: ["bash"]
+      - ivy2-cache:/root/.ivy2
+    command: ["bash"]  # airflow-triggered mode
+
 
   superset-db:
     image: postgres:17
@@ -308,3 +308,4 @@ volumes:
   superset-db-volume:
   superset-redis-volume:
   superset-home-volume:
+  ivy2-cache:

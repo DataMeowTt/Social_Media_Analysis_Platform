@@ -21,6 +21,7 @@ def _parse_dashboards(env_key: str) -> list[dict]:
 PLATFORM_DASHBOARDS = {
     "twitter": _parse_dashboards("SUPERSET_DASHBOARDS_TWITTER") or _parse_dashboards("SUPERSET_DASHBOARDS"),
     "youtube": _parse_dashboards("SUPERSET_DASHBOARDS_YOUTUBE"),
+    "facebook": _parse_dashboards("SUPERSET_DASHBOARDS_FACEBOOK"),
 }
 
 

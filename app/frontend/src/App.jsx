@@ -6,6 +6,7 @@ import RunChart from './components/RunChart.jsx'
 import RunTable from './components/RunTable.jsx'
 import SupersetEmbed from './components/SupersetEmbed.jsx'
 import ThreadInsights from './components/ThreadInsights.jsx'
+import FacebookCharts from './components/FacebookCharts.jsx'
 import LoginPage from './pages/LoginPage.jsx'
 import { apiFetch, formatDate } from './utils.js'
 
@@ -36,23 +37,6 @@ const PLATFORM_LABELS = {
   facebook: 'Facebook',
 }
 
-function NotReadyPlaceholder() {
-  return (
-    <div style={{
-      padding: 60, textAlign: 'center',
-      background: 'var(--c-surface)', border: '1px solid var(--c-border)',
-      borderRadius: 8,
-    }}>
-      <div style={{ fontSize: 32, marginBottom: 12 }}>🚧</div>
-      <div style={{ fontSize: 15, fontWeight: 600, color: 'var(--c-text)', marginBottom: 8 }}>
-        Not ready yet
-      </div>
-      <div style={{ fontSize: 13, color: 'var(--c-muted)' }}>
-        Analytics dashboard for this platform is coming soon.
-      </div>
-    </div>
-  )
-}
 
 function SkeletonCard({ height = 120 }) {
   return (
@@ -305,7 +289,10 @@ export default function App() {
             {selectedView === 'thread_insights' ? (
               <ThreadInsights />
             ) : selectedView === 'analytics' && selectedPlatform === 'facebook' ? (
-              <NotReadyPlaceholder />
+              <>
+                <SupersetEmbed platform="facebook" />
+                <FacebookCharts />
+              </>
             ) : selectedView === 'analytics' ? (
               <SupersetEmbed platform={selectedPlatform} />
             ) : (

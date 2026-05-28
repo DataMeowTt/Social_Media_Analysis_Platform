@@ -14,6 +14,7 @@ from pydantic import BaseModel
 import airflow_client as ac
 import superset_client as sc
 import s3_insights
+import fb_insights
 
 app = FastAPI(title="Social Media Pipeline Dashboard")
 
@@ -98,6 +99,11 @@ async def superset_guest_token(dashboard_id: str):
 @app.get("/api/youtube/thread-insights", dependencies=[Depends(require_auth)])
 async def youtube_thread_insights():
     return await asyncio.to_thread(s3_insights.read_thread_insights)
+
+
+@app.get("/api/facebook/controversial-posts", dependencies=[Depends(require_auth)])
+async def fb_controversial_posts():
+    return await asyncio.to_thread(fb_insights.controversial_posts)
 
 
 if __name__ == "__main__":

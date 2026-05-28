@@ -16,7 +16,7 @@ _default_args = {
 }
 
 with DAG(
-    dag_id="social_media_pipeline_test",
+    dag_id="twitter_pipeline_test",
     default_args=_default_args,
     description="Test pipeline — safe to run multiple times a day (deduplicates between runs)",
     schedule=None,

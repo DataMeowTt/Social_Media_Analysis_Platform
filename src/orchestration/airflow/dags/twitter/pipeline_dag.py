@@ -3,8 +3,8 @@ from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.providers.standard.operators.python import PythonOperator
 from airflow.providers.standard.operators.bash import BashOperator
-
 from src.orchestration.jobs.twitter.ingestion_job import run_ingestion_task
+
 from src.orchestration.airflow.dags._spark import spark_cmd as _spark_cmd
 
 
@@ -15,11 +15,10 @@ _default_args = {
 }
 
 with DAG(
-    dag_id="social_media_pipeline",
+    dag_id="twitter_pipeline",
     default_args=_default_args,
     description="Social Media Analysis Pipeline: Ingest tweets, process data, and run analytics",
-    # TODO: change to daily schedule after testing
-    # schedule="0 6 * * *",
+    schedule=None,
     start_date=datetime(2025, 1, 1),
     catchup=False,
     tags=["social-media"],
@@ -46,4 +45,4 @@ with DAG(
         execution_timeout=timedelta(hours=3),
     )
 
-    ingestion >> processing >> analytics
+    processing >> analytics

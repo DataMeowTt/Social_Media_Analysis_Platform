@@ -21,6 +21,3 @@ def load_config() -> dict:
     return {**_load_yaml("base.yaml"), **_load_yaml(f"{env}.yaml")}
 
 
-@lru_cache(maxsize=None)
-def load_table_config(layer: str) -> dict:
-    return _load_yaml("tables.yaml")["s3"][layer]

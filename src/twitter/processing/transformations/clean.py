@@ -1,5 +1,6 @@
 from pyspark.sql import DataFrame
 from pyspark.sql import functions as F
+from src.utils.helpers import clean_text
 from src.utils.logger import get_logger
 
 logger = get_logger(__name__)
@@ -21,18 +22,8 @@ def drop_negative_engagement(df: DataFrame) -> DataFrame:
         (F.col("quoteCount")   >= 0)
     )
 
-def clean_text(df: DataFrame) -> DataFrame:
-    return (
-        df
-        .withColumn("text", F.regexp_replace(F.col("text"), r"@\w+", "")) # Remove mentions
-        .withColumn("text", F.regexp_replace(F.col("text"), r"https?://\S+", "")) # Remove URLs
-        .withColumn("text", F.regexp_replace(F.col("text"), "[^\w\s#\U0001F300-\U0010FFFF]", "")) # Remove special characters except hashtags and emojis
-        .withColumn("text", F.trim(F.regexp_replace(F.col("text"), r"\s{2,}", " "))) # Replace multiple spaces with single space and trim
-    )
-
 def clean_tweets(df: DataFrame) -> DataFrame:
     df = drop_missing_critical_fields(df)
     df = drop_negative_engagement(df)
     df = clean_text(df)
-    
     return df

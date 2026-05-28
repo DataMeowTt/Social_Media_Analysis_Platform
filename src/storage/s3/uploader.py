@@ -8,7 +8,7 @@ if TYPE_CHECKING:
     from pyspark.sql import DataFrame
 
 from src.storage.s3.partitioning import get_s3_key
-from src.utils.config_loader import load_config, load_table_config
+from src.utils.config_loader import load_config
 from src.utils.logger import get_logger
 from src.utils.session import get_s3_client, get_glue_client
 
@@ -23,20 +23,23 @@ def upload_to_bronze_s3(
     data: list[dict],
     dataset: str,
     ingestion_time: datetime = None,
+    youtube_id: str | None = None,
 ) -> str:
-    table_config = load_table_config("raw")
-
     if ingestion_time is None:
         ingestion_time = datetime.now(timezone.utc)
 
     filename = f"{dataset}_{ingestion_time.strftime('%Y%m%d_%H%M%S')}.json.gz"
-    s3_key = get_s3_key(
-        layer="raw",
-        dataset=dataset,
-        filename=filename,
-        partition_time=ingestion_time,
-        partition_cols=table_config["partition_cols"],
-    )
+
+    if youtube_id is not None:
+        s3_key = f"raw/youtube/{youtube_id}/{filename}"
+    else:
+        s3_key = get_s3_key(
+            layer="raw",
+            dataset=dataset,
+            filename=filename,
+            partition_time=ingestion_time,
+            partition_cols=["year", "month", "day"],
+        )
 
     body = gzip.compress(json.dumps(data, ensure_ascii=False).encode("utf-8"))
     get_s3_client().put_object(
@@ -59,14 +62,16 @@ def write_to_S3(
     layer: str,
     mode: str = "overwrite",
     partition_cols: list[str] | None = None,
+    path_override: str | None = None,
 ) -> None:
     if partition_cols is None:
-        partition_cols = load_table_config(layer)["partition_cols"]
+        partition_cols = ["year", "month", "day"]
 
     dataset = table_name.split(".")[-1]
     database = table_name.split(".")[0]
-    s3a_path = f"s3a://{bucket}/{layer}/{dataset}/"
-    s3_path  = f"s3://{bucket}/{layer}/{dataset}/"
+    base     = path_override or f"{layer}/{dataset}"
+    s3a_path = f"s3a://{bucket}/{base}/"
+    s3_path  = f"s3://{bucket}/{base}/"
 
     if partition_cols:
         df = df.repartition(*partition_cols)

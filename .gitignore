@@ -106,3 +106,6 @@ src/ml/data_training/
 
 temporary/*
 .databricks
+
+.codegraph/
+CLAUDE.md

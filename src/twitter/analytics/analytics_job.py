@@ -1,7 +1,7 @@
 from pyspark.sql import SparkSession
 
 from src.utils.logger import get_logger
-from src.storage.s3.reader import read_all_silver, read_fact_tweets_window, read_latest_silver
+from src.storage.s3.reader import read_all_silver, read_fact_tweets_window
 from src.storage.s3.uploader import write_to_S3
 from src.twitter.analytics.transformations.enrich import enrich_analytics
 from src.twitter.analytics.transformations.aggregate import (
@@ -20,13 +20,14 @@ from src.ml.ml_job import run_ml_pipeline
 
 logger = get_logger(__name__)
 LAYER = "analytics"
+TWEETS_PREFIX = "analytics/tweets"
 
 
 def gold_processing(spark: SparkSession) -> None:
     logger.info("Starting silver → gold pipeline")
 
     enriched_df = enrich_analytics(
-        read_latest_silver(spark, dataset="tweets").dropDuplicates(["id"]) # avoiding accidents duplicate in silver layer by code 
+        read_all_silver(spark, dataset="tweets").dropDuplicates(["id"])
     )
     enriched_df.cache()
 
@@ -51,10 +52,10 @@ def gold_processing(spark: SparkSession) -> None:
     validate_gold(fact_tweets, dim_authors, agg_brand_daily)
     logger.info("Gold validation passed — writing tables...")
 
-    write_to_S3(fact_tweets,     "analytics.fact_tweets",     LAYER, partition_cols=["date", "primary_brand"])
-    write_to_S3(dim_brands,      "analytics.dim_brands",      LAYER, partition_cols=[])
-    write_to_S3(dim_authors,     "analytics.dim_authors",     LAYER, partition_cols=[])
-    write_to_S3(agg_brand_daily, "analytics.agg_brand_daily", LAYER, partition_cols=["brand_name"])
+    write_to_S3(fact_tweets,     "analytics.fact_tweets",     LAYER, partition_cols=["date", "primary_brand"], path_override=f"{TWEETS_PREFIX}/fact_tweets")
+    write_to_S3(dim_brands,      "analytics.dim_brands",      LAYER, partition_cols=[],                        path_override=f"{TWEETS_PREFIX}/dim_brands")
+    write_to_S3(dim_authors,     "analytics.dim_authors",     LAYER, partition_cols=[],                        path_override=f"{TWEETS_PREFIX}/dim_authors")
+    write_to_S3(agg_brand_daily, "analytics.agg_brand_daily", LAYER, partition_cols=["brand_name"],            path_override=f"{TWEETS_PREFIX}/agg_brand_daily")
 
     df.unpersist()
     dim_authors.unpersist()
@@ -67,7 +68,7 @@ def gold_processing(spark: SparkSession) -> None:
     agg_author_perf = build_agg_author_perf(df_30d)
     agg_author_perf.cache()
     validate_agg_author_perf(agg_author_perf)
-    write_to_S3(agg_author_perf, "analytics.agg_author_perf", LAYER, partition_cols=[])
+    write_to_S3(agg_author_perf, "analytics.agg_author_perf", LAYER, partition_cols=[], path_override=f"{TWEETS_PREFIX}/agg_author_perf")
     
     agg_author_perf.unpersist()
     df_30d.unpersist()
