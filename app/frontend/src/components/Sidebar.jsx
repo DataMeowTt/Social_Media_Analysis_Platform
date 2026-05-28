@@ -1,9 +1,11 @@
 import { formatDate } from '../utils.js'
+import iconStatistic from '../../image/icon_statistic.png'
+import logoUet from '../../image/logo_uet.webp'
 
 const PLATFORMS = [
   { id: 'twitter',  label: 'Twitter',  color: '#1DA1F2', hasPipeline: true },
   { id: 'youtube',  label: 'YouTube',  color: '#FF0000', hasPipeline: true },
-  { id: 'facebook', label: 'Facebook', color: '#1877F2', hasPipeline: false, disabled: true },
+  { id: 'facebook', label: 'Facebook', color: '#1877F2', hasPipeline: true },
 ]
 
 function TwitterIcon() {
@@ -128,18 +130,7 @@ export default function Sidebar({ selectedPlatform, onChange, dark, onToggleDark
         gap: 11,
         flexShrink: 0,
       }}>
-        <div style={{
-          width: 36, height: 36, borderRadius: 10, flexShrink: 0,
-          background: 'linear-gradient(135deg, #1a73e8 0%, #6c47ff 100%)',
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          boxShadow: '0 4px 12px rgba(26,115,232,0.4)',
-        }}>
-          <svg width="19" height="19" viewBox="0 0 40 40" fill="none">
-            <rect x="4"  y="22" width="7" height="14" rx="2" fill="white" opacity="0.75"/>
-            <rect x="16" y="14" width="7" height="22" rx="2" fill="white" opacity="0.9"/>
-            <rect x="28" y="8"  width="7" height="28" rx="2" fill="white"/>
-          </svg>
-        </div>
+        <img src={iconStatistic} alt="icon" style={{ width: 36, height: 36, flexShrink: 0 }} />
         <div>
           <div style={{ fontSize: 13.5, fontWeight: 700, color: 'var(--c-nav-text)', letterSpacing: '-0.01em', lineHeight: 1.3 }}>
             Analytics
@@ -243,6 +234,20 @@ export default function Sidebar({ selectedPlatform, onChange, dark, onToggleDark
             onClick={onToggleDark}
           />
           <NavAction icon={<LogoutIcon />} title="Logout" onClick={onLogout} />
+        </div>
+      </div>
+
+      {/* UET Logo */}
+      <div style={{
+        padding: '10px 16px 14px',
+        borderTop: '1px solid var(--c-nav-border)',
+        display: 'flex', alignItems: 'center', gap: 9,
+        flexShrink: 0, opacity: 0.65,
+      }}>
+        <img src={logoUet} alt="UET logo" style={{ width: 28, height: 28, flexShrink: 0 }} />
+        <div style={{ fontSize: 10, color: 'var(--c-nav-muted)', lineHeight: 1.4 }}>
+          <div style={{ fontWeight: 600 }}>UET — VNU</div>
+          <div>Đại học Công nghệ</div>
         </div>
       </div>
     </aside>

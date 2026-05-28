@@ -4,9 +4,8 @@ import uuid
 from pathlib import Path
 
 from dotenv import load_dotenv
-load_dotenv(Path(__file__).parent.parent / ".env")
+load_dotenv(Path(__file__).parent.parent / ".env", override=True)
 
-import httpx
 from fastapi import FastAPI, Depends, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
@@ -14,6 +13,7 @@ from pydantic import BaseModel
 
 import airflow_client as ac
 import superset_client as sc
+import s3_insights
 
 app = FastAPI(title="Social Media Pipeline Dashboard")
 
@@ -93,6 +93,11 @@ async def superset_config():
 async def superset_guest_token(dashboard_id: str):
     token = await sc.get_guest_token(dashboard_id)
     return {"token": token}
+
+
+@app.get("/api/youtube/thread-insights", dependencies=[Depends(require_auth)])
+async def youtube_thread_insights():
+    return await asyncio.to_thread(s3_insights.read_thread_insights)
 
 
 if __name__ == "__main__":

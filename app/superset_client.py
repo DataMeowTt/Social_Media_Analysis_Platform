@@ -46,5 +46,6 @@ async def get_guest_token(dashboard_id: str) -> str:
                 "rls": [],
             },
         )
-        r.raise_for_status()
+        if not r.is_success:
+            raise ValueError(f"Superset guest_token error {r.status_code}: {r.text}")
         return r.json()["token"]

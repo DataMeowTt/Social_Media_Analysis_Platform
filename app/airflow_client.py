@@ -11,12 +11,12 @@ AIRFLOW_PASSWORD = os.getenv("AIRFLOW_PASSWORD", "admin")
 _BASE = f"{AIRFLOW_URL}/api/v2"
 
 DAGS = {
-    "social_media_pipeline": [
+    "twitter_pipeline": [
         "ingestion_tweets",
         "processing_silver",
         "analytics_gold",
     ],
-    "social_media_pipeline_test": [
+    "twitter_pipeline_test": [
         "ingestion_tweets",
         "delete_raw_duplicates",
         "processing_silver",
@@ -24,8 +24,19 @@ DAGS = {
         "analytics_gold",
     ],
     "youtube_pipeline": [
+        "ingestion_comments",
+        "processing_silver",
         "analytics_sentiment",
         "analytics_stance",
+        "build_conversation_threads",
+        "gemini_analysis_and_save",
+    ],
+    "facebook_pipeline": [
+        "ingestion_posts",
+        "processing_silver",
+        "analytics_gold",
+        "gemini_analysis",
+        "stance_analysis",
     ],
 }
 

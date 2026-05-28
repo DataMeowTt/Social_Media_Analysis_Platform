@@ -5,6 +5,7 @@ import TaskFlow from './components/TaskFlow.jsx'
 import RunChart from './components/RunChart.jsx'
 import RunTable from './components/RunTable.jsx'
 import SupersetEmbed from './components/SupersetEmbed.jsx'
+import ThreadInsights from './components/ThreadInsights.jsx'
 import LoginPage from './pages/LoginPage.jsx'
 import { apiFetch, formatDate } from './utils.js'
 
@@ -12,22 +13,45 @@ const POLL_INTERVAL = 30_000
 
 const PLATFORM_DAGS = {
   twitter: [
-    { id: 'social_media_pipeline',      label: 'Production' },
-    { id: 'social_media_pipeline_test', label: 'Test' },
+    { id: 'twitter_pipeline',      label: 'Production' },
+    { id: 'twitter_pipeline_test', label: 'Test' },
   ],
   youtube: [
     { id: 'youtube_pipeline', label: 'Production' },
+  ],
+  facebook: [
+    { id: 'facebook_pipeline', label: 'Production' },
   ],
 }
 
 const PLATFORM_VIEWS = {
   twitter: ['pipeline', 'analytics'],
-  youtube: ['pipeline', 'analytics'],
+  youtube: ['pipeline', 'analytics', 'thread_insights'],
+  facebook: ['pipeline', 'analytics'],
 }
 
 const PLATFORM_LABELS = {
   twitter: 'Twitter',
   youtube: 'YouTube',
+  facebook: 'Facebook',
+}
+
+function NotReadyPlaceholder() {
+  return (
+    <div style={{
+      padding: 60, textAlign: 'center',
+      background: 'var(--c-surface)', border: '1px solid var(--c-border)',
+      borderRadius: 8,
+    }}>
+      <div style={{ fontSize: 32, marginBottom: 12 }}>🚧</div>
+      <div style={{ fontSize: 15, fontWeight: 600, color: 'var(--c-text)', marginBottom: 8 }}>
+        Not ready yet
+      </div>
+      <div style={{ fontSize: 13, color: 'var(--c-muted)' }}>
+        Analytics dashboard for this platform is coming soon.
+      </div>
+    </div>
+  )
 }
 
 function SkeletonCard({ height = 120 }) {
@@ -40,7 +64,7 @@ function SkeletonCard({ height = 120 }) {
 }
 
 function ViewTabs({ views, selected, onChange, platformColor }) {
-  const LABELS = { pipeline: 'Pipeline', analytics: 'Analytics' }
+  const LABELS = { pipeline: 'Pipeline', analytics: 'Analytics', thread_insights: 'Thread Insights' }
   return (
     <div style={{ display: 'flex', gap: 4 }}>
       {views.map(v => {
@@ -113,9 +137,9 @@ function RefreshIcon() {
 
 export default function App() {
   const [authToken, setAuthToken] = useState(() => localStorage.getItem('authToken'))
-  const [selectedPlatform, setSelectedPlatform] = useState('twitter')
-  const [selectedView, setSelectedView] = useState('pipeline')
-  const [selectedDag, setSelectedDag] = useState('social_media_pipeline')
+  const [selectedPlatform, setSelectedPlatform] = useState(() => localStorage.getItem('nav_platform') ?? 'twitter')
+  const [selectedView, setSelectedView] = useState(() => localStorage.getItem('nav_view') ?? 'pipeline')
+  const [selectedDag, setSelectedDag] = useState(() => localStorage.getItem('nav_dag') ?? 'twitter_pipeline')
   const [allStatus, setAllStatus] = useState({})
   const [allRuns, setAllRuns]     = useState({})
   const [lastRefreshed, setLastRefreshed] = useState(null)
@@ -126,6 +150,10 @@ export default function App() {
     document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light')
     localStorage.setItem('theme', dark ? 'dark' : 'light')
   }, [dark])
+
+  useEffect(() => { localStorage.setItem('nav_platform', selectedPlatform) }, [selectedPlatform])
+  useEffect(() => { localStorage.setItem('nav_view', selectedView) }, [selectedView])
+  useEffect(() => { localStorage.setItem('nav_dag', selectedDag) }, [selectedDag])
 
   useEffect(() => {
     const handler = () => setAuthToken(null)
@@ -274,7 +302,11 @@ export default function App() {
 
           {/* Main content */}
           <main style={{ flex: 1, padding: '28px', display: 'flex', flexDirection: 'column', gap: 20, minWidth: 0 }}>
-            {selectedView === 'analytics' ? (
+            {selectedView === 'thread_insights' ? (
+              <ThreadInsights />
+            ) : selectedView === 'analytics' && selectedPlatform === 'facebook' ? (
+              <NotReadyPlaceholder />
+            ) : selectedView === 'analytics' ? (
               <SupersetEmbed platform={selectedPlatform} />
             ) : (
               <>
