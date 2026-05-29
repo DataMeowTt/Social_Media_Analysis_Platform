@@ -10,13 +10,12 @@ from src.twitter.ingestion.api.client import TwitterAPIClient, CreditsExhaustedE
 from src.storage.s3.uploader import upload_to_bronze_s3
 from src.twitter.ingestion.api.enums.query_type import QueryType
 from src.utils.config_loader import load_config
+from src.utils.constants import BUFFER_LIMIT_BYTES
 from src.utils.logger import get_logger
 
 load_dotenv()
 CONFIG = load_config()
 logger = get_logger(__name__)
-
-BUFFER_LIMIT_BYTES = 300 * 1024 * 1024  # 300MB
 
 
 def _load_api_keys() -> list[str]:

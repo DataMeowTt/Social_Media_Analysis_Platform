@@ -164,6 +164,11 @@ def test_flatten_comments_dedup_by_comment_id(spark):
     assert len(ids) == len(set(ids))
 
 
-def test_flatten_comments_no_comments_empty_result(spark):
+def test_flatten_comments_no_comments_yields_null_row(spark):
+    # explode_outer([]) returns 1 null row; after coalesce defaults, author_id and text are empty strings
     df = _df(spark, [_post(comments=[])])
-    assert flatten_comments(df).count() == 0
+    result = flatten_comments(df)
+    assert result.count() == 1
+    row = result.collect()[0]
+    assert row["author_id"] == ""
+    assert row["text"] == ""

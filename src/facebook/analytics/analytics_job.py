@@ -14,7 +14,7 @@ from src.facebook.analytics.transformations.enrich import enrich_comments
 from src.facebook.analytics.validate.quality_checks import validate_gold, validate_silver_comments
 from src.ml.inference.gemini_sentiment import add_sentiment as run_ml_pipeline
 from src.storage.s3.reader import read_all_silver, read_latest_silver_facebook
-from src.storage.s3.uploader import write_to_S3
+from src.storage.s3.uploader import write_to_s3
 from src.utils.logger import get_logger
 
 logger = get_logger(__name__)
@@ -32,7 +32,7 @@ def gold_processing(spark: SparkSession) -> None:
     enriched = enrich_comments(comments_df)
 
     logger.info("[facebook] Running ML sentiment inference...")
-    n_executors = 1
+    n_executors = 1  # model is loaded per-executor; coalesce keeps inference on one process
     enriched_with_sentiment = run_ml_pipeline(enriched.coalesce(n_executors))
     enriched_with_sentiment = enriched_with_sentiment.repartition(
         spark.sparkContext.defaultParallelism
@@ -47,7 +47,7 @@ def gold_processing(spark: SparkSession) -> None:
     validate_gold(fact_comments, agg_page_daily)
     logger.info("[facebook] Gold validation passed — writing tables...")
 
-    write_to_S3(
+    write_to_s3(
         fact_comments,
         table_name="analytics.fb_fact_comments",
         layer="analytics",
@@ -55,7 +55,7 @@ def gold_processing(spark: SparkSession) -> None:
         partition_cols=["date", "page_name"],
         path_override="analytics/facebook/fact_comments",
     )
-    write_to_S3(
+    write_to_s3(
         agg_page_daily,
         table_name="analytics.fb_agg_page_daily",
         layer="analytics",
@@ -75,7 +75,7 @@ def gold_processing(spark: SparkSession) -> None:
     posts_enriched = run_ml_pipeline(posts_with_text.coalesce(1))
     all_posts = posts_enriched.unionByName(posts_no_text)
     dim_posts = build_dim_posts(all_posts)
-    write_to_S3(
+    write_to_s3(
         dim_posts,
         table_name="analytics.fb_dim_posts",
         layer="analytics",
@@ -100,7 +100,7 @@ def incremental_gold_processing(spark: SparkSession) -> None:
     enriched = enrich_comments(comments_df)
 
     logger.info("[facebook] Running ML sentiment inference on today's comments...")
-    n_executors = 1
+    n_executors = 1  # model is loaded per-executor; coalesce keeps inference on one process
     enriched_with_sentiment = run_ml_pipeline(enriched.coalesce(n_executors))
     enriched_with_sentiment = enriched_with_sentiment.repartition(
         spark.sparkContext.defaultParallelism
@@ -115,7 +115,7 @@ def incremental_gold_processing(spark: SparkSession) -> None:
     validate_gold(fact_comments, agg_page_daily)
     logger.info("[facebook] Gold validation passed — writing tables...")
 
-    write_to_S3(
+    write_to_s3(
         fact_comments,
         table_name="analytics.fb_fact_comments",
         layer="analytics",
@@ -123,7 +123,7 @@ def incremental_gold_processing(spark: SparkSession) -> None:
         partition_cols=["date", "page_name"],
         path_override="analytics/facebook/fact_comments",
     )
-    write_to_S3(
+    write_to_s3(
         agg_page_daily,
         table_name="analytics.fb_agg_page_daily",
         layer="analytics",
@@ -148,7 +148,7 @@ def incremental_gold_processing(spark: SparkSession) -> None:
     posts_enriched = run_ml_pipeline(posts_with_text.coalesce(1))
     all_posts = posts_enriched.unionByName(posts_no_text)
     dim_posts = build_dim_posts(all_posts)
-    write_to_S3(
+    write_to_s3(
         dim_posts,
         table_name="analytics.fb_dim_posts",
         layer="analytics",

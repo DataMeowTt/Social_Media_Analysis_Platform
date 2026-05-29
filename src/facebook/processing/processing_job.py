@@ -4,8 +4,8 @@ from pyspark.sql import SparkSession
 
 from src.facebook.processing.transformations.normalize import flatten_comments, flatten_posts
 from src.storage.s3.reader import read_all_bronze, read_latest_bronze
-from src.storage.s3.uploader import write_to_S3
-from src.utils.deleter_duplicate import delete_full
+from src.storage.s3.uploader import write_to_s3
+from src.utils.s3_deduplicator import delete_full
 from src.utils.logger import get_logger
 
 logger = get_logger(__name__)
@@ -15,7 +15,7 @@ _PARTITION_COLS = ["ingestion_date"]
 
 
 def _write_silver(posts_df, comments_df, mode: str = "overwrite") -> None:
-    write_to_S3(
+    write_to_s3(
         posts_df,
         table_name="processed.facebook_posts",
         layer="processed",
@@ -23,7 +23,7 @@ def _write_silver(posts_df, comments_df, mode: str = "overwrite") -> None:
         partition_cols=_PARTITION_COLS,
         path_override="processed/facebook/posts",
     )
-    write_to_S3(
+    write_to_s3(
         comments_df,
         table_name="processed.facebook_comments",
         layer="processed",

@@ -1,44 +1,17 @@
-import io
-import os
-
-import boto3
 import pandas as pd
-import pyarrow as pa
-import pyarrow.parquet as pq
 
-_BUCKET = os.getenv("S3_BUCKET", "social-analysis-prod-bucket")
-_REGION = os.getenv("AWS_REGION", "ap-southeast-1")
-
-
-def _s3():
-    return boto3.client(
-        "s3",
-        region_name=_REGION,
-        aws_access_key_id=os.getenv("AWS_ACCESS_KEY_ID"),
-        aws_secret_access_key=os.getenv("AWS_SECRET_ACCESS_KEY"),
-    )
-
-
-def _read_parquet(prefix: str) -> pd.DataFrame:
-    s3 = _s3()
-    paginator = s3.get_paginator("list_objects_v2")
-    tables = []
-    for page in paginator.paginate(Bucket=_BUCKET, Prefix=prefix + "/"):
-        for obj in page.get("Contents", []):
-            if not obj["Key"].endswith(".parquet"):
-                continue
-            body = s3.get_object(Bucket=_BUCKET, Key=obj["Key"])["Body"].read()
-            tables.append(pq.read_table(io.BytesIO(body)))
-    if not tables:
-        return pd.DataFrame()
-    return pa.concat_tables(tables).to_pandas()
+from app.s3_reader import read_parquet_from_s3
 
 
 def controversial_posts() -> list[dict]:
-    posts = _read_parquet("analytics/facebook/dim_posts")
-    stance = _read_parquet("analytics/facebook/fact_comment_stance")
-    if posts.empty or stance.empty:
+    posts_table = read_parquet_from_s3("analytics/facebook/dim_posts")
+    stance_table = read_parquet_from_s3("analytics/facebook/fact_comment_stance")
+
+    if posts_table is None or stance_table is None:
         return []
+
+    posts = posts_table.to_pandas()
+    stance = stance_table.to_pandas()
 
     agg = (
         stance.groupby("post_id")

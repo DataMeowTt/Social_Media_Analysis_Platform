@@ -7,7 +7,7 @@ from pyspark.sql.types import DateType, IntegerType, StringType, StructField, St
 
 from src.ml.inference.youtube_stance import predict_stance
 from src.storage.s3.reader import read_latest_silver_facebook
-from src.storage.s3.uploader import write_to_S3
+from src.storage.s3.uploader import write_to_s3
 from src.utils.config_loader import load_config
 from src.utils.logger import get_logger
 
@@ -111,7 +111,7 @@ def run_stance_analysis(spark: SparkSession) -> None:
 
     logger.info(f"[stance_job] writing {len(result_pdf)} rows...")
     result_df = spark.createDataFrame(result_pdf, schema=_STANCE_SCHEMA)
-    write_to_S3(
+    write_to_s3(
         result_df,
         table_name="analytics.fb_fact_comment_stance",
         layer="analytics",

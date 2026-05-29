@@ -1,7 +1,7 @@
 from pyspark.sql import SparkSession
 
 from src.utils.logger import get_logger
-from src.storage.s3.uploader import write_to_S3
+from src.storage.s3.uploader import write_to_s3
 from src.storage.s3.reader import read_all_bronze
 from src.youtube.processing.transformations.clean import clean_comments
 from src.youtube.processing.transformations.enrich import enrich_comments
@@ -23,7 +23,7 @@ def processing(spark: SparkSession, youtube_id: str) -> None:
     try:
         validate_comments(df)
         logger.info("Validation passed — writing to silver...")
-        write_to_S3(
+        write_to_s3(
             df,
             table_name="processed.youtube_comments",
             layer="processed",

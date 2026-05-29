@@ -5,7 +5,7 @@ from airflow.providers.standard.operators.python import PythonOperator
 from airflow.providers.standard.operators.bash import BashOperator
 
 from src.orchestration.jobs.twitter.ingestion_job import run_ingestion_task
-from src.utils.deleter_duplicate import delete_raw_duplicates, delete_processed_duplicates
+from src.utils.s3_deduplicator import delete_raw_duplicates, delete_processed_duplicates
 from src.orchestration.airflow.dags._spark import spark_cmd as _spark_cmd
 
 

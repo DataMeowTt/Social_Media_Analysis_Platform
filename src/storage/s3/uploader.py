@@ -56,7 +56,7 @@ def upload_to_bronze_s3(
 
 # ── Silver / Gold ─────────────────────────────────────────────────────────────
 
-def write_to_S3(
+def write_to_s3(
     df: DataFrame,
     table_name: str,
     layer: str,

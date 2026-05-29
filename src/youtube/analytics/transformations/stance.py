@@ -18,7 +18,7 @@ SCHEMA = StructType([
 
 def run_stance(spark: SparkSession, youtube_id: str) -> None:
     from src.storage.s3.reader import read_silver_youtube
-    from src.storage.s3.uploader import write_to_S3
+    from src.storage.s3.uploader import write_to_s3
     from src.ml.inference.youtube_stance import predict_stance
 
     logger.info(f"[stance] Starting for {youtube_id}")
@@ -44,7 +44,7 @@ def run_stance(spark: SparkSession, youtube_id: str) -> None:
     del pdf, replies, parents, joined, stance_labels, result_pdf
     gc.collect()
 
-    write_to_S3(
+    write_to_s3(
         stance_df,
         table_name="analytics.fct_comment_stance",
         layer="analytics",

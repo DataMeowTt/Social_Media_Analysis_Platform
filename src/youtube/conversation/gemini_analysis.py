@@ -5,7 +5,7 @@ from datetime import datetime, timezone
 
 import pandas as pd
 
-from src.storage.s3.uploader import write_to_S3
+from src.storage.s3.uploader import write_to_s3
 from src.utils.config_loader import load_config
 from src.utils.logger import get_logger
 from src.utils.session import create_spark_session, get_s3_client
@@ -54,7 +54,7 @@ def run_gemini_analysis(youtube_id: str) -> None:
     spark = create_spark_session("YouTube-Gemini-Insights")
     try:
         insights_df = spark.createDataFrame(pd.DataFrame(all_rows), schema=INSIGHT_SCHEMA)
-        write_to_S3(
+        write_to_s3(
             insights_df,
             table_name="analytics.fct_thread_insights",
             layer="analytics",

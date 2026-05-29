@@ -7,12 +7,11 @@ from dotenv import load_dotenv
 from src.youtube.ingestion.api.client import YouTubeAPIClient
 from src.youtube.ingestion.api.fetcher import YouTubeDataFetcher
 from src.storage.s3.uploader import upload_to_bronze_s3
+from src.utils.constants import BUFFER_LIMIT_BYTES
 from src.utils.logger import get_logger
 
 load_dotenv()
 logger = get_logger(__name__)
-
-BUFFER_LIMIT_BYTES = 300 * 1024 * 1024  # 300MB
 
 
 def run_ingestion_comments(video_id: str, num_comments: int | None = None) -> list[str]:

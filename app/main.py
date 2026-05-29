@@ -11,10 +11,10 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from pydantic import BaseModel
 
-import airflow_client as ac
-import superset_client as sc
-import s3_insights
-import fb_insights
+import app.airflow_client as ac
+import app.superset_client as sc
+import app.s3_insights as s3_insights
+import app.fb_insights as fb_insights
 
 app = FastAPI(title="Social Media Pipeline Dashboard")
 

@@ -20,8 +20,9 @@ def get_partition_prefix(partition_time: datetime, partition_cols: list[str]) ->
     return "/".join(partition_values) + "/"
     
 def get_s3_key(layer: str, dataset: str, filename: str, partition_time: datetime, partition_cols: list[str]) -> str:
+    if not partition_cols:
+        return f"{layer}/{dataset}/{filename}"
     partition_prefix = get_partition_prefix(partition_time, partition_cols)
-    
     return f"{layer}/{dataset}/{partition_prefix}{filename}"
 
 def latest_value(prefix: str, key: str) -> str:
@@ -29,9 +30,9 @@ def latest_value(prefix: str, key: str) -> str:
     response = s3.list_objects_v2(Bucket=bucket, Prefix=prefix, Delimiter="/")
 
     values = []
-    for object in response.get("CommonPrefixes", []):
-        if f"{key}=" in object["Prefix"]:
-            values.append(object["Prefix"].split("/")[-2].split("=")[1])
+    for prefix_entry in response.get("CommonPrefixes", []):
+        if f"{key}=" in prefix_entry["Prefix"]:
+            values.append(prefix_entry["Prefix"].split("/")[-2].split("=")[1])
 
     if not values:
         raise ValueError(f"No partition found for prefix {prefix} and key {key}")

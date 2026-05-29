@@ -27,7 +27,7 @@ SCHEMA = StructType([
 
 def run_sentiment(spark: SparkSession, youtube_id: str) -> None:
     from src.storage.s3.reader import read_silver_youtube
-    from src.storage.s3.uploader import write_to_S3
+    from src.storage.s3.uploader import write_to_s3
     from src.ml.inference.youtube_sentiment import predict_sentiment
 
     logger.info(f"[sentiment] Starting for {youtube_id}")
@@ -63,7 +63,7 @@ def run_sentiment(spark: SparkSession, youtube_id: str) -> None:
     del pdf, texts, brand_lists, iphone_res, android_res, rows, result_pdf
     gc.collect()
 
-    write_to_S3(
+    write_to_s3(
         sentiment_df,
         table_name="analytics.fct_comment_sentiment",
         layer="analytics",

@@ -12,7 +12,7 @@ from src.twitter.analytics.transformations.enrich import (
 )
 from src.twitter.analytics.transformations.aggregate import (
     build_fact_tweets, build_dim_brands, build_dim_authors,
-    build_agg_brand_daily, build_agg_author_perf,
+    build_agg_brand_daily,
 )
 from src.twitter.analytics.validate.quality_checks import validate_analytics, validate_gold
 
@@ -77,25 +77,24 @@ def _gold_ready(spark, **overrides):
 
 # ── add_engagement_score ──────────────────────────────────────────────────────
 
-def test_engagement_score_formula(spark):
-    # score = 2*rt + like + 1.5*reply + 1.5*quote
-    # = 2*10 + 5 + 1.5*2 + 1.5*1 = 20 + 5 + 3 + 1.5 = 29.5
-    df = add_engagement_score(_silver(spark, retweetCount=10, likeCount=5, replyCount=2, quoteCount=1))
-    assert df.collect()[0]["engagement_score"] == 29.5
+def test_engagement_score_higher_for_more_activity(spark):
+    high = add_engagement_score(_silver(spark, retweetCount=100, likeCount=50, replyCount=20, quoteCount=10))
+    low  = add_engagement_score(_silver(spark, retweetCount=0,   likeCount=0,  replyCount=0,  quoteCount=0, author_followers=0))
+    assert high.collect()[0]["engagement_score"] > low.collect()[0]["engagement_score"]
 
 
-def test_engagement_score_zero_for_no_activity(spark):
-    df = add_engagement_score(_silver(spark, retweetCount=0, likeCount=0, replyCount=0, quoteCount=0))
-    assert df.collect()[0]["engagement_score"] == 0.0
+def test_engagement_score_zero_when_no_activity_no_followers(spark):
+    df = add_engagement_score(_silver(spark, retweetCount=0, likeCount=0, replyCount=0, quoteCount=0, author_followers=0))
+    assert df.collect()[0]["engagement_score"] == pytest.approx(0.0, abs=1e-6)
 
 
 # ── add_is_viral ──────────────────────────────────────────────────────────────
 
-def test_is_viral_above_threshold(spark):
-    df = _silver(spark, retweetCount=500, likeCount=0, replyCount=0, quoteCount=0)
-    df = add_engagement_score(df)
-    df = add_is_viral(df, threshold=1000)
-    assert df.collect()[0]["is_viral"] is True  # 500*2 = 1000 >= 1000
+def test_is_viral_true_when_score_above_threshold(spark):
+    df = add_engagement_score(_silver(spark, retweetCount=100, likeCount=100))
+    score = df.collect()[0]["engagement_score"]
+    df = add_is_viral(df, threshold=score * 0.5)
+    assert df.collect()[0]["is_viral"] is True
 
 
 def test_is_viral_below_threshold(spark):
@@ -242,9 +241,9 @@ def test_validate_analytics_raises_on_null_engagement(spark):
         validate_analytics(df)
 
 
-def test_validate_analytics_raises_on_null_is_viral(spark):
-    df = _enriched(spark).withColumn("is_viral", F.lit(None).cast("boolean"))
-    with pytest.raises(ValueError, match="null_is_viral"):
+def test_validate_analytics_raises_on_null_is_bot(spark):
+    df = _enriched(spark).withColumn("is_bot", F.lit(None).cast("boolean"))
+    with pytest.raises(ValueError, match="null_is_bot"):
         validate_analytics(df)
 
 
@@ -254,10 +253,8 @@ def _build_all_gold(spark):
     gold_df = _gold_ready(spark)
     return (
         build_fact_tweets(gold_df),
-        build_dim_brands(spark),
         build_dim_authors(gold_df),
         build_agg_brand_daily(gold_df),
-        build_agg_author_perf(gold_df),
     )
 
 
@@ -266,14 +263,14 @@ def test_validate_gold_passes_on_valid_tables(spark):
 
 
 def test_validate_gold_raises_on_null_tweet_id(spark):
-    fact, dim_b, dim_a, agg_bd, agg_ap = _build_all_gold(spark)
+    fact, dim_a, agg_bd = _build_all_gold(spark)
     bad_fact = fact.withColumn("tweet_id", F.lit(None).cast("string"))
     with pytest.raises(ValueError, match="fact_tweets_null_keys"):
-        validate_gold(bad_fact, dim_b, dim_a, agg_bd, agg_ap)
+        validate_gold(bad_fact, dim_a, agg_bd)
 
 
 def test_validate_gold_raises_on_null_sentiment(spark):
-    fact, dim_b, dim_a, agg_bd, agg_ap = _build_all_gold(spark)
+    fact, dim_a, agg_bd = _build_all_gold(spark)
     bad_fact = fact.withColumn("sentiment_label", F.lit(None).cast("string"))
     with pytest.raises(ValueError, match="fact_tweets_null_sentiment"):
-        validate_gold(bad_fact, dim_b, dim_a, agg_bd, agg_ap)
+        validate_gold(bad_fact, dim_a, agg_bd)

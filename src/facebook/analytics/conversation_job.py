@@ -11,7 +11,7 @@ from src.facebook.analytics.conversation.insight_merger import merge_insights
 from src.facebook.analytics.conversation.models.insight_schema import FB_INSIGHT_SCHEMA
 from src.facebook.analytics.conversation.post_builder import build_post_contexts
 from src.facebook.analytics.transformations.aggregate import build_agg_model_issue_weekly
-from src.storage.s3.uploader import write_to_S3
+from src.storage.s3.uploader import write_to_s3
 from src.utils.config_loader import load_config
 from src.utils.logger import get_logger
 from src.utils.session import create_spark_session
@@ -56,7 +56,7 @@ def run_gemini_analysis() -> None:
         insights_df.cache()
         insights_df.count()
 
-        write_to_S3(
+        write_to_s3(
             insights_df,
             table_name="analytics.fb_fct_post_insights",
             layer="analytics",
@@ -69,7 +69,7 @@ def run_gemini_analysis() -> None:
         # Rebuild weekly agg từ toàn bộ history để LAG window chính xác
         all_insights = spark.read.parquet(f"s3a://{_BUCKET}/analytics/facebook/fct_post_insights/")
         agg_weekly = build_agg_model_issue_weekly(all_insights)
-        write_to_S3(
+        write_to_s3(
             agg_weekly,
             table_name="analytics.fb_agg_model_issue_weekly",
             layer="analytics",

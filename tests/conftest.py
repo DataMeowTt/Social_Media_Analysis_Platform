@@ -1,9 +1,10 @@
 import pytest
-from pyspark.sql import SparkSession
 
 
 @pytest.fixture(scope="session")
 def spark():
+    pytest.importorskip("pyspark")
+    from pyspark.sql import SparkSession
     session = (
         SparkSession.builder
         .master("local[1]")

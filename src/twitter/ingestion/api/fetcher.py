@@ -10,6 +10,8 @@ from src.utils.logger import get_logger
 logger = get_logger(__name__)
 
 _CALL_DELAY = 5.0  # free tier: 1 request per 5 seconds
+
+
 class TwitterDataFetcher:
     def __init__(self, client: TwitterAPIClient):
         self.client = client
