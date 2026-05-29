@@ -1,6 +1,5 @@
 from datetime import date, datetime, timezone
 
-import pytest
 
 from src.facebook.analytics.conversation.gemini_extractor import _parse_response
 from src.facebook.analytics.conversation.insight_merger import merge_insights

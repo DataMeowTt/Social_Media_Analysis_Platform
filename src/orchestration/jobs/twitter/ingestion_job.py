@@ -1,5 +1,4 @@
 import asyncio
-import os
 from datetime import date
 
 from src.twitter.ingestion.ingestion_job import run_ingestion_tweets

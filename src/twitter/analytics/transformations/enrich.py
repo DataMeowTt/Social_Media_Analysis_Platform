@@ -50,7 +50,7 @@ def add_engagement_score(df: DataFrame) -> DataFrame:
     )
 
     author_weight = F.log10(F.coalesce(F.col("author_followers"), F.lit(0)) + 1) * F.when(
-        F.col("author_is_blue_verified") == True, F.lit(1.2)
+        F.col("author_is_blue_verified"), F.lit(1.2)
     ).otherwise(F.lit(1.0))
 
     age_hours = F.greatest(

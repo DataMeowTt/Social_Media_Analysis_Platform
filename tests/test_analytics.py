@@ -3,7 +3,7 @@ from datetime import datetime
 from pyspark.sql import functions as F
 from pyspark.sql.types import (
     StructType, StructField, StringType, LongType,
-    IntegerType, BooleanType, ArrayType, TimestampType, DoubleType,
+    IntegerType, BooleanType, ArrayType, TimestampType,
 )
 
 from src.twitter.analytics.transformations.enrich import (

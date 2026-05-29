@@ -1,4 +1,3 @@
-import pytest
 from pyspark.sql import Row
 from pyspark.sql.types import (
     ArrayType, IntegerType, StringType, StructField, StructType,

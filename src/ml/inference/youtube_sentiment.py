@@ -38,9 +38,11 @@ def predict_sentiment(texts: list, brand_lists: list) -> tuple:
     for i, (text, brand_list) in enumerate(zip(texts, brand_lists)):
         brand_set = set(brand_list) if brand_list else set()
         if "iPhone" in brand_set:
-            iphone_idx.append(i); iphone_texts.append(text)
+            iphone_idx.append(i)
+            iphone_texts.append(text)
         if "Android" in brand_set:
-            android_idx.append(i); android_texts.append(text)
+            android_idx.append(i)
+            android_texts.append(text)
 
     print(f"[predict_sentiment] model={_MODEL_PATH}")
     print(f"[predict_sentiment] total={len(texts)} | iphone={len(iphone_texts)} | android={len(android_texts)}")

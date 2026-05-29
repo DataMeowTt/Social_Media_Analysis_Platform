@@ -1,5 +1,4 @@
 from pyspark.sql import SparkSession
-from pyspark.sql import functions as F
 
 from src.utils.logger import get_logger
 from src.utils.deleter_duplicate import delete_full

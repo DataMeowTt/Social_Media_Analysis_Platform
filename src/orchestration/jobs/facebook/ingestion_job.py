@@ -1,4 +1,3 @@
-import os
 
 from src.facebook.ingestion.ingestion_job import run_group_ingestion, run_simple_ingestion
 

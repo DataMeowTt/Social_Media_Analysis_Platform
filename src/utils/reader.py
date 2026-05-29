@@ -157,7 +157,7 @@ def check_processed_duplicates() -> None:
     if total != unique:
         counts = Counter(ids)
         dups = [(id_, cnt) for id_, cnt in counts.items() if cnt > 1]
-        print(f"\nSample duplicate IDs in processed:")
+        print("\nSample duplicate IDs in processed:")
         for id_, cnt in dups[:5]:
             print(f"  id={id_}  count={cnt}")
 

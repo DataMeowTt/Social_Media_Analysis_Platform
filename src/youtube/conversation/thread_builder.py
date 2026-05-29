@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from typing import Set
+
 import gzip
 import json
 
@@ -64,14 +66,14 @@ def build_conversations(spark: SparkSession, video_id: str, force: bool = False)
 
     roots = (
         sentiment_df
-        .filter(F.col("is_root") == True)
+        .filter(F.col("is_root"))
         .filter(F.col("comment_id").isin(thread_ids))
         .withColumn("thread_id", F.col("comment_id"))
     )
 
     replies = (
         sentiment_df
-        .filter(F.col("is_root") == False)
+        .filter(~F.col("is_root"))
         .join(
             stance_df.select("comment_id", "parent_id"),
             on="comment_id",

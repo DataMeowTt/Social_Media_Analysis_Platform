@@ -1,7 +1,7 @@
 import pytest
 from pyspark.sql import functions as F
 
-from src.youtube.processing.transformations.clean import clean_comments, drop_invalid_likes, drop_missing_critical_fields
+from src.youtube.processing.transformations.clean import drop_invalid_likes, drop_missing_critical_fields
 from src.youtube.processing.transformations.enrich import add_published_at_ts, add_temporal_features, drop_unparseable_timestamps, enrich_comments
 from src.youtube.processing.validation.quality_checks import validate_comments
 from src.youtube.processing.validation.schema import COMMENT_SCHEMA
