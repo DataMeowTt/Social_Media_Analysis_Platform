@@ -1,6 +1,33 @@
 import { useEffect, useState } from 'react'
 import { apiFetch } from '../utils.js'
 
+const PROFANITY_RE = new RegExp(
+  '(đcm|dcm|đkm|dkm|đm\\b|\\bdm\\b|clm|vl\\b|\\bcc\\b|lồn|lon|cặc|cac|địt|\\bdit\\b|đéo|\\bdeo\\b|mẹ kiếp|đụ|du má)',
+  'gi'
+)
+
+function CensoredText({ text, style }) {
+  if (!text) return <span style={style}>(Không có nội dung)</span>
+  const parts = []
+  let last = 0, match
+  const re = new RegExp(PROFANITY_RE.source, 'gi')
+  while ((match = re.exec(text)) !== null) {
+    if (match.index > last) parts.push({ t: text.slice(last, match.index), blur: false })
+    parts.push({ t: match[0], blur: true })
+    last = match.index + match[0].length
+  }
+  if (last < text.length) parts.push({ t: text.slice(last), blur: false })
+  return (
+    <span style={style}>
+      {parts.map((p, i) =>
+        p.blur
+          ? <span key={i} style={{ filter: 'blur(4px)', userSelect: 'none', opacity: 0.7 }}>{p.t}</span>
+          : <span key={i}>{p.t}</span>
+      )}
+    </span>
+  )
+}
+
 const SENT_COLOR = {
   positive: '#22c55e',
   negative: '#ef4444',
@@ -84,16 +111,16 @@ function PostCard({ post, rank }) {
       </div>
 
       {/* Text preview */}
-      <p style={{
-        margin: 0,
-        fontSize: 13, lineHeight: 1.65, color: 'var(--c-text)',
-        borderLeft: '3px solid var(--c-border)',
-        paddingLeft: 12,
-        display: '-webkit-box', WebkitLineClamp: 4,
-        WebkitBoxOrient: 'vertical', overflow: 'hidden',
-      }}>
-        {post.text_preview || '(Không có nội dung)'}
-      </p>
+      <CensoredText
+        text={post.text_preview}
+        style={{
+          display: '-webkit-box', WebkitLineClamp: 4,
+          WebkitBoxOrient: 'vertical', overflow: 'hidden',
+          fontSize: 13, lineHeight: 1.65, color: 'var(--c-text)',
+          borderLeft: '3px solid var(--c-border)',
+          paddingLeft: 12,
+        }}
+      />
 
       {/* Agree/Disagree bars */}
       <StatBar agree={agree} disagree={disagree} total={total} />
