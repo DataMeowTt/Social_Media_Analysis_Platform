@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from datetime import date, datetime
 
-from src.facebook.analytics.conversation.models.insight_schema import VALID_ASPECTS, VALID_MODELS
+from src.facebook.analytics.conversation.schemas.insight_schema import VALID_ASPECTS, VALID_MODELS
 from src.utils.logger import get_logger
 
 logger = get_logger(__name__)

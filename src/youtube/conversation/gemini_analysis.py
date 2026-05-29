@@ -11,7 +11,7 @@ from src.utils.logger import get_logger
 from src.utils.session import create_spark_session, get_s3_client
 from src.youtube.conversation.gemini_extractor import extract_insights_for_thread
 from src.youtube.conversation.insight_merger import merge_insights
-from src.youtube.conversation.models.insight_schema import INSIGHT_SCHEMA
+from src.youtube.conversation.schemas.insight_schema import INSIGHT_SCHEMA
 
 logger = get_logger(__name__)
 _config = load_config()

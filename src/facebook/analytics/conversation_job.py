@@ -8,7 +8,7 @@ import pandas as pd
 
 from src.facebook.analytics.conversation.gemini_extractor import extract_insights_for_post
 from src.facebook.analytics.conversation.insight_merger import merge_insights
-from src.facebook.analytics.conversation.models.insight_schema import FB_INSIGHT_SCHEMA
+from src.facebook.analytics.conversation.schemas.insight_schema import FB_INSIGHT_SCHEMA
 from src.facebook.analytics.conversation.post_builder import build_post_contexts
 from src.facebook.analytics.transformations.aggregate import build_agg_model_issue_weekly
 from src.storage.s3.uploader import write_to_s3

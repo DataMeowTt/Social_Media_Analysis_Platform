@@ -59,9 +59,9 @@ def validate_gold(
     _check(dim_authors, F.col("author_id").isNull(), "dim_authors_null_keys")
 
     abd = agg_brand_daily.agg(
-        F.sum((F.col("date").isNull() | F.col("brand_name").isNull() | F.col("lang").isNull()).cast("int")).alias("null_keys"),
-        F.sum((F.col("total_mentions").isNull() | (F.col("total_mentions") <= 0)).cast("int")).alias("invalid_mentions"),
-        F.sum((F.col("share_of_voice").isNotNull() & ((F.col("share_of_voice") < 0) | (F.col("share_of_voice") > 1))).cast("int")).alias("invalid_sov"),
+        F.coalesce(F.sum((F.col("date").isNull() | F.col("brand_name").isNull() | F.col("lang").isNull()).cast("int")), F.lit(0)).alias("null_keys"),
+        F.coalesce(F.sum((F.col("total_mentions").isNull() | (F.col("total_mentions") <= 0)).cast("int")), F.lit(0)).alias("invalid_mentions"),
+        F.coalesce(F.sum((F.col("share_of_voice").isNotNull() & ((F.col("share_of_voice") < 0) | (F.col("share_of_voice") > 1))).cast("int")), F.lit(0)).alias("invalid_sov"),
     ).collect()[0]
 
     if abd["null_keys"] > 0:
