@@ -16,9 +16,9 @@ def get_partition_prefix(partition_time: datetime, partition_cols: list[str]) ->
         if col == "year":
             partition_values.append(f"year={partition_time.strftime('%Y')}")
         elif col == "month":
-            partition_values.append(f"month={partition_time.month}")
+            partition_values.append(f"month={partition_time.strftime('%m')}")
         elif col == "day":
-            partition_values.append(f"day={partition_time.day}")
+            partition_values.append(f"day={partition_time.strftime('%d')}")
 
     return "/".join(partition_values) + "/"
     
