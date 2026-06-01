@@ -96,6 +96,28 @@ async def superset_guest_token(dashboard_id: str):
     return {"token": token}
 
 
+@app.get("/api/logs/{dag_id}/{task_id}", dependencies=[Depends(require_auth)])
+async def task_logs(dag_id: str, task_id: str, run_id: str, try_number: int = 1):
+    if dag_id not in ac.DAGS:
+        raise HTTPException(status_code=404, detail=f"Unknown DAG: {dag_id}")
+    try:
+        content = await ac.get_task_logs(dag_id, run_id, task_id, try_number)
+        return {"content": content}
+    except Exception as exc:
+        raise HTTPException(status_code=502, detail=str(exc))
+
+
+@app.post("/api/trigger/{dag_id}", dependencies=[Depends(require_auth)])
+async def trigger_dag(dag_id: str):
+    if dag_id not in ac.DAGS:
+        raise HTTPException(status_code=404, detail=f"Unknown DAG: {dag_id}")
+    try:
+        run = await ac.trigger_dag(dag_id)
+        return {"ok": True, "run": run}
+    except Exception as exc:
+        raise HTTPException(status_code=502, detail=str(exc))
+
+
 @app.get("/api/youtube/thread-insights", dependencies=[Depends(require_auth)])
 async def youtube_thread_insights():
     return await asyncio.to_thread(s3_insights.read_thread_insights)

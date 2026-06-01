@@ -13,7 +13,7 @@ _DEFAULT_QUERY = (
 
 def run_ingestion_task(**_):
     base_query = os.getenv("TWITTER_QUERY", _DEFAULT_QUERY)
-    query = f"{base_query} since:{date.today()}"
+    query = f"{base_query} since:{date(2026, 5, 28)} until:{date(2026, 5, 29)}"
     asyncio.run(
         run_ingestion_tweets(
             query=query,

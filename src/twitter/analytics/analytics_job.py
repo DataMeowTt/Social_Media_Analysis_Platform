@@ -1,7 +1,7 @@
 from pyspark.sql import SparkSession
 
 from src.utils.logger import get_logger
-from src.storage.s3.reader import read_all_silver, read_fact_tweets_window
+from src.storage.s3.reader import read_all_silver, read_latest_silver, read_fact_tweets_window
 from src.storage.s3.uploader import write_to_s3
 from src.twitter.analytics.transformations.enrich import enrich_analytics
 from src.twitter.analytics.transformations.aggregate import (
@@ -26,28 +26,34 @@ TWEETS_PREFIX = "analytics/tweets"
 def gold_processing(spark: SparkSession) -> None:
     logger.info("Starting silver → gold pipeline")
 
-    enriched_df = enrich_analytics(
-        read_all_silver(spark, dataset="tweets").dropDuplicates(["id"])
+    # Latest silver only: ML runs on new data only
+    df_latest = enrich_analytics(
+        read_latest_silver(spark, dataset="tweets").dropDuplicates(["id"])
     )
-    enriched_df.cache()
+    df_latest.cache()
 
-    validate_analytics(enriched_df)
+    validate_analytics(df_latest)
     logger.info("Pre-ML validation passed — running sentiment inference...")
 
     n_executors = 1  # model is loaded per-executor; coalesce keeps inference on one process
-    df = run_ml_pipeline(enriched_df.coalesce(n_executors))
-    
+    df = run_ml_pipeline(df_latest.coalesce(n_executors))
+
     df = df.repartition(spark.sparkContext.defaultParallelism)
-    
+
     df.cache()
     df.count()
-    enriched_df.unpersist()
+    df_latest.unpersist()
     logger.info("Sentiment inference complete — building gold tables...")
 
     fact_tweets     = build_fact_tweets(df)
-    dim_brands      = build_dim_brands(spark)
-    dim_authors     = build_dim_authors(df).cache()
     agg_brand_daily = build_agg_brand_daily(df).cache()
+
+    # All silver: dim_authors needs full author history, no ML needed
+    df_all  = enrich_analytics(
+        read_all_silver(spark, dataset="tweets").dropDuplicates(["id"])
+    )
+    dim_authors = build_dim_authors(df_all).cache()
+    dim_brands  = build_dim_brands(spark)
 
     validate_gold(fact_tweets, dim_authors, agg_brand_daily)
     logger.info("Gold validation passed — writing tables...")
@@ -55,7 +61,7 @@ def gold_processing(spark: SparkSession) -> None:
     write_to_s3(fact_tweets,     "analytics.fact_tweets",     LAYER, partition_cols=["date", "primary_brand"], path_override=f"{TWEETS_PREFIX}/fact_tweets")
     write_to_s3(dim_brands,      "analytics.dim_brands",      LAYER, partition_cols=[],                        path_override=f"{TWEETS_PREFIX}/dim_brands")
     write_to_s3(dim_authors,     "analytics.dim_authors",     LAYER, partition_cols=[],                        path_override=f"{TWEETS_PREFIX}/dim_authors")
-    write_to_s3(agg_brand_daily, "analytics.agg_brand_daily", LAYER, partition_cols=["brand_name"],            path_override=f"{TWEETS_PREFIX}/agg_brand_daily")
+    write_to_s3(agg_brand_daily, "analytics.agg_brand_daily", LAYER, mode="append", partition_cols=["brand_name"], path_override=f"{TWEETS_PREFIX}/agg_brand_daily")
 
     df.unpersist()
     dim_authors.unpersist()

@@ -70,29 +70,3 @@ with DAG(
 
     ingestion >> processing >> analytics_sentiment >> analytics_stance >> build_conversations >> gemini_analysis
 
-
-# ── Standalone DAG: re-run Gemini analysis on existing conversation threads ───
-
-_default_args_gemini = {
-    "owner": "airflow",
-    "retries": 1,
-    "retry_delay": timedelta(minutes=5),
-}
-
-with DAG(
-    dag_id="youtube_gemini_analysis",
-    default_args=_default_args_gemini,
-    description="Re-run Gemini analysis on existing conversation threads (manual only)",
-    schedule=None,
-    start_date=datetime(2025, 1, 1),
-    catchup=False,
-    tags=["youtube"],
-) as gemini_dag:
-
-    BashOperator(
-        task_id="gemini_analysis_and_save",
-        bash_command=_local_spark_cmd(
-            "/opt/workspace/src/orchestration/jobs/youtube/gemini_analysis_job.py"
-        ),
-        execution_timeout=timedelta(hours=2),
-    )

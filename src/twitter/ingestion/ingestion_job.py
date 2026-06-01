@@ -38,7 +38,7 @@ def add_ingestion_date(records: list[dict], ingestion_time: datetime) -> list[di
 
 
 async def run_ingestion_tweets(query: str, query_type: QueryType, tweets_number: int) -> list[str]:
-    ingestion_time = datetime.now(timezone.utc)
+    ingestion_time = datetime(2026, 5, 28, tzinfo=timezone.utc)
     buffer: list[dict] = []
     buffer_size = 0
     s3_paths: list[str] = []

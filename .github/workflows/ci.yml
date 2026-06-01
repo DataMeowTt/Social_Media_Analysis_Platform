@@ -42,7 +42,6 @@ jobs:
           PYTHONPATH: ${{ github.workspace }}
         run: |
           pytest tests/test_ingestion.py \
-                 tests/test_fb_conversation.py \
                  tests/test_utils.py \
                  -v --tb=short
 

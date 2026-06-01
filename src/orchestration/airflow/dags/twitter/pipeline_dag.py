@@ -45,4 +45,4 @@ with DAG(
         execution_timeout=timedelta(hours=3),
     )
 
-    processing >> analytics
+    ingestion >> processing >> analytics

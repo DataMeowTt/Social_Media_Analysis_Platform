@@ -1,6 +1,7 @@
 import os
 from typing import Optional
 from datetime import datetime, timezone
+from urllib.parse import quote
 
 import httpx
 
@@ -134,3 +135,44 @@ async def get_task_instances(dag_id: str, run_id: str) -> list[dict]:
 async def get_runs(dag_id: str, limit: int = 10) -> list[dict]:
     data = await _get(f"/dags/{dag_id}/dagRuns", {"limit": limit, "order_by": "-start_date"})
     return [_clean_run(r) for r in data.get("dag_runs", [])]
+
+
+async def get_task_logs(dag_id: str, run_id: str, task_id: str, try_number: int = 1) -> str:
+    encoded_run_id = quote(run_id, safe='')
+    try:
+        data = await _get(
+            f"/dags/{dag_id}/dagRuns/{encoded_run_id}/taskInstances/{task_id}/logs/{max(1, try_number)}"
+        )
+        content = data.get("content", "")
+        if isinstance(content, list):
+            # Airflow 2.6+ trả list [[channel, log_line], ...]
+            return "\n".join(
+                item[1] if isinstance(item, (list, tuple)) and len(item) > 1 else str(item)
+                for item in content
+            )
+        return content if isinstance(content, str) else str(content)
+    except httpx.HTTPStatusError as exc:
+        if exc.response.status_code == 404:
+            return "No logs available yet."
+        raise
+
+
+async def trigger_dag(dag_id: str) -> dict:
+    global _token
+    token = await _get_token()
+    async with httpx.AsyncClient(timeout=10) as client:
+        r = await client.post(
+            f"{_BASE}/dags/{dag_id}/dagRuns",
+            headers={"Authorization": f"Bearer {token}"},
+            json={},
+        )
+        if r.status_code == 401:
+            _token = None
+            token = await _get_token()
+            r = await client.post(
+                f"{_BASE}/dags/{dag_id}/dagRuns",
+                headers={"Authorization": f"Bearer {token}"},
+                json={},
+            )
+        r.raise_for_status()
+    return _clean_run(r.json())

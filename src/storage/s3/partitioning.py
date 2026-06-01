@@ -2,6 +2,9 @@ from __future__ import annotations
 from datetime import datetime
 from src.utils.config_loader import load_config
 from src.utils.session import get_s3_client
+from src.utils.logger import get_logger
+
+logger = get_logger(__name__)
 
 config = load_config()
 bucket = config["s3"]["bucket_name"]
@@ -13,9 +16,9 @@ def get_partition_prefix(partition_time: datetime, partition_cols: list[str]) ->
         if col == "year":
             partition_values.append(f"year={partition_time.strftime('%Y')}")
         elif col == "month":
-            partition_values.append(f"month={partition_time.strftime('%m')}")
+            partition_values.append(f"month={partition_time.month}")
         elif col == "day":
-            partition_values.append(f"day={partition_time.strftime('%d')}")
+            partition_values.append(f"day={partition_time.day}")
 
     return "/".join(partition_values) + "/"
     
@@ -36,7 +39,7 @@ def latest_value(prefix: str, key: str) -> str:
 
     if not values:
         raise ValueError(f"No partition found for prefix {prefix} and key {key}")
-    return sorted(values)[-1]
+    return sorted(values, key=lambda x: int(x))[-1]
 
 def get_latest_partition_prefix(dataset: str, layer: str) -> str:
     base = f"{layer}/{dataset}/"
@@ -44,4 +47,6 @@ def get_latest_partition_prefix(dataset: str, layer: str) -> str:
     month = latest_value(f"{base}year={year}/", "month")
     day = latest_value(f"{base}year={year}/month={month}/", "day")
 
-    return f"s3a://{bucket}/{base}year={year}/month={month}/day={day}/"
+    path = f"s3a://{bucket}/{base}year={year}/month={month}/day={day}/"
+    logger.info(f"[{dataset}] Latest partition resolved: year={year}, month={month}, day={day}")
+    return path

@@ -2,12 +2,18 @@ import { getStateColor, formatDuration } from '../utils.js'
 
 const DISPLAY_NAME = {
   ingestion_tweets:            'Ingestion',
+  ingestion_comments:          'Ingestion',
+  ingestion_posts:             'Ingestion',
   delete_raw_duplicates:       'Dedup Raw',
   processing_silver:           'Processing',
   delete_processed_duplicates: 'Dedup Silver',
   analytics_gold:              'Analytics',
   analytics_sentiment:         'Sentiment',
   analytics_stance:            'Stance',
+  build_conversation_threads:  'Threads',
+  gemini_analysis_and_save:    'Gemini',
+  gemini_analysis:             'Gemini',
+  stance_analysis:             'Stance',
 }
 
 const STATE_ICON = {
@@ -39,27 +45,36 @@ function ArrowConnector({ prevState, nextState }) {
   )
 }
 
-function TaskCard({ task }) {
-  const state  = task?.state ?? 'none'
-  const colors = getStateColor(state)
-  const taskId = task?.task_id ?? ''
+function TaskCard({ task, onClick }) {
+  const state    = task?.state ?? 'none'
+  const colors   = getStateColor(state)
+  const taskId   = task?.task_id ?? ''
+  const hasLog   = state !== 'none'
 
   return (
-    <div style={{
-      flex: 1,
-      background: 'var(--c-surface)',
-      border: '1px solid var(--c-border)',
-      borderTop: `3px solid ${colors.border}`,
-      borderRadius: 10,
-      boxShadow: '0 2px 8px var(--c-shadow)',
-      padding: '14px 16px',
-      minWidth: 0,
-    }}>
+    <div
+      onClick={hasLog ? onClick : undefined}
+      style={{
+        flex: 1,
+        background: 'var(--c-surface)',
+        border: '1px solid var(--c-border)',
+        borderTop: `3px solid ${colors.border}`,
+        borderRadius: 10,
+        boxShadow: '0 2px 8px var(--c-shadow)',
+        padding: '14px 16px',
+        minWidth: 0,
+        cursor: hasLog ? 'pointer' : 'default',
+        transition: 'box-shadow 0.15s',
+      }}
+      onMouseEnter={e => { if (hasLog) e.currentTarget.style.boxShadow = '0 4px 16px var(--c-shadow)' }}
+      onMouseLeave={e => { if (hasLog) e.currentTarget.style.boxShadow = '0 2px 8px var(--c-shadow)' }}
+    >
       <div style={{
         fontSize: 11, fontWeight: 700,
         color: 'var(--c-muted)',
         textTransform: 'uppercase', letterSpacing: '0.07em',
         marginBottom: 10,
+        overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
       }}>
         {DISPLAY_NAME[taskId] ?? taskId}
       </div>
@@ -91,13 +106,13 @@ function TaskCard({ task }) {
   )
 }
 
-export default function TaskFlow({ tasks }) {
+export default function TaskFlow({ tasks, onTaskClick }) {
   if (!tasks?.length) return null
   return (
     <div style={{ display: 'flex', alignItems: 'stretch', gap: 0 }}>
       {tasks.map((task, i) => (
         <div key={task.task_id} style={{ display: 'flex', alignItems: 'center', flex: 1, minWidth: 0 }}>
-          <TaskCard task={task} />
+          <TaskCard task={task} onClick={() => onTaskClick?.(task)} />
           {i < tasks.length - 1 && (
             <ArrowConnector
               prevState={task.state}

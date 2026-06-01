@@ -75,10 +75,8 @@ def read_latest_silver_facebook(spark: SparkSession, table: str) -> DataFrame:
 
 
 def read_latest_silver(spark: SparkSession, dataset: str) -> DataFrame:
-    today = date.today()
-    prefix = f"processed/{dataset}/year={today.year}/month={today.month}/day={today.day}/"
-    path = f"s3a://{bucket}/{prefix}"
-    logger.info(f"Reading today's silver partition from {path}")
+    path = get_latest_partition_prefix(dataset=dataset, layer="processed")
+    logger.info(f"Reading latest silver from {path}")
     return spark.read.format("parquet").load(path)
 
 
